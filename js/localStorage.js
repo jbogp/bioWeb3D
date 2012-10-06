@@ -48,9 +48,11 @@ function loaded(evt) {
 			// $this will contain a reference to the checkbox
 			var $this = $(this);
 			if ($this.is(':checked')) {
-				worlds[event.data.world-1].attachDataSet(datasets[event.data.dataset-1]);
+				var numDataset = worlds[event.data.world-1].attachDataSet(datasets[event.data.dataset-1]);
+				$this.val(numDataset);
+				console.log("registering :"+$this.val());
 			} else {
-				//TODO the checkbox was unchecked
+				worlds[event.data.world-1].detachDataSet($this.val());
 			}
 		});
 	}

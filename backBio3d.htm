@@ -122,6 +122,8 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		//Attached visualizations
 		this.datasets = new Array();
 		this.clusters = new Array();
+		//Unique ID for datasets
+		this.datasetID = 0;
 
 
 		//Setting camera position
@@ -174,16 +176,31 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 		//attach a DataSet to the world
 		this.attachDataSet = function(dataSet) {
+			var ret = -1;
 			//Check if the dataset has been loaded
 			if(!dataSet.loaded) { 
 				alert("loading is not finished");
 			}
 			else{
-				var particuleSystem = dataSet.createParticuleSystem()
-				this.scene.add(particuleSystem);
+				//registering new PaticuleSystem
+				this.datasets[""+this.datasetID+""] = dataSet.createParticuleSystem();
+				ret = this.datasetID;
+				this.scene.add(this.datasets[""+this.datasetID+""]);
+				this.datasetID++;
 			}
+			return ret;
 			
 		}
+		
+		//detach a DataSet from the world
+		this.detachDataSet = function(numDataset) {
+			//deleting PaticuleSystem
+			console.log("removing :"+numDataset);
+			this.scene.remove(this.datasets[""+numDataset+""]);
+			delete this.datasets[""+numDataset+""];
+		}
+
+			
 		
 	
 
@@ -336,8 +353,10 @@ $(function(){
 	initUI();
 	
 	//Starting one world
-	worlds[0] = new World((window.innerWidth/2), (window.innerHeight),0,0,data);
-	worlds[1] = new World((window.innerWidth/2), (window.innerHeight),(window.innerWidth/2),0,data);
+	worlds[0] = new World((window.innerWidth/2), (window.innerHeight/2),0,0,data);
+	worlds[1] = new World((window.innerWidth/2), (window.innerHeight/2),(window.innerWidth/2),0,data);
+	worlds[2] = new World((window.innerWidth/2), (window.innerHeight/2),(window.innerWidth/2),(window.innerHeight/2),data);
+	worlds[3] = new World((window.innerWidth/2), (window.innerHeight/2),0,(window.innerHeight/2),data);
 	
 	animate();
 	
