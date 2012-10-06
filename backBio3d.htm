@@ -1,0 +1,357 @@
+
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bio3D</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<style>
+	body {
+		background-color: #000000;
+		margin: 0px;
+		overflow: hidden;
+	}
+
+	a {
+		color:#0078ff;
+	}
+	
+	h3 {
+		font-size : 12px;
+	}
+	
+	.UIControl {
+		position:absolute;
+		left:5px;
+		bottom:-5px;
+		height:20px;
+		border: 5px solid transparent;
+		-moz-border-radius: 15px;
+		border-radius: 5px;
+		font-size:0.8em;
+		background:#fff;
+		padding : 5px 5px;
+		cursor: pointer;
+		opacity:0.6;
+		text-align
+		filter:alpha(opacity=60);"
+	}
+</style>
+</head>
+
+<body>  
+<script src="build/json2.js"></script>	
+<script src="build/jquery-1.8.0.min.js"></script>
+<script src="build/jquery-ui-1.8.23.custom.min.js"></script>
+<link type="text/css" href="css/jquery-ui-1.8.24.custom.css" rel="Stylesheet" />	
+<script src="build/Three.js"></script>
+<script src="build/underscore.js"></script>
+<script src="build/backbone.js"></script>
+<script src="build/backbone-localstorage.js"></script>
+<script src="build/Stats.js"></script>
+
+
+
+<script>
+//Defining application global variables
+var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeight=window.innerHeight,winWidth=window.innerWidth,datasets=new Array();
+</script>
+
+
+<!-- creating the UI -->
+	<div class="UIControl">
+		Show/Hide UI
+	</div>
+	<div class="UI">
+		<div class="session" style="position:absolute;left:0px;top:0px;;width:100%;height:30px;border:1px solid #000;background:#fff;padding-top:5px;opacity:0.6;filter:alpha(opacity=60);">
+			<div id="current" style="display:inline"><b>Bio3D-1.0</b></div>
+			<div style="float:right;display:inline"></div>
+		</div>
+		<div class="controls" style="position:absolute;right:0px;top:36px;;width:300px;border:1px solid #000;background:#000;opacity:0.6;filter:alpha(opacity=60);">
+			<div id="accordion">
+			
+				<h3><a href="#">Settings</a></h3>
+					<div>
+						<div class="coefs" style="padding:10px !important;">
+							Axis Coefficients :</br>
+							Antero-posterior axis<div id="sliderX"></div>
+							Dorso-versal axis<div id="sliderY"></div>
+							Latero-medial axis<div id="sliderZ"></div>
+							
+
+
+						</div>
+					</div>
+				<h3><a href="#">Data view</a></h3>
+					<div>
+						<input type="file" id="newDataSet">
+						<div id="accordionData">
+						</div>
+					</div>
+			</div>
+
+
+
+		</div>
+	</div> 
+
+<!-- importing application scripts -->
+<script src="js/utils.js"></script>
+<script src="js/materials.js"></script>
+<script src="js/labelClasses.js"></script>
+
+
+
+<script>
+
+
+
+
+	//defining world model
+	function World(innerWidth,innerHeight,x,y,data){
+
+		//Initialisation
+		this.camera = new THREE.PerspectiveCamera( 75, innerWidth / innerHeight, 1, 100000 );
+		this.scene = new THREE.Scene();
+		this.controls = new THREE.TrackballControls( this.camera );
+		
+		this.x = x;
+		this.y = y;
+		this.innerWidth = innerWidth;
+		this.innerHeight = innerHeight;
+		
+		//Attached visualizations
+		this.datasets = new Array();
+		this.clusters = new Array();
+
+
+		//Setting camera position
+		this.camera.position.z = 600;
+		this.camera.position.x = 600;
+		this.camera.position.y = 600;
+
+		//Adding camera to the scene
+		this.scene.add( this.camera );
+
+
+		//Create axis (point1, point2, colour)
+		this.createAxis = function(p1, p2, color){
+			var line, lineGeometry = new THREE.Geometry(),lineMat = new THREE.LineBasicMaterial({color: color, lineWidth: 1});
+			lineGeometry.vertices.push(p1, p2);
+			line = new THREE.Line(lineGeometry, lineMat);
+			this.scene.add(line);
+		}
+
+
+		//Creating 3 axis
+		this.createAxis(v(-axisLength, 0, 0), v(axisLength, 0, 0), 0xffffff);
+		this.createAxis(v(0, -axisLength, 0), v(0, axisLength, 0), 0xffffff);
+		this.createAxis(v(0, 0, -axisLength), v(0, 0, axisLength), 0xffffff);
+
+
+		//Creating Axis labels
+		this.labelSet = new WorldLabelSet(this);
+		
+
+		//Turn off controls
+		this.disableControls = function () {
+			this.controls.enabled = false;
+		}
+
+		//Turn on controls
+		this.enableControls = function () {
+			this.controls.enabled = true;
+		}
+		
+		
+		//Change world size and localization
+		this.changeSize = function(innerWidth,innerHeight,x,y) {
+			this.innerWidth = innerWidth;
+			this.innerHeight = innerHeight;
+			this.x = x;
+			this.y = y;
+		}
+
+
+		//attach a DataSet to the world
+		this.attachDataSet = function(dataSet) {
+			//Check if the dataset has been loaded
+			if(!dataSet.loaded) { 
+				alert("loading is not finished");
+			}
+			else{
+				var particuleSystem = dataSet.createParticuleSystem()
+				this.scene.add(particuleSystem);
+			}
+			
+		}
+		
+	
+
+
+		
+		//Creating the Render function
+		this.render = function () {
+
+				//Updating controls
+				this.controls.update();
+
+				//Updating labels
+				this.labelSet.render();
+
+				//Zooming with arrow keys
+				if(KeyDown){
+					if (dir == 1){
+						this.camera.fov = camera.fov-1;
+						this.camera.updateProjectionMatrix();
+					}
+					else if (dir ==2){
+						this.camera.fov = camera.fov+1;
+						this.camera.updateProjectionMatrix();
+					}
+				}
+
+				
+				renderer.setViewport(this.x, this.y, this.innerWidth, this.innerHeight);
+				renderer.render( this.scene, this.camera );
+		}
+
+	};
+
+
+
+
+
+	//defining dataset Model
+	function DataSet(){
+
+		this.points;
+		this.clusterSets = new Array();
+		this.loaded = false;
+		
+		
+		//Create Three.js particle system for new dataset
+		this.createParticuleSystem = function(){
+			if(this.loaded) {
+				var geometry,particles, particle,check,particleSystem;
+				
+				//create DataSet geometry
+				geometry = new THREE.Geometry();
+				for (var i = 0; i < this.points.length; i++) {
+						var pX =  this.points[i][0],
+						pY =  this.points[i][1],
+						pZ =  this.points[i][2],
+						particle = new THREE.Vector3(pX, pY, pZ);
+
+						geometry.vertices.push( particle );
+				}
+		
+				// create the particle systems
+				particleSystem = new THREE.ParticleSystem(geometry,dataSetMaterial);
+				return particleSystem;
+			}
+		}
+		
+		//Setter for loaded points
+		this.setPoints = function(points) {
+			this.points = points;
+		}
+
+
+		//Function to load json data from file and store it in points
+		this.loadFromFile = function(jsonFile){
+			var objectCall = this;
+			$.getJSON(jsonFile,function(json) {
+				console.log("dataset "+jsonFile+" loaded");
+				objectCall.points = json.cell;
+				objectCall.loaded = true;
+			});
+		}
+		
+		
+		//Add cluster to dataset
+		this.addClusterSet = function(clusterSet) {
+			clusterSets.push(clusterSet);
+		}
+
+	}
+
+
+
+	//defining dataset Model
+	function ClusterSet(){
+
+		
+		this.set;
+		
+		this.loadFromDistantFile = function(jsonFile) {
+			this.set = $.getJSON(jsonFile,function(data) {
+				console.log("clusterset loaded");
+			});	
+		}
+		
+		this.loadFromLocalFile = function(jsonFile) {
+			this.set = $.getJSON(jsonFile,function(data) {
+				console.log("clusterset loaded");
+			});	
+		}
+
+
+
+
+	}
+
+	//Load Data From Json File
+	function dataSetFactory(data,jsonFile) {
+	
+	}
+
+
+
+
+
+	//Defining Data collection
+	function data() {
+
+	};
+
+	//Request Animation Frame
+	function animate() {
+
+		requestAnimationFrame( animate );
+		renderWorlds();
+
+
+	}
+
+
+	/********************************************************
+			LAUNCHING APPLICATION
+	*********************************************************/
+	
+$(function(){
+	//Initializing Renderer
+	initRenderer(window.innerWidth,window.innerHeight);
+	
+	//Initializing UI
+	initUI();
+	
+	//Starting one world
+	worlds[0] = new World((window.innerWidth/2), (window.innerHeight),0,0,data);
+	worlds[1] = new World((window.innerWidth/2), (window.innerHeight),(window.innerWidth/2),0,data);
+	
+	animate();
+	
+});
+
+
+
+
+
+
+</script>
+<script src="js/localStorage.js"></script>
+
+
+</body>
+
+
