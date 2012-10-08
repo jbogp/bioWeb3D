@@ -37,11 +37,21 @@
 	//Initializing UI elements
 	function initUI() {
 		//Create sliders
-		$( "#sliderX" ).slider({
-		});
-		$( "#sliderY" ).slider({
-		});
-		$( "#sliderZ" ).slider({
+		$( ".sliderCoord" ).slider({
+			value:1,
+			min: 0,
+			max: 2,
+			step: 0.2,
+			slide: function( event, ui ) {
+				//recreating dataset points
+				for(var i=0;i<datasets.length;i++) {
+					datasets[i].center([$( "#sliderX" ).slider('value'),$( "#sliderY" ).slider('value'),$( "#sliderZ" ).slider('value')]);
+				}
+				//Refreshing worlds
+				for(var i=0;i<worlds.length;i++) {
+					worlds[i].refreshDataSets();
+				}
+			}
 		});
 		
 		//Create accordions

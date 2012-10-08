@@ -1,7 +1,7 @@
 
 <!DOCTYPE html>
 <html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Bio3D, it's cool</title>
+<title>Bio3D</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <style>
@@ -77,9 +77,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					<div>
 						<div class="coefs" style="padding:10px !important;">
 							Axis Coefficients :</br>
-							Antero-posterior axis<div id="sliderX"></div>
-							Dorso-versal axis<div id="sliderY"></div>
-							Latero-medial axis<div id="sliderZ"></div>
+							Antero-posterior axis<div class="sliderCoord" id="sliderX"></div>
+							Dorso-versal axis<div class="sliderCoord" id="sliderY"></div>
+							Latero-medial axis<div class="sliderCoord" id="sliderZ"></div>
 							
 
 
@@ -136,8 +136,6 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		//Attached visualizations
 		this.datasets = new Array();
 		this.clusters = new Array();
-		//Unique ID for datasets
-		this.datasetID = 0;
 
 
 		//Setting camera position
@@ -199,30 +197,41 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		}
 
 		//attach a DataSet to the world
-		this.attachDataSet = function(dataSet) {
-			var ret = -1;
+		this.attachDataSet = function(dataSet,setNum) {
 			//Check if the dataset has been loaded
 			if(!dataSet.loaded) { 
 				alert("loading is not finished");
 			}
 			else{
 				//registering new PaticuleSystem
-				this.datasets[""+this.datasetID+""] = dataSet.createParticuleSystem();
+				this.datasets[""+setNum+""] = [dataSet.createParticuleSystem(),setNum];
 				ret = this.datasetID;
-				this.scene.add(this.datasets[""+this.datasetID+""]);
-				this.datasetID++;
+				this.scene.add(this.datasets[""+setNum+""][0]);
 			}
-			return ret;
 			
 		}
-		
+
 		//detach a DataSet from the world
 		this.detachDataSet = function(numDataset) {
 			//deleting PaticuleSystem
-			console.log("removing :"+numDataset);
-			this.scene.remove(this.datasets[""+numDataset+""]);
+			this.scene.remove(this.datasets[""+numDataset+""][0]);
 			delete this.datasets[""+numDataset+""];
 		}
+
+
+		//Refresh DataSets
+		this.refreshDataSets = function() {
+			var numDataset;
+			var self = this;
+			$.each(this.datasets, function(key, value) { 
+				if(typeof value !== 'undefined') {
+					numDataSet = value[1];
+					self.detachDataSet(key);
+					self.attachDataSet(datasets[numDataSet],numDataSet);
+				}
+			});
+		}
+		
 
 		
 		//Creating the Render function
@@ -261,21 +270,22 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 	function DataSet(){
 
 		this.points;
+		this.centered = new Array();
 		this.clusterSets = new Array();
 		this.loaded = false;
+		this.mean = new Array();
 		
 		
 		//Create Three.js particle system for new dataset
 		this.createParticuleSystem = function(){
 			if(this.loaded) {
 				var geometry,particles, particle,check,particleSystem;
-				
 				//create DataSet geometry
 				geometry = new THREE.Geometry();
-				for (var i = 0; i < this.points.length; i++) {
-						var pX =  this.points[i][0],
-						pY =  this.points[i][1],
-						pZ =  this.points[i][2],
+				for (var i = 0; i < this.centered.length; i++) {
+						var pX =  this.centered[i][0],
+						pY =  this.centered[i][1],
+						pZ =  this.centered[i][2],
 						particle = new THREE.Vector3(pX, pY, pZ);
 
 						geometry.vertices.push( particle );
@@ -290,6 +300,39 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		//Setter for loaded points
 		this.setPoints = function(points) {
 			this.points = points;
+			this.computeMeans();
+			this.center([1,1,1]);
+		}
+
+
+		//Computing mean of raw data to center on 0
+		this.computeMeans = function() {
+			var mean = new Array();
+			for (var i = 0; i < this.points.length; i++) {
+				if(i == 0) {
+					this.mean = [this.points[i][0],this.points[i][1],this.points[i][2]];
+				}
+				else {
+					this.mean[0] += this.points[i][0];
+					this.mean[1] += this.points[i][1];
+					this.mean[2] += this.points[i][2];
+				}
+			}
+			this.mean[0] = this.mean[0]/this.points.length;
+			this.mean[1] = this.mean[1]/this.points.length;
+			this.mean[2] = this.mean[2]/this.points.length;
+					
+
+		}
+
+		//Centering data on 0 accounting for the axis respective coeficients
+		this.center = function(coef) {
+			for (var i = 0; i < this.points.length; i++) {
+				this.centered[i] = new Array();
+				for(var j = 0; j < 3; j++) {
+						this.centered[i][j] = (((this.points[i][j])-this.mean[j])*coef[j]);
+				}
+			}
 		}
 
 

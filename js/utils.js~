@@ -20,18 +20,103 @@
 		renderer.autoClear = false;
 		renderer.setSize(width, height );
 		container.appendChild( renderer.domElement );
-
-		//Displaying stats
-		stats = new Stats();
-		stats.domElement.style.position = 'absolute';
-		stats.domElement.style.top = '0px';
-		container.appendChild( stats.domElement );
+		
+		
+		//Binding to UI elements so camera won't move while manipulating UI
+		$('.UI').live("mouseover",function(event){
+			controlsOff();			
+		});
+		
+		
+		//Binding to UI elements so camera restarts when exiting UI
+		$('.UI').live("mouseout",function(event){
+			controlsOn();			
+		});
 	}
+	
+	//Initializing UI elements
+	function initUI() {
+		//Create sliders
+		$( ".sliderCoord" ).slider({
+			value:1,
+			min: 0.2,
+			max: 2,
+			step: 0.2,
+			slide: function( event, ui ) {
+				//recreating dataset points
+				for(var i=0;i<datasets.length;i++) {
+					datasets[i].center([$( "#sliderX" ).slider('value'),$( "#sliderY" ).slider('value'),$( "#sliderZ" ).slider('value')]);
+				}
+				//Refreshing worlds
+				for(var i=0;i<worlds.length;i++) {
+					worlds[i].refreshDataSets();
+				}
+			}
+		});
+		
+		//Create accordions
+		$("#accordion").accordion({ header: "h3" });
+		$("#worldAccordion").buttonset();
+		
+		
+		//Bind events 
+		$(".UIControl").bind("click", function (event) {
+			//Show/hide UI
+			$(".UI").fadeToggle('slow');
+		});
+		
+		$("#newDataSet").bind("change", function (event) {
+			startRead();
+		});
+		
+		$(".checkWorld").bind("change",function (event) {
+			var $this = $(this);
+			worlds[$this.val()].toggle();
+			console.log($this.val());
+			numWorlds = $(".checkWorld:checked").length;
+			setWorlds();
+		});
+		
+	}
+	
+
+
 	
 	//Render all created worlds
 	function renderWorlds () {
 		for(var i=0;i<worlds.length;i++) {
 			worlds[i].render();
+		}
+	}
+	
+	//Different world number options from 1 to 4
+	function setWorlds () {
+		var coord = new Array();
+		var coordNum = 0;
+		var i =0;
+		if(numWorlds == 1) {
+			coord = [[winWidth,winHeight,0,0]];
+		}
+		else if(numWorlds == 2) {
+			coord = [[winWidth/2,winHeight,0,0],[winWidth/2,winHeight,winWidth/2,0]];
+		}
+		else if(numWorlds == 3) {
+			coord = [[winWidth,winHeight/2,0,0],[winWidth/2,winHeight/2,0,winHeight/2],[winWidth/2,winHeight/2,winWidth/2,winHeight/2]];
+		}
+		else if (numWorlds == 4) {
+			coord = [[winWidth/2,winHeight/2,0,0],[winWidth/2,winHeight/2,winWidth/2,0],[winWidth/2,winHeight/2,0,winHeight/2],[winWidth/2,winHeight/2,winWidth/2,winHeight/2]];
+		}
+		else {
+			alert("invalid number of worlds");
+		}
+		
+		while(coordNum < numWorlds) {
+			if(worlds[i].visible) {
+				console.log(numWorlds);
+				worlds[i].changeSize(coord[coordNum][0],coord[coordNum][1],coord[coordNum][2],coord[coordNum][3]);
+				coordNum++;
+			}
+			i++;
 		}
 	}
 
@@ -55,7 +140,8 @@
 	function dataSetFactory(data,jsonFile) {
 		$.getJSON(jsonFile,function(json) {
 			console.log(json.cell[0][1]);
-			this.viewSet();
+			data = new DataSet();
+			data.set = json.cell;
 		});	
 	}
 
