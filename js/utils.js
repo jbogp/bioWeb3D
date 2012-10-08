@@ -75,9 +75,7 @@
 	//Render all created worlds
 	function renderWorlds () {
 		for(var i=0;i<worlds.length;i++) {
-			if(worlds[i].visible){
-				worlds[i].render();
-			}
+			worlds[i].render();
 		}
 	}
 	
@@ -90,7 +88,7 @@
 			coord = [[winWidth,winHeight,0,0]];
 		}
 		else if(numWorlds == 2) {
-			coord = [[winWidth,winHeight/2,0,0],[winWidth,winHeight/2,0,winHeight/2]];
+			coord = [[winWidth/2,winHeight,0,0],[winWidth/2,winHeight,winWidth/2,0]];
 		}
 		else if(numWorlds == 3) {
 			coord = [[winWidth,winHeight/2,0,0],[winWidth/2,winHeight/2,0,winHeight/2],[winWidth/2,winHeight/2,winWidth/2,winHeight/2]];

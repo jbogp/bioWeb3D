@@ -43,15 +43,19 @@
 <script src="build/jquery-1.8.0.min.js"></script>
 <script src="build/jquery-ui-1.8.23.custom.min.js"></script>
 <link type="text/css" href="css/jquery-ui-1.8.24.custom.css" rel="Stylesheet" />	
-<script src="build/Three.js"></script>
+<script src="build/three.min.js"></script>
 <script src="build/underscore.js"></script>
 <script src="build/backbone.js"></script>
 <script src="build/backbone-localstorage.js"></script>
 <script src="build/Stats.js"></script>
+<script src="build/Detector.js"></script>
 
 
 
 <script>
+//Checking for WebGL
+if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
+
 //Defining application global variables
 var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeight=window.innerHeight,winWidth=window.innerWidth,datasets=new Array(),numWorlds;
 </script>
@@ -220,11 +224,6 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 			delete this.datasets[""+numDataset+""];
 		}
 
-			
-		
-	
-
-
 		
 		//Creating the Render function
 		this.render = function () {
@@ -232,24 +231,24 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 				//Updating controls
 				this.controls.update();
 
-				//Updating labels
-				this.labelSet.render();
+				if(this.visible) {
+					//Zooming with arrow keys
+					if(KeyDown){
+						if (dir == 1){
+							this.camera.fov = camera.fov-1;
+							this.camera.updateProjectionMatrix();
+						}
+						else if (dir ==2){
+							this.camera.fov = camera.fov+1;
+							this.camera.updateProjectionMatrix();
+						}
+					}
 
-				//Zooming with arrow keys
-				if(KeyDown){
-					if (dir == 1){
-						this.camera.fov = camera.fov-1;
-						this.camera.updateProjectionMatrix();
-					}
-					else if (dir ==2){
-						this.camera.fov = camera.fov+1;
-						this.camera.updateProjectionMatrix();
-					}
+					//Updating labels
+					this.labelSet.render();
+					renderer.setViewport(this.x, this.y, this.innerWidth, this.innerHeight);
+					renderer.render( this.scene, this.camera );
 				}
-
-				
-				renderer.setViewport(this.x, this.y, this.innerWidth, this.innerHeight);
-				renderer.render( this.scene, this.camera );
 		}
 
 	};
