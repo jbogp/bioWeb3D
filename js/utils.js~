@@ -39,7 +39,7 @@
 		//Create sliders
 		$( ".sliderCoord" ).slider({
 			value:1,
-			min: 0.2,
+			min: 0,
 			max: 2,
 			step: 0.2,
 			slide: function( event, ui ) {
@@ -75,6 +75,11 @@
 			console.log($this.val());
 			numWorlds = $(".checkWorld:checked").length;
 			setWorlds();
+		});
+
+		//Bind Cluster File upload now and in the future
+		$(".clusterFile").live("change", function (event) {
+			startReadCluster($(this));
 		});
 		
 	}

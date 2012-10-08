@@ -76,6 +76,11 @@
 			numWorlds = $(".checkWorld:checked").length;
 			setWorlds();
 		});
+
+		//Bind Cluster File upload now and in the future
+		$(".clusterFile").live("change", function (event) {
+			startReadCluster($(this).attr('id'));
+		});
 		
 	}
 	

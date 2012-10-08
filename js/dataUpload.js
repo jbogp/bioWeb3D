@@ -41,7 +41,7 @@ function loaded(evt) {
   //Adding dataset to the UI
 	//Create accordion
 	$("#accordionData").append("<h3><a href='#'>Dataset #"+index+"</a></h3><div id='worldDataAccordion"+index+"'>");
-	$("#worldDataAccordion"+index+"").append("Show in World :<div id='worldSelectData"+index+"'></div>");
+	$("#worldDataAccordion"+index+"").append("Show raw in world :<div id='worldSelectData"+index+"'></div>");
 	for(var i=1;i<=worlds.length;i++) {
 		$("#worldSelectData"+index+"").append("<input type='checkbox' id='worldSelectData"+index+""+i+"' /><label for='worldSelectData"+index+""+i+"'>world "+i+"</label>");
 		$("#worldSelectData"+index+""+i+"").bind("change",{world:i,dataset:index},function(event){
@@ -58,18 +58,18 @@ function loaded(evt) {
 	//create JqueryUI radio button
 	$( "#worldSelectData"+index+"" ).buttonset();
 	
-	$("#worldDataAccordion"+index+"").append("Add cluster data : <input type='file'>");
+	//Appening input file to import cluster data
+	$("#worldDataAccordion"+index+"").append("Add cluster data : <input class='clusterFile' id='clusterFile"+index+"' type='file'>");
 	$("#worldDataAccordion"+index+"").append("</div>");
 	$("#accordionData").accordion('destroy');
 	$("#accordionData").accordion({ header: "h3" });
-	$("#accordion").accordion( "resize" )
-
+	$("#accordion").accordion( "resize" );
 	
       
 }
 
 function errorHandler(evt) {
   if(evt.target.error.name == "NotReadableErr") {
-    // The file could not be read
+    alert("File format is wrong somehow");
   }
 }

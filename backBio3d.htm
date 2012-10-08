@@ -111,6 +111,8 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 <script src="js/utils.js"></script>
 <script src="js/materials.js"></script>
 <script src="js/labelClasses.js"></script>
+<script src="js/dataUpload.js"></script>
+<script src="js/clusterUpload.js"></script>
 
 
 
@@ -410,6 +412,8 @@ $(function(){
 	
 	
 	animate();
+
+setTimeout("dataSetMaterial.color.setHex( 0xD12F35 );console.log('changed');",10000);
 	
 });
 
@@ -419,7 +423,7 @@ $(function(){
 
 
 </script>
-<script src="js/localStorage.js"></script>
+
 
 
 </body>
