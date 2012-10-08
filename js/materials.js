@@ -19,7 +19,7 @@ var labelMaterial =  new THREE.ParticleBasicMaterial({
 var dataSetMaterial =  new THREE.ParticleBasicMaterial({
 	color: 0xffffff,
 	size: 10.0,
-	opacity:0.1,
+	opacity:0.01,
 	blending: THREE.NormalBlending,
 	transparent: true
 });

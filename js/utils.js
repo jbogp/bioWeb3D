@@ -44,8 +44,9 @@
 		$( "#sliderZ" ).slider({
 		});
 		
-		//Create accordion
+		//Create accordions
 		$("#accordion").accordion({ header: "h3" });
+		$("#worldAccordion").buttonset();
 		
 		
 		//Bind events 
@@ -57,14 +58,57 @@
 		$("#newDataSet").bind("change", function (event) {
 			startRead();
 		});
+		
+		$(".checkWorld").bind("change",function (event) {
+			var $this = $(this);
+			worlds[$this.val()].toggle();
+			console.log($this.val());
+			numWorlds = $(".checkWorld:checked").length;
+			setWorlds();
+		});
+		
 	}
+	
 
 
 	
 	//Render all created worlds
 	function renderWorlds () {
 		for(var i=0;i<worlds.length;i++) {
-			worlds[i].render();
+			if(worlds[i].visible){
+				worlds[i].render();
+			}
+		}
+	}
+	
+	//Different world number options from 1 to 4
+	function setWorlds () {
+		var coord = new Array();
+		var coordNum = 0;
+		var i =0;
+		if(numWorlds == 1) {
+			coord = [[winWidth,winHeight,0,0]];
+		}
+		else if(numWorlds == 2) {
+			coord = [[winWidth,winHeight/2,0,0],[winWidth,winHeight/2,0,winHeight/2]];
+		}
+		else if(numWorlds == 3) {
+			coord = [[winWidth,winHeight/2,0,0],[winWidth/2,winHeight/2,0,winHeight/2],[winWidth/2,winHeight/2,winWidth/2,winHeight/2]];
+		}
+		else if (numWorlds == 4) {
+			coord = [[winWidth/2,winHeight/2,0,0],[winWidth/2,winHeight/2,winWidth/2,0],[winWidth/2,winHeight/2,0,winHeight/2],[winWidth/2,winHeight/2,winWidth/2,winHeight/2]];
+		}
+		else {
+			alert("invalid number of worlds");
+		}
+		
+		while(coordNum < numWorlds) {
+			if(worlds[i].visible) {
+				console.log(numWorlds);
+				worlds[i].changeSize(coord[coordNum][0],coord[coordNum][1],coord[coordNum][2],coord[coordNum][3]);
+				coordNum++;
+			}
+			i++;
 		}
 	}
 

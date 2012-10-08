@@ -53,7 +53,7 @@
 
 <script>
 //Defining application global variables
-var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeight=window.innerHeight,winWidth=window.innerWidth,datasets=new Array();
+var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeight=window.innerHeight,winWidth=window.innerWidth,datasets=new Array(),numWorlds;
 </script>
 
 
@@ -81,10 +81,19 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 						</div>
 					</div>
-				<h3><a href="#">Data view</a></h3>
+				<h3><a href="#">Datasets</a></h3>
 					<div>
 						<input type="file" id="newDataSet">
 						<div id="accordionData">
+						</div>
+					</div>
+				<h3><a href="#">Worlds</a></h3>
+					<div>
+						<div id='worldAccordion' style="text-align:center">
+							<input type='checkbox' checked class="checkWorld" id='worldAccordion1' value=0 /><label for='worldAccordion1'>world 1</label>
+							<input type='checkbox' checked class="checkWorld" id='worldAccordion2' value=1 /><label for='worldAccordion2'>world 2</label><br />
+							<input type='checkbox' checked class="checkWorld" id='worldAccordion3' value=2 /><label for='worldAccordion3'>world 3</label>
+							<input type='checkbox' checked class="checkWorld" id='worldAccordion4' value=3 /><label for='worldAccordion4'>world 4</label>
 						</div>
 					</div>
 			</div>
@@ -107,9 +116,10 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 
 	//defining world model
-	function World(innerWidth,innerHeight,x,y,data){
+	function World(innerWidth,innerHeight,x,y,visible){
 
 		//Initialisation
+		this.visible = visible;
 		this.camera = new THREE.PerspectiveCamera( 75, innerWidth / innerHeight, 1, 100000 );
 		this.scene = new THREE.Scene();
 		this.controls = new THREE.TrackballControls( this.camera );
@@ -172,7 +182,17 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 			this.x = x;
 			this.y = y;
 		}
-
+		
+		//toggle visibility
+		this.toggle = function() {
+			if(this.visible) {
+				this.visible = false;
+				this.labelSet.hideAll();
+			}
+			else{
+				this.visible = true;
+			}
+		}
 
 		//attach a DataSet to the world
 		this.attachDataSet = function(dataSet) {
@@ -294,7 +314,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 
 
-	//defining dataset Model
+	//defining cluster Model
 	function ClusterSet(){
 
 		
@@ -312,25 +332,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 			});	
 		}
 
-
-
-
 	}
 
-	//Load Data From Json File
-	function dataSetFactory(data,jsonFile) {
 	
-	}
-
-
-
-
-
-	//Defining Data collection
-	function data() {
-
-	};
-
 	//Request Animation Frame
 	function animate() {
 
@@ -352,11 +356,16 @@ $(function(){
 	//Initializing UI
 	initUI();
 	
-	//Starting one world
-	worlds[0] = new World((window.innerWidth/2), (window.innerHeight/2),0,0,data);
-	worlds[1] = new World((window.innerWidth/2), (window.innerHeight/2),(window.innerWidth/2),0,data);
-	worlds[2] = new World((window.innerWidth/2), (window.innerHeight/2),(window.innerWidth/2),(window.innerHeight/2),data);
-	worlds[3] = new World((window.innerWidth/2), (window.innerHeight/2),0,(window.innerHeight/2),data);
+	//Starting 4 world
+	worlds[0] = new World((window.innerWidth), (window.innerHeight),0,0,true);
+	worlds[1] = new World((window.innerWidth), (window.innerHeight),0,0,true);
+	worlds[2] = new World((window.innerWidth), (window.innerHeight),0,0,true);
+	worlds[3] = new World((window.innerWidth), (window.innerHeight),0,0,true);
+	
+	
+	numWorlds = 4;
+	setWorlds();
+	
 	
 	animate();
 	

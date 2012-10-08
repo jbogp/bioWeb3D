@@ -97,6 +97,13 @@
 
 
 		this.vecGeoLabs = new Array();
+		
+		this.hideAll = function() {
+			for(var i=0;i<this.labelSet.length;i++){
+				this.labelSet[i].hide();
+			}
+		
+		}
 
 		this.render = function() {
 			var x = new Array();
@@ -129,6 +136,7 @@
 				if((this.vecGeoLabs[i+1].y* +(world.innerHeight/2) + (world.innerHeight/2)+world.y) > (world.innerHeight+world.y) || (this.vecGeoLabs[i+1].y * (world.innerHeight/2) + (world.innerHeight/2)+world.y) < (world.y)) {
 					this.labelSet[i+1].hide();
 				}
+				
 				
 
 				//Updating labels positions
