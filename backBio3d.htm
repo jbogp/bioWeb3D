@@ -18,6 +18,10 @@
 	h3 {
 		font-size : 12px;
 	}
+
+	.UI {
+		z-index:99;
+	}
 	
 	.UIControl {
 		position:absolute;
@@ -208,7 +212,10 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 				//registering new PaticuleSystem
 				this.datasets[""+setNum+""] = [dataSet.createParticuleSystem(),setNum];
 				ret = this.datasetID;
-				this.scene.add(this.datasets[""+setNum+""][0]);
+				//Adding particule Systems to the scene
+				for( var i=0; i<this.datasets[""+setNum+""][0].length ; i++ ) {
+					this.scene.add(this.datasets[""+setNum+""][0][i]);
+				}
 			}
 			
 		}
@@ -216,7 +223,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		//detach a DataSet from the world
 		this.detachDataSet = function(numDataset) {
 			//deleting PaticuleSystem
-			this.scene.remove(this.datasets[""+numDataset+""][0]);
+			for( var i=0; i<this.datasets[""+numDataset+""][0].length ; i++ ) {
+				this.scene.remove(this.datasets[""+numDataset+""][0][i]);
+			}
 			delete this.datasets[""+numDataset+""];
 		}
 
@@ -276,25 +285,48 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		this.clusterSets = new Array();
 		this.loaded = false;
 		this.mean = new Array();
+		this.currentClusterSet=-1;
 		
 		
 		//Create Three.js particle system for new dataset
 		this.createParticuleSystem = function(){
 			if(this.loaded) {
-				var geometry,particles, particle,check,particleSystem;
-				//create DataSet geometry
-				geometry = new THREE.Geometry();
-				for (var i = 0; i < this.centered.length; i++) {
-						var pX =  this.centered[i][0],
-						pY =  this.centered[i][1],
-						pZ =  this.centered[i][2],
-						particle = new THREE.Vector3(pX, pY, pZ);
+				var geometry=new Array(),particles, particle,particleSystem=new Array();
+	console.log(this.currentClusterSet);
+				if(this.currentClusterSet == -1) {
+					//create DataSet geometry
+					geometry[0] = new THREE.Geometry();
+					for (var i = 0; i < this.centered.length; i++) {
+							var pX =  this.centered[i][0],
+							pY =  this.centered[i][1],
+							pZ =  this.centered[i][2],
+							particle = new THREE.Vector3(pX, pY, pZ);
 
-						geometry.vertices.push( particle );
-				}
+							geometry[0].vertices.push( particle );
+					}
 		
-				// create the particle systems
-				particleSystem = new THREE.ParticleSystem(geometry,dataSetMaterial);
+					// create the particle systems
+					particleSystem[0] = new THREE.ParticleSystem(geometry[0],dataSetMaterial);
+				}
+				//Create particule Systems
+				else {
+					//Creating geometries
+					for( var i=0; i<this.clusterSets[this.currentClusterSet].numClust; i++ ) {
+						geometry[i] = new THREE.Geometry();
+					}
+					for (var i = 0; i < this.centered.length; i++) {
+							var pX =  this.centered[i][0],
+							pY =  this.centered[i][1],
+							pZ =  this.centered[i][2],
+							particle = new THREE.Vector3(pX, pY, pZ);
+
+							geometry[this.clusterSets[this.currentClusterSet].set[i]-1].vertices.push( particle );
+					}
+					for( var i=0; i<this.clusterSets[this.currentClusterSet].numClust; i++ ) {
+						particleSystem[i] = new THREE.ParticleSystem(geometry[i],clustMaterial[i]);
+					}
+					
+				}
 				return particleSystem;
 			}
 		}
@@ -304,6 +336,13 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 			this.points = points;
 			this.computeMeans();
 			this.center([1,1,1]);
+		}
+
+		//Add clusterset to this dataset
+		this.addClusterSet = function(clusterSet) {
+			console.log(clusterSet.name);
+			this.clusterSets.push(clusterSet);
+			this.currentClusterSet = 0;
 		}
 
 
@@ -349,32 +388,17 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		}
 		
 		
-		//Add cluster to dataset
-		this.addClusterSet = function(clusterSet) {
-			clusterSets.push(clusterSet);
-		}
 
 	}
 
 
 
 	//defining cluster Model
-	function ClusterSet(){
-
+	function ClusterSet(jsonObj){
 		
-		this.set;
-		
-		this.loadFromDistantFile = function(jsonFile) {
-			this.set = $.getJSON(jsonFile,function(data) {
-				console.log("clusterset loaded");
-			});	
-		}
-		
-		this.loadFromLocalFile = function(jsonFile) {
-			this.set = $.getJSON(jsonFile,function(data) {
-				console.log("clusterset loaded");
-			});	
-		}
+		this.set=jsonObj.values;
+		this.numClust = jsonObj.numClust;
+		this.name = jsonObj.name;
 
 	}
 

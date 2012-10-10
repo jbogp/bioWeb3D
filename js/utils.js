@@ -117,7 +117,6 @@
 		
 		while(coordNum < numWorlds) {
 			if(worlds[i].visible) {
-				console.log(numWorlds);
 				worlds[i].changeSize(coord[coordNum][0],coord[coordNum][1],coord[coordNum][2],coord[coordNum][3]);
 				coordNum++;
 			}

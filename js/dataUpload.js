@@ -59,7 +59,7 @@ function loaded(evt) {
 	$( "#worldSelectData"+index+"" ).buttonset();
 	
 	//Appening input file to import cluster data
-	$("#worldDataAccordion"+index+"").append("Add cluster data : <input class='clusterFile' id='clusterFile"+index+"' type='file'>");
+	$("#worldDataAccordion"+index+"").append("Add cluster data : <input class='clusterFile' id='clusterFile"+(index-1)+"' type='file'>");
 	$("#worldDataAccordion"+index+"").append("</div>");
 	$("#accordionData").accordion('destroy');
 	$("#accordionData").accordion({ header: "h3" });

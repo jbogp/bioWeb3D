@@ -25,14 +25,14 @@ var dataSetMaterial =  new THREE.ParticleBasicMaterial({
 });
 
 //Materials for clusters	
-var clustMaterials = new Array();
+var clustMaterial = new Array();
 for(var i=0;i<colors.length;i++) {
 	
-	clustMaterials[i] =  new THREE.ParticleBasicMaterial({
+	clustMaterial[i] =  new THREE.ParticleBasicMaterial({
 	color: colors[i],
 	size: 10,
 	opacity:0.5,
-	blending: THREE.NoBlending,
+	blending: THREE.NormalBlending,
 	transparent: true
   });
 }

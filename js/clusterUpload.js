@@ -3,11 +3,11 @@ function startReadCluster(element) {
   
   var file = document.getElementById(element).files[0];
   if(file){
-    getClusterAsText(file,element);
+    getClusterAsText(file,element.charAt(element.length-1));
   }
 }
 
-function getClusterAsText(readFile,element) {
+function getClusterAsText(readFile,datasetId) {
         
   var reader = new FileReader();
   
@@ -17,10 +17,16 @@ function getClusterAsText(readFile,element) {
   // Handle progress, success, and errors
   reader.onprogress = updateClusterProgress;
   reader.onload = function (evt) {
-	  // Obtain the read file data    
-	  var fileString = evt.target.result;
-	  //Reading Json and creating Object
-	  alert(element);
+	// Obtain the read file data    
+	var fileString = evt.target.result;
+	//Reading Json and creating Object
+	var json = eval('(' + fileString + ')').cluster;
+	
+	//iterating on clustering sets
+	for(var i=0;i<json.length;i++) {
+		datasets[datasetId].addClusterSet(new ClusterSet(json[i]));
+	}
+	  
   }
   reader.onerror = errorClusterHandler;
 }

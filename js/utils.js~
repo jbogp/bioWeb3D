@@ -79,7 +79,7 @@
 
 		//Bind Cluster File upload now and in the future
 		$(".clusterFile").live("change", function (event) {
-			startReadCluster($(this));
+			startReadCluster($(this).attr('id'));
 		});
 		
 	}
