@@ -55,7 +55,8 @@
 		});
 		
 		//Create accordions
-		$("#accordion").accordion({ header: "h3" });
+		$("#accordion").accordion({ heightStyle: "content"});
+
 		$("#worldAccordion").buttonset();
 		
 		

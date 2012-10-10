@@ -36,8 +36,12 @@
 		padding : 5px 5px;
 		cursor: pointer;
 		opacity:0.6;
-		text-align
-		filter:alpha(opacity=60);"
+		text-align:center;
+		filter:alpha(opacity=60);
+	}
+
+	.heightLimited {
+		max-height:600px;
 	}
 </style>
 </head>
@@ -45,7 +49,7 @@
 <body>  
 <script src="build/json2.js"></script>	
 <script src="build/jquery-1.8.0.min.js"></script>
-<script src="build/jquery-ui-1.8.23.custom.min.js"></script>
+<script src="build/jquery-ui-1.9.0.custom.min.js"></script>
 <link type="text/css" href="css/jquery-ui-1.8.24.custom.css" rel="Stylesheet" />	
 <script src="build/three.min.js"></script>
 <script src="build/underscore.js"></script>
@@ -74,7 +78,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 			<div id="current" style="display:inline"><b>Bio3D-1.0</b></div>
 			<div style="float:right;display:inline"></div>
 		</div>
-		<div class="controls" style="position:absolute;right:0px;top:36px;;width:300px;border:1px solid #000;background:#000;opacity:0.6;filter:alpha(opacity=60);">
+		<div class="controls" style="position:absolute;right:0px;top:36px;overflow: auto;width:400px;border:1px solid #000;background:#000;opacity:0.6;filter:alpha(opacity=60);">
 			<div id="accordion">
 			
 				<h3><a href="#">Settings</a></h3>
@@ -90,7 +94,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 						</div>
 					</div>
 				<h3><a href="#">Datasets</a></h3>
-					<div>
+					<div class="heightLimited">
 						<input type="file" id="newDataSet">
 						<div id="accordionData">
 						</div>
@@ -285,15 +289,14 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		this.clusterSets = new Array();
 		this.loaded = false;
 		this.mean = new Array();
-		this.currentClusterSet=-1;
 		
 		
 		//Create Three.js particle system for new dataset
-		this.createParticuleSystem = function(){
+		this.createParticuleSystem = function(cluster){
+			cluster = typeof cluster !== 'undefined' ? cluster : -1;
 			if(this.loaded) {
 				var geometry=new Array(),particles, particle,particleSystem=new Array();
-	console.log(this.currentClusterSet);
-				if(this.currentClusterSet == -1) {
+				if(cluster == -1) {
 					//create DataSet geometry
 					geometry[0] = new THREE.Geometry();
 					for (var i = 0; i < this.centered.length; i++) {
@@ -339,10 +342,8 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		}
 
 		//Add clusterset to this dataset
-		this.addClusterSet = function(clusterSet) {
-			console.log(clusterSet.name);
-			this.clusterSets.push(clusterSet);
-			this.currentClusterSet = 0;
+		this.addClusterSet = function(clusterSet) {	
+			return	this.clusterSets.push(clusterSet);
 		}
 
 

@@ -59,11 +59,13 @@ function loaded(evt) {
 	$( "#worldSelectData"+index+"" ).buttonset();
 	
 	//Appening input file to import cluster data
+	$("#worldDataAccordion"+index+"").append("<div id='clustAccordion"+index+"'></div>");
 	$("#worldDataAccordion"+index+"").append("Add cluster data : <input class='clusterFile' id='clusterFile"+(index-1)+"' type='file'>");
 	$("#worldDataAccordion"+index+"").append("</div>");
+	$("#accordionData").accordion({ header: "h3" });
 	$("#accordionData").accordion('destroy');
 	$("#accordionData").accordion({ header: "h3" });
-	$("#accordion").accordion( "resize" );
+	$("#accordion").accordion( "refresh" );
 	
       
 }

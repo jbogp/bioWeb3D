@@ -55,7 +55,8 @@
 		});
 		
 		//Create accordions
-		$("#accordion").accordion({ header: "h3" });
+		//$("#accordion").accordion({ header: "h3" , heightStyle: "content"});
+
 		$("#worldAccordion").buttonset();
 		
 		
@@ -117,7 +118,6 @@
 		
 		while(coordNum < numWorlds) {
 			if(worlds[i].visible) {
-				console.log(numWorlds);
 				worlds[i].changeSize(coord[coordNum][0],coord[coordNum][1],coord[coordNum][2],coord[coordNum][3]);
 				coordNum++;
 			}
