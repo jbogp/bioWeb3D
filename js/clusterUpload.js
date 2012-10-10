@@ -31,9 +31,20 @@ function getClusterAsText(readFile,datasetId) {
 		$("#contentClustAccordion"+datasetNum+"-"+clustNum+"").append("<div style='display:inline' id='buttonsClustAccordion"+datasetNum+"-"+clustNum+"'></div>");
 		//Creating World buttons		
 		for(var j=0;j<worlds.length;j++) {
-			$("#buttonsClustAccordion"+datasetNum+"-"+clustNum+"").append("<input type='checkbox' id='worldSelectClustAccordion"+datasetNum+"-"+clustNum+"-"+j+"' /><label for='worldSelectClustAccordion"+datasetNum+"-"+clustNum+"-"+j+"'>world "+j+"</label>");
+			$("#buttonsClustAccordion"+datasetNum+"-"+clustNum+"").append("<input type='checkbox' class='worldSelect"+datasetNum+"-"+j+"' id='worldSelectClustAccordion"+datasetNum+"-"+clustNum+"-"+j+"' /><label for='worldSelectClustAccordion"+datasetNum+"-"+clustNum+"-"+j+"'>world "+j+"</label>");
 			$("#worldSelectClustAccordion"+datasetNum+"-"+clustNum+"-"+j+"").bind("change",{world:j,dataset:datasetId,clusterId:clustNum-1},function(event){
-				console.log("world"+event.data.world+" dataset"+event.data.dataset+" cluster"+event.data.clusterId);
+				// $this will contain a reference to the checkbox
+				var $this = $(this);
+				if ($this.is(':checked')) {
+					//uncheck other non compatible buttons (same world same dataset)
+					$(".worldSelect"+(event.data.dataset)+"-"+(event.data.world)+"").prop("checked",false);
+				//check this one though
+				$this.prop("checked",true);
+					worlds[event.data.world].attachDataSet(datasets[event.data.dataset],event.data.dataset,event.data.clusterId);
+					$this.val(event.data.dataset);
+				} else {
+					worlds[event.data.world].detachDataSet($this.val());
+				}
 			});
 		}
 		$( "#buttonsClustAccordion"+datasetNum+"-"+clustNum+"" ).buttonset();

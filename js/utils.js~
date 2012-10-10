@@ -55,7 +55,7 @@
 		});
 		
 		//Create accordions
-		//$("#accordion").accordion({ header: "h3" , heightStyle: "content"});
+		$("#accordion").accordion({ heightStyle: "content"});
 
 		$("#worldAccordion").buttonset();
 		
@@ -82,6 +82,12 @@
 		$(".clusterFile").live("change", function (event) {
 			startReadCluster($(this).attr('id'));
 		});
+		
+	}
+
+	//This unchecks certain buttons except one
+	function uncheckNonCompatible(dataset,world,element) {
+		$(".worldSelect"+(event.data.dataset)+"-"+(event.data.world)+"").prop("checked",false);
 		
 	}
 	
