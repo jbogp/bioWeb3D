@@ -41,7 +41,7 @@
 	}
 
 	.heightLimited {
-		max-height:600px;
+		max-height:500px;
 	}
 </style>
 </head>
@@ -99,7 +99,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 						<div id="accordionData">
 						</div>
 					</div>
-				<h3><a href="#">Worlds</a></h3>
+				<h3><a href="#">View</a></h3>
 					<div>
 						<div id='worldAccordion' style="text-align:center">
 							<input type='checkbox' checked class="checkWorld" id='worldAccordion1' value=0 /><label for='worldAccordion1'>world 1</label>
@@ -333,7 +333,12 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 							geometry[this.clusterSets[cluster].set[i]-1].vertices.push( particle );
 					}
 					for( var i=0; i<this.clusterSets[cluster].numClust; i++ ) {
-						particleSystem[i] = new THREE.ParticleSystem(geometry[i],clustMaterial[i]);
+						if(this.clusterSets[cluster].visible[i]) {
+							particleSystem[i] = new THREE.ParticleSystem(geometry[i],clustMaterial[i]);
+						}
+						else{
+							particleSystem[i] = new THREE.ParticleSystem(geometry[i],dataSetMaterial);
+						}
 					}
 					
 				}
@@ -407,6 +412,12 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		this.set=jsonObj.values;
 		this.numClust = jsonObj.numClust;
 		this.name = jsonObj.name;
+		this.visible = new Array();
+		
+		//Initialize visibility
+		for(var i=0;i<this.numClust;i++){
+			this.visible[i] = true;
+		}
 
 	}
 
@@ -445,7 +456,6 @@ $(function(){
 	
 	animate();
 
-setTimeout("dataSetMaterial.color.setHex( 0xD12F35 );console.log('changed');",10000);
 	
 });
 
