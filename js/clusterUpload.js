@@ -39,6 +39,7 @@ function getClusterAsText(readFile,datasetId) {
 		$("#worldSelectData"+datasetNum+"-"+(j+1)+"").append("<div id='clusters"+datasetNum+"-"+(j+1)+"'></div>");
 			
 	}
+	consoleMess("Loaded "+json.length+" cluster sets for dataset "+datasetNum);
 	$('#clustAccordion'+datasetNum+'').accordion({ header: "h3" });
 	$('#clustAccordion'+datasetNum+'').accordion( "refresh" );
 	$("#accordionData").accordion( "refresh" );

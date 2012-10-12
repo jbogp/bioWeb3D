@@ -57,6 +57,7 @@ function loaded(evt) {
 	$("#accordionData").accordion('destroy');
 	$("#accordionData").accordion({ header: "h3" });
 	$("#accordion").accordion( "refresh" );
+	consoleMess("Loaded dataset #"+index+" containing "+datasets[index-1].points.length+" points");
 	
       
 }

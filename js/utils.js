@@ -73,7 +73,6 @@
 		$(".checkWorld").bind("change",function (event) {
 			var $this = $(this);
 			worlds[$this.val()].toggle();
-			console.log($this.val());
 			numWorlds = $(".checkWorld:checked").length;
 			setWorlds();
 		});
@@ -110,10 +109,26 @@
 
 				//Clearing the cluster area
 				$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").empty();
-				//Iterating over each cluster
+				//Creating All/None buttons
+				$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<a href='#' class='allButton'>All</a>/<a class='noneButton' href='#'>None</a>");
+				$(".allButton").bind("click",{world:event.data.world,dataset:event.data.dataset,clustSet:numClust,numClust:datasets[event.data.dataset-1].clusterSets[numClust].numClust}, function(event) {
+					$(".clusters"+(event.data.dataset)+"-"+(event.data.world)+"").attr("checked",true);
+					for(var k=0;k<event.data.numClust;k++) {
+						datasets[event.data.dataset-1].clusterSets[event.data.clustSet].visible[k] = true;
+					}
+					worlds[event.data.world-1].refreshDataSets();
+				});
+				$(".noneButton").bind("click",{world:event.data.world,dataset:event.data.dataset,clustSet:numClust,numClust:datasets[event.data.dataset-1].clusterSets[numClust].numClust}, function(event) {
+					$(".clusters"+(event.data.dataset)+"-"+(event.data.world)+"").attr("checked",false);
+					for(var k=0;k<event.data.numClust;k++) {
+						datasets[event.data.dataset-1].clusterSets[event.data.clustSet].visible[k] = false;
+					}
+					worlds[event.data.world-1].refreshDataSets();
+				});
+				//Iterating over each cluster				
 				for(var k=0;k<datasets[event.data.dataset-1].clusterSets[numClust].numClust;k++) {
 					var checked = (datasets[event.data.dataset-1].clusterSets[numClust].visible[k]) ? "checked" : "";
-					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<div style='background-color:"+colorsCSS[k]+";padding-left:8px'><input type='checkbox' "+checked+" id='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'><label for='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'> Cluster "+(k+1)+"</label></div>");
+					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<div style='background-color:"+colorsCSS[k]+";padding-left:8px'><input type='checkbox' "+checked+" class='clusters"+(event.data.dataset)+"-"+(event.data.world)+"' id='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'><label for='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'> Cluster "+(k+1)+"</label></div>");
 					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"").bind("change",{world:event.data.world-1,dataset:event.data.dataset-1,clusterSet:numClust,cluster:k}, function(event) {
 						var $this = $(this);
 						if ($this.is(':checked')) {
@@ -127,6 +142,17 @@
 					});
 				}
 			}
+	}
+
+
+	//Display message on command console
+	function consoleMess(text) {
+		if(typeof timeout !== 'undefined'){
+			clearTimeout(timeout);
+		}
+		$("#console").text(text);
+		$("#console").fadeIn('slow');
+		var timeout = setTimeout("$('#console').fadeOut('slow');",6000);
 	}
 
 	
