@@ -84,6 +84,50 @@
 		});
 		
 	}
+	
+	
+	function selectDataHandler(event) {
+			// $this will contain a reference to the checkbox
+			var $this = $(this);
+
+			if (typeof $this.attr('name') !== 'undefined') {
+				//remove current
+				worlds[event.data.world-1].detachDataSet($this.attr('name'));
+			}	
+			if($("select[id='worldButtonData"+event.data.dataset+""+event.data.world+"'] option:selected").attr("class") == 'raw'){
+				worlds[event.data.world-1].attachDataSet(datasets[event.data.dataset-1],event.data.dataset-1);
+				$this.attr('name',event.data.dataset-1);
+				//Clearing the cluster area
+				$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").empty();
+			}
+			else if($("select[id='worldButtonData"+event.data.dataset+""+event.data.world+"'] option:selected").attr("class") == 'noaction') {
+				$this.removeAttr('name');
+			}
+			else if($("select[id='worldButtonData"+event.data.dataset+""+event.data.world+"'] option:selected").attr("class") == 'clust') {
+				var numClust = ($("select[id='worldButtonData"+event.data.dataset+""+event.data.world+"'] option:selected").val() - 1);
+				worlds[event.data.world-1].attachDataSet(datasets[event.data.dataset-1],event.data.dataset-1,numClust);
+				$this.attr('name',event.data.dataset-1);
+
+				//Clearing the cluster area
+				$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").empty();
+				//Iterating over each cluster
+				for(var k=0;k<datasets[event.data.dataset-1].clusterSets[numClust].numClust;k++) {
+					var checked = (datasets[event.data.dataset-1].clusterSets[numClust].visible[k]) ? "checked" : "";
+					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<div style='background-color:"+colorsCSS[k]+";padding-left:8px'><input type='checkbox' "+checked+" id='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'><label for='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'> Cluster "+(k+1)+"</label></div>");
+					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"").bind("change",{world:event.data.world-1,dataset:event.data.dataset-1,clusterSet:numClust,cluster:k}, function(event) {
+						var $this = $(this);
+						if ($this.is(':checked')) {
+						
+							datasets[event.data.dataset].clusterSets[event.data.clusterSet].visible[event.data.cluster] = true;
+						}
+						else {
+							datasets[event.data.dataset].clusterSets[event.data.clusterSet].visible[event.data.cluster] = false;
+						}
+						worlds[event.data.world].refreshDataSets();
+					});
+				}
+			}
+	}
 
 	
 

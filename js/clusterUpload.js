@@ -33,43 +33,9 @@ function getClusterAsText(readFile,datasetId) {
 		for(var i=0;i<json.length;i++) {
 
 			clustNum = datasets[datasetId].addClusterSet(new ClusterSet(json[i]));
-			$("#worldSelectData"+datasetNum+"-"+(j+1)+"").append("<input type=\"checkbox\" class='worldButtonData"+datasetNum+"-"+(j+1)+"' id='worldButtonData"+datasetNum+"-"+(j+1)+"-"+(i+1)+"' /><label for='worldButtonData"+datasetNum+"-"+(j+1)+"-"+(i+1)+"'>"+datasets[datasetId].clusterSets[clustNum-1].name+"</label>");
-			$("#worldButtonData"+datasetNum+"-"+(j+1)+"-"+(i+1)+"").button();
-			//Creating the clusters div
-			$("#worldButtonData"+datasetNum+"-"+(j+1)+"-"+(i+1)+"").bind("change",{world:j,dataset:datasetNum-1,clusterId:clustNum-1},function(event){
-				// $this will contain a reference to the checkbox
-				var $this = $(this);
-				if ($this.is(':checked')) {
-					//uncheck other non compatible buttons (same world same dataset)
-					$(".worldButtonData"+(event.data.dataset+1)+"-"+(event.data.world+1)+"").attr("checked",false);
-					//check this one though
-					$this.attr("checked",true);
-					$(".worldButtonData"+(event.data.dataset+1)+"-"+(event.data.world+1)+"").button("refresh");
-					worlds[event.data.world].attachDataSet(datasets[event.data.dataset],event.data.dataset,event.data.clusterId);
-					$this.val(event.data.dataset);
-
-					//Clearing the cluster area
-					$("#clusters"+(event.data.dataset+1)+"-"+(event.data.world+1)+"").empty();
-					//Iterating over each cluster
-					for(var k=0;k<datasets[event.data.dataset].clusterSets[event.data.clusterId].numClust;k++) {
-						var checked = (datasets[event.data.dataset].clusterSets[event.data.clusterId].visible[k]) ? "checked" : "";
-						$("#clusters"+(event.data.dataset+1)+"-"+(event.data.world+1)+"").append("<div style='background-color:"+colorsCSS[k]+";padding-left:8px'><input type='checkbox' "+checked+" id='clusters"+(event.data.dataset+1)+"-"+(event.data.world+1)+"-"+(k+1)+"'><label for='clusters"+(event.data.dataset+1)+"-"+(event.data.world+1)+"-"+(k+1)+"'> Cluster "+(k+1)+"</label></div>");
-						$("#clusters"+(event.data.dataset+1)+"-"+(event.data.world+1)+"-"+(k+1)+"").bind("change",{world:event.data.world,dataset:event.data.dataset,clusterSet:event.data.clusterId,cluster:k}, function(event) {
-							var $this = $(this);
-							if ($this.is(':checked')) {
-								datasets[event.data.dataset].clusterSets[event.data.clusterSet].visible[event.data.cluster] = true;
-							}
-							else {
-								datasets[event.data.dataset].clusterSets[event.data.clusterSet].visible[event.data.cluster] = false;
-							}
-							worlds[event.data.world].refreshDataSets();
-						});
-					}
-				} else {
-					worlds[event.data.world].detachDataSet($this.val());
-				}
-			});
+			$("#worldButtonData"+datasetNum+""+(j+1)+"").append("<option class='clust' value='"+clustNum+"'>"+datasets[datasetId].clusterSets[clustNum-1].name+"</option>");
 		}
+		//Creating the clusters div
 		$("#worldSelectData"+datasetNum+"-"+(j+1)+"").append("<div id='clusters"+datasetNum+"-"+(j+1)+"'></div>");
 			
 	}
