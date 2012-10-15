@@ -8,7 +8,7 @@ var colorsCSS = ["#E3E4FA","#B7CEEC","#AFDCEC","#92C7C7","#79BAEC","#1919FF","#5
 //Creating LabelMaterial
 var labelMaterial =  new THREE.ParticleBasicMaterial({
 	color: 0xffffff,
-	size: 10.0,
+	size: 1,
 	opacity:0.05,
 	blending: THREE.NormalBlending,
 	transparent: true
@@ -18,7 +18,7 @@ var labelMaterial =  new THREE.ParticleBasicMaterial({
 //Dataset Materials
 var dataSetMaterial =  new THREE.ParticleBasicMaterial({
 	color: 0xffffff,
-	size: 5.0,
+	size: 1,
 	opacity:0.1,
 	blending: THREE.NormalBlending,
 	transparent: true
@@ -29,7 +29,7 @@ var clustMaterial = new Array();
 for(var i=0;i<colors.length;i++) {
 	
 	clustMaterial[i] =  new THREE.ParticleBasicMaterial({
-	size: 10,
+	size: 1,
 	opacity:0.5,
 	blending: THREE.NoBlending,
 	transparent: true

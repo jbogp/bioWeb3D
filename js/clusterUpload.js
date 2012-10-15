@@ -1,6 +1,5 @@
 function startReadCluster(element) {  
   // obtain input element through DOM 
-  
   var file = document.getElementById(element).files[0];
   if(file){
     getClusterAsText(file,element.charAt(element.length-1));
@@ -40,7 +39,7 @@ function getClusterAsText(readFile,datasetId) {
 			
 	}
 	consoleMess("Loaded "+json.length+" cluster sets for dataset "+datasetNum);
-	$('#clustAccordion'+datasetNum+'').accordion({ header: "h3" });
+	$('#clustAccordion'+datasetNum+'').accordion({ header: "h3" , heightStyle: "content"});
 	$('#clustAccordion'+datasetNum+'').accordion( "refresh" );
 	$("#accordionData").accordion( "refresh" );
 	$("#accordion").accordion( "refresh" );
@@ -55,8 +54,7 @@ function updateClusterProgress(evt) {
     // evt.loaded and evt.total are ProgressEvent properties
     var loaded = (evt.loaded / evt.total);
     if (loaded < 1) {
-      // Increase the prog bar length
-      // style.width = (loaded * 200) + "px";
+
     }
   }
 }
