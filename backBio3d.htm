@@ -57,6 +57,8 @@
 <script src="build/backbone-localstorage.js"></script>
 <script src="build/Stats.js"></script>
 <script src="build/Detector.js"></script>
+<script src="build/TrackballControls.js"></script>
+<script src="build/jscolor/jscolor.js"></script>
 
 
 
@@ -78,7 +80,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		<div class="session" style="position:absolute;left:0px;top:0px;;width:100%;height:30px;border:1px solid #000;background:#fff;padding-top:5px;opacity:0.6;filter:alpha(opacity=60);">
 			<div id="current" style="display:inline"><b>Bio3D-1.0</b></div>
 			<div style="float:right;display:inline;margin-right:25px;">
-				<a href='https://github.com/jibooo/bio3D' target='_blank'>Getting started</a>
+				<a href='https://github.com/jibooo/bio3D/wiki/Getting-started' target='_blank'>Getting started</a>
 				<a href='https://github.com/jibooo/bio3D' target='_blank'>See project on Github</a>
 			</div>
 		</div>
@@ -107,9 +109,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					<div>
 						<div id='worldAccordion' style="text-align:center">
 							<input type='checkbox' checked class="checkWorld" id='worldAccordion1' value=0 /><label for='worldAccordion1'>world 1</label>
-							<input type='checkbox' checked class="checkWorld" id='worldAccordion2' value=1 /><label for='worldAccordion2'>world 2</label><br />
-							<input type='checkbox' checked class="checkWorld" id='worldAccordion3' value=2 /><label for='worldAccordion3'>world 3</label>
-							<input type='checkbox' checked class="checkWorld" id='worldAccordion4' value=3 /><label for='worldAccordion4'>world 4</label>
+							<input type='checkbox' class="checkWorld" id='worldAccordion2' value=1 /><label for='worldAccordion2'>world 2</label><br />
+							<input type='checkbox' class="checkWorld" id='worldAccordion3' value=2 /><label for='worldAccordion3'>world 3</label>
+							<input type='checkbox' class="checkWorld" id='worldAccordion4' value=3 /><label for='worldAccordion4'>world 4</label>
 						</div>
 					</div>
 			</div>
@@ -339,7 +341,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					}
 					for( var i=0; i<this.clusterSets[cluster].numClust; i++ ) {
 						if(this.clusterSets[cluster].visible[i]) {
-							particleSystem[i] = new THREE.ParticleSystem(geometry[i],clustMaterial[i]);
+							particleSystem[i] = new THREE.ParticleSystem(geometry[i],this.clusterSets[cluster].materials[i]);
 						}
 						else{
 							particleSystem[i] = new THREE.ParticleSystem(geometry[i],dataSetMaterial);
@@ -424,10 +426,27 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		this.numClust = jsonObj.numClust;
 		this.name = jsonObj.name;
 		this.visible = new Array();
+		this.materials = new Array();
 		
 		//Initialize visibility
 		for(var i=0;i<this.numClust;i++){
 			this.visible[i] = true;
+		}
+
+		//Initialize materials
+		for(var i=0;i<this.numClust;i++){
+			this.materials[i] =  new THREE.ParticleBasicMaterial({
+				size: 1,
+				opacity:0.5,
+				blending: THREE.NoBlending,
+				transparent: true
+			});
+			this.materials[i].color.setHex(colors[i]);
+		}
+
+		//setter for cluster color
+		this.setColor = function(numClust, color) {
+			this.materials[numClust].color.setHex(color);
 		}
 
 	}
@@ -456,12 +475,12 @@ $(function(){
 	
 	//Starting 4 world
 	worlds[0] = new World((window.innerWidth), (window.innerHeight),0,0,true);
-	worlds[1] = new World((window.innerWidth), (window.innerHeight),0,0,true);
-	worlds[2] = new World((window.innerWidth), (window.innerHeight),0,0,true);
-	worlds[3] = new World((window.innerWidth), (window.innerHeight),0,0,true);
+	worlds[1] = new World((window.innerWidth), (window.innerHeight),0,0,false);
+	worlds[2] = new World((window.innerWidth), (window.innerHeight),0,0,false);
+	worlds[3] = new World((window.innerWidth), (window.innerHeight),0,0,false);
 	
 	
-	numWorlds = 4;
+	numWorlds = 1;
 	setWorlds();
 	
 	

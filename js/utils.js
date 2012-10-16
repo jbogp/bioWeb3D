@@ -132,7 +132,12 @@
 				//Iterating over each cluster				
 				for(var k=0;k<datasets[event.data.dataset-1].clusterSets[numClust].numClust;k++) {
 					var checked = (datasets[event.data.dataset-1].clusterSets[numClust].visible[k]) ? "checked" : "";
-					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<div style='background-color:"+colorsCSS[k]+";padding-left:8px'><input type='checkbox' "+checked+" class='clusters"+(event.data.dataset)+"-"+(event.data.world)+"' id='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'><label for='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'> Cluster "+(k+1)+"</label></div>");
+					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<div id='divClust"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"' style='background-color:"+colorsCSS[k]+";padding-left:8px'>" +
+						"<input type='checkbox' "+checked+" class='clusters"+(event.data.dataset)+"-"+(event.data.world)+"' id='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'> "+
+						"<label for='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'> Cluster "+(k+1)+"</label>"+
+						"<div style='float:right'><input type='text'size='10' id='colors"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"' style='font-size:10px;background:#"+('000000'+datasets[event.data.dataset-1].clusterSets[numClust].materials[k].color.getHex().toString(16)).slice(-6)+"' class=\"color\" value='"+('000000'+datasets[event.data.dataset-1].clusterSets[numClust].materials[k].color.getHex().toString(16)).slice(-6)+"'></div>"+
+						"</div>");
+					//Binding checkboxes
 					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"").bind("change",{world:event.data.world-1,dataset:event.data.dataset-1,clusterSet:numClust,cluster:k}, function(event) {
 						var $this = $(this);
 						if ($this.is(':checked')) {
@@ -144,6 +149,12 @@
 						}
 						worlds[event.data.world].refreshDataSets();
 					});
+					//Binding color input
+					$("#colors"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"").bind("change",{world:event.data.world-1,dataset:event.data.dataset-1,clusterSet:numClust,cluster:k}, function(event) {
+						datasets[event.data.dataset].clusterSets[event.data.clusterSet].setColor(event.data.cluster,'0x'+$(this).val());
+						$("#divClust"+(event.data.dataset+1)+"-"+(event.data.world+1)+"-"+(event.data.cluster+1)+"").css('background-color','#'+$(this).val());
+					});
+					
 				}
 			}
 	}
