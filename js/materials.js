@@ -16,7 +16,7 @@ var labelMaterial =  new THREE.ParticleBasicMaterial({
 
 
 //Dataset Materials
-var dataSetMaterial =  new THREE.ParticleBasicMaterial({
+var dataSetMaterial =  new THREE.MeshLambertMaterial( { color: 0xFFFFFF } )({
 	color: 0xffffff,
 	size: 1,
 	opacity:0.1,

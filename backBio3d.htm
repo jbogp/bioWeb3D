@@ -310,6 +310,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 			cluster = typeof cluster !== 'undefined' ? cluster : -1;
 			if(this.loaded) {
 				var geometry=new Array(),particles, particle,particleSystem=new Array();
+				//Create particule system for raw data
 				if(cluster == -1) {
 					//create DataSet geometry
 					geometry[0] = new THREE.Geometry();
@@ -325,7 +326,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					// create the particle systems
 					particleSystem[0] = new THREE.ParticleSystem(geometry[0],dataSetMaterial);
 				}
-				//Create particule Systems
+				//Create particule Systems for cluster sets
 				else {
 					//Creating geometries
 					for( var i=0; i<this.clusterSets[cluster].numClust; i++ ) {
