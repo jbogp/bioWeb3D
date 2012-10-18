@@ -106,18 +106,6 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		<div class="controls" style="position:absolute;right:0px;top:36px;overflow: auto;width:400px;border:1px solid #000;background:#000;opacity:0.6;filter:alpha(opacity=60);">
 			<div id="accordion">
 			
-				<h3><a href="#">Settings</a></h3>
-					<div>
-						<div class="coefs" style="padding:10px !important;">
-							Axis Coefficients :</br>
-							Antero-posterior axis<div class="sliderCoord" id="sliderX"></div>
-							Dorso-versal axis<div class="sliderCoord" id="sliderY"></div>
-							Latero-medial axis<div class="sliderCoord" id="sliderZ"></div>
-							
-
-
-						</div>
-					</div>
 				<h3><a href="#">Datasets</a></h3>
 					<div class="heightLimited">
 						<input type="file" id="newDataSet">
@@ -131,6 +119,18 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 							<input type='checkbox' class="checkWorld" id='worldAccordion2' value=1 /><label for='worldAccordion2'>world 2</label><br />
 							<input type='checkbox' class="checkWorld" id='worldAccordion3' value=2 /><label for='worldAccordion3'>world 3</label>
 							<input type='checkbox' class="checkWorld" id='worldAccordion4' value=3 /><label for='worldAccordion4'>world 4</label>
+						</div>
+					</div>
+				<h3><a href="#">Settings</a></h3>
+					<div>
+						<div class="coefs" style="padding:10px !important;">
+							Axis Coefficients :</br>
+							Antero-posterior axis<div class="sliderCoord" id="sliderX"></div>
+							Dorso-versal axis<div class="sliderCoord" id="sliderY"></div>
+							Latero-medial axis<div class="sliderCoord" id="sliderZ"></div>
+							
+
+
 						</div>
 					</div>
 			</div>
@@ -420,19 +420,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 						this.centered[i][j] = (((this.points[i][j])-this.mean[j])*coef[j]);
 				}
 			}
-		}
-
-
-		//Function to load json data from file and store it in points
-		this.loadFromFile = function(jsonFile){
-			var objectCall = this;
-			$.getJSON(jsonFile,function(json) {
-				console.log("dataset "+jsonFile+" loaded");
-				objectCall.points = json.cell;
-				objectCall.loaded = true;
-			});
-		}
-		
+		}		
 		
 
 	}
@@ -447,6 +435,8 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		this.name = jsonObj.name;
 		this.visible = new Array();
 		this.materials = new Array();
+		this.labels = new Array();
+
 		
 		//Initialize visibility
 		for(var i=0;i<this.numClust;i++){
@@ -462,6 +452,12 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 				transparent: true
 			});
 			this.materials[i].color.setHex(colors[i]);
+			if(typeof jsonObj.labels !== 'undefined') {
+				this.labels[i] = jsonObj.labels[i];
+			}
+			else{
+				this.labels[i] = "cluster "+(i+1);
+			}
 		}
 
 		//setter for cluster color
@@ -503,13 +499,14 @@ $(function(){
 	numWorlds = 1;
 	setWorlds();
 	
+	setFactory(getUrlVars()["dataset"],getUrlVars()["cluster"]);
+
+	
 	
 	animate();
 
 	
 });
-
-
 
 
 

@@ -45,6 +45,12 @@ function loaded(evt) {
   }
 
   datasets[index-1].loaded = true;
+
+  addDataSetUI(index);
+      
+}
+
+function addDataSetUI(index) {
   //Adding dataset to the UI
 	//Create accordion
 	$("#accordionData").append("<h3><a href='#'>"+datasets[index-1].name+"</a></h3><div id='worldDataAccordion"+index+"'>");
@@ -65,8 +71,6 @@ function loaded(evt) {
 	$("#accordionData").accordion({ header: "h3" , heightStyle: "content"});
 	$("#accordion").accordion( "refresh" );
 	consoleMess("Loaded dataset \""+datasets[index-1].name+"\" containing "+datasets[index-1].points.length+" points");
-	
-      
 }
 
 function errorHandler(evt) {

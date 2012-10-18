@@ -134,7 +134,7 @@
 					var checked = (datasets[event.data.dataset-1].clusterSets[numClust].visible[k]) ? "checked" : "";
 					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<div id='divClust"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"' style='background-color:"+colorsCSS[k]+";padding-left:8px'>" +
 						"<input type='checkbox' "+checked+" class='clusters"+(event.data.dataset)+"-"+(event.data.world)+"' id='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'> "+
-						"<label for='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'> Cluster "+(k+1)+"</label>"+
+						"<label for='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'>"+datasets[event.data.dataset-1].clusterSets[numClust].labels[k]+"</label>"+
 						"<div style='float:right'><input type='text'size='10' id='colors"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"' style='font-size:10px;background:#"+('000000'+datasets[event.data.dataset-1].clusterSets[numClust].materials[k].color.getHex().toString(16)).slice(-6)+"' class=\"color\" value='"+('000000'+datasets[event.data.dataset-1].clusterSets[numClust].materials[k].color.getHex().toString(16)).slice(-6)+"'></div>"+
 						"</div>");
 					//Binding checkboxes
@@ -228,12 +228,46 @@
 
 
 	//Load Data From Json File
-	function dataSetFactory(data,jsonFile) {
-		$.getJSON(jsonFile,function(json) {
-			console.log(json.cell[0][1]);
-			data = new DataSet();
-			data.set = json.cell;
+	function setFactory(jsonFile,cluster) {
+		$.getJSON(jsonFile,function(data) {
+			  //Reading Json and creating Object
+			  var index = datasets.push(new DataSet());
+			  datasets[index-1].setPoints(data.dataset.points);
+			  if(typeof data.dataset.name !== 'undefined' && data.dataset.name !== '') {
+				datasets[index-1].setName(data.dataset.name);
+			  }
+			  else {
+				datasets[index-1].setName("Dataset #"+index);
+			  }
+
+			  datasets[index-1].loaded = true;
+
+			  addDataSetUI(index);
+			  clusterSetFactory(cluster,index);
 		});	
+	}
+	
+	
+	//Load cluster From Json File
+	function clusterSetFactory(jsonFile,index) {
+		$.getJSON(jsonFile,function(data) {
+			
+			addClusterUI((index-1),index,data.cluster);
+		});	
+	}
+	
+	
+	function getUrlVars()
+	{
+		var vars = [], hash;
+		var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+		for(var i = 0; i < hashes.length; i++)
+		{
+			hash = hashes[i].split('=');
+			vars.push(hash[0]);
+			vars[hash[0]] = hash[1];
+		}
+		return vars;
 	}
 
  

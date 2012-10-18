@@ -22,9 +22,12 @@ function getClusterAsText(readFile,datasetId) {
 	var fileString = evt.target.result;
 	//Reading Json and creating Object
 	var json = eval('(' + fileString + ')').cluster;
-	
+	addClusterUI(datasetId,datasetNum,json);
+  }
+  reader.onerror = errorClusterHandler;
+}
 
-
+function addClusterUI (datasetId,datasetNum,json) {
 	//Creating World buttons		
 	for(var j=0;j<worlds.length;j++) {
 
@@ -43,10 +46,6 @@ function getClusterAsText(readFile,datasetId) {
 	$('#clustAccordion'+datasetNum+'').accordion( "refresh" );
 	$("#accordionData").accordion( "refresh" );
 	$("#accordion").accordion( "refresh" );
-
-	  
-  }
-  reader.onerror = errorClusterHandler;
 }
 
 function updateClusterProgress(evt) {

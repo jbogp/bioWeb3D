@@ -1,7 +1,7 @@
 /***************************************************************************
 			LABEL MANAGEMENT CLASSES
 ***************************************************************************/
-
+	var defaultLabel = ["x","x","z","z","y","y"];
 
 	//Defining Label
 	function Label2D(text,geometry,vector){
@@ -81,12 +81,12 @@
 
 		
 		//Creating 2D labels
-		this.labelSet.push(new Label2D("lateral",this.labelGeometry,v(-axisLength, 0, 0)));
-		this.labelSet.push(new Label2D("medial",this.labelGeometry,v(axisLength, 0, 0)));
-		this.labelSet.push(new Label2D("versal",this.labelGeometry,v(0, -axisLength, 0)));
-		this.labelSet.push(new Label2D("dorsal",this.labelGeometry,v(0, axisLength, 0)));
-		this.labelSet.push(new Label2D("anterior",this.labelGeometry,v(0, 0, -axisLength)));
-		this.labelSet.push(new Label2D("posterior",this.labelGeometry,v(0, 0, axisLength)));
+		this.labelSet.push(new Label2D(defaultLabel[0],this.labelGeometry,v(-axisLength, 0, 0)));
+		this.labelSet.push(new Label2D(defaultLabel[1],this.labelGeometry,v(axisLength, 0, 0)));
+		this.labelSet.push(new Label2D(defaultLabel[2],this.labelGeometry,v(0, -axisLength, 0)));
+		this.labelSet.push(new Label2D(defaultLabel[3],this.labelGeometry,v(0, axisLength, 0)));
+		this.labelSet.push(new Label2D(defaultLabel[4],this.labelGeometry,v(0, 0, -axisLength)));
+		this.labelSet.push(new Label2D(defaultLabel[5],this.labelGeometry,v(0, 0, axisLength)));
 
 
 
