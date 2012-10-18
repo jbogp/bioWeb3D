@@ -27,6 +27,7 @@ function getClusterAsText(readFile,datasetId) {
   reader.onerror = errorClusterHandler;
 }
 
+
 function addClusterUI (datasetId,datasetNum,json) {
 	//Creating World buttons		
 	for(var j=0;j<worlds.length;j++) {

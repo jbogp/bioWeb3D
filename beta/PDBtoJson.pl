@@ -50,7 +50,7 @@ open(F2, ">Amino-".$file.".json");
 close(F);
 open(F, $file);
 print F2 "{ \"cluster\" : [\n";
-print F2 "{	\"name\": \"Amino Acids\",	\"numClust\": \"".scalar(@aminoTable)."\",	\"labels\": [\n";
+print F2 "{	\"name\": \"Atoms in Amino Acids\",	\"numClust\": \"".scalar(@aminoTable)."\",	\"labels\": [\n";
 for($j=0;$j<scalar(@aminoTable);$j++) {
 	if($j<scalar(@aminoTable)-1){
 	print F2 "\"".$aminoTable[$j]."\",\n";

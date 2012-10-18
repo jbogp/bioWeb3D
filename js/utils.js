@@ -114,7 +114,8 @@
 				//Clearing the cluster area
 				$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").empty();
 				//Creating All/None buttons
-				$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<a href='#' class='allButton"+(event.data.dataset)+"-"+(event.data.world)+"'>All</a>/<a class='noneButton"+(event.data.dataset)+"-"+(event.data.world)+"' href='#'>None</a>");
+				$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<a href='#' class='allButton"+(event.data.dataset)+"-"+(event.data.world)+"'>All</a>/<a class='noneButton"+(event.data.dataset)+"-"+(event.data.world)+"' href='#'>None</a>"+
+					"<div style='float:right'>Change colour</div>");
 				$(".allButton"+(event.data.dataset)+"-"+(event.data.world)+"").bind("click",{world:event.data.world,dataset:event.data.dataset,clustSet:numClust,numClust:datasets[event.data.dataset-1].clusterSets[numClust].numClust}, function(event) {
 					$(".clusters"+(event.data.dataset)+"-"+(event.data.world)+"").attr("checked",true);
 					for(var k=0;k<event.data.numClust;k++) {
