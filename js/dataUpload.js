@@ -34,18 +34,9 @@ function loaded(evt) {
   // Obtain the read file data    
   var fileString = evt.target.result;
   //Reading Json and creating Object
-  var index = datasets.push(new DataSet());
   var data = eval('(' + fileString + ')').dataset;
-  datasets[index-1].setPoints(data.points);
-  if(typeof data.name !== 'undefined' && data.name !== '') {
-    datasets[index-1].setName(data.name);
-  }
-  else {
-    datasets[index-1].setName("Dataset #"+index);
-  }
-
-  datasets[index-1].loaded = true;
-
+  var index = datasets.push(new DataSet(data));
+  //Adding dataSet to UI
   addDataSetUI(index);
       
 }

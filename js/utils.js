@@ -232,17 +232,7 @@
 	function setFactory(jsonFile,cluster) {
 		$.getJSON(jsonFile,function(data) {
 			  //Reading Json and creating Object
-			  var index = datasets.push(new DataSet());
-			  datasets[index-1].setPoints(data.dataset.points);
-			  if(typeof data.dataset.name !== 'undefined' && data.dataset.name !== '') {
-				datasets[index-1].setName(data.dataset.name);
-			  }
-			  else {
-				datasets[index-1].setName("Dataset #"+index);
-			  }
-
-			  datasets[index-1].loaded = true;
-
+			  var index = datasets.push(new DataSet(data.dataset));
 			  addDataSetUI(index);
 			  clusterSetFactory(cluster,index);
 		});	

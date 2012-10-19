@@ -314,21 +314,24 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 
 	//defining dataset Model
-	function DataSet(){
+	function DataSet(data){
 
 		this.points;
 		this.name;
 		this.centered = new Array();
 		this.clusterSets = new Array();
 		this.loaded = false;
+		this.chain;
 		this.mean = new Array();
-		
+
 		
 		//Create Three.js particle system for new dataset
 		this.createParticuleSystem = function(cluster){
 			cluster = typeof cluster !== 'undefined' ? cluster : -1;
 			if(this.loaded) {
-				var geometry=new Array(),particles, particle,particleSystem=new Array();
+				var geometry=new Array(),particles, particle,particleSystem=new Array();	
+				//For chain
+				var geometryLine=new THREE.Geometry();
 				//Create particule system for raw data
 				if(cluster == -1) {
 					//create DataSet geometry
@@ -341,9 +344,13 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 							geometry[0].vertices.push( particle );
 					}
-		
-					// create the particle systems
-					particleSystem[0] = new THREE.ParticleSystem(geometry[0],dataSetMaterial);
+					if(!this.chain) {
+						// create the particle systems
+						particleSystem[0] = new THREE.ParticleSystem(geometry[0],dataSetMaterial);
+					}
+					else {
+						particleSystem[0] = new THREE.Line(geometry[0], lineMaterial);
+					}
 				}
 				//Create particule Systems for cluster sets
 				else {
@@ -356,7 +363,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 							pY =  this.centered[i][1],
 							pZ =  this.centered[i][2],
 							particle = new THREE.Vector3(pX, pY, pZ);
-
+							if(this.chain) {
+								geometryLine.vertices.push( particle );
+							}
 							geometry[this.clusterSets[cluster].set[i]-1].vertices.push( particle );
 					}
 					for( var i=0; i<this.clusterSets[cluster].numClust; i++ ) {
@@ -366,6 +375,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 						else{
 							particleSystem[i] = new THREE.ParticleSystem(geometry[i],dataSetMaterial);
 						}
+					}
+					if(this.chain) {
+						particleSystem[i+1] = new THREE.Line(geometryLine, lineMaterial);
 					}
 					
 				}
@@ -420,7 +432,27 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 						this.centered[i][j] = (((this.points[i][j])-this.mean[j])*coef[j]);
 				}
 			}
-		}		
+		}
+
+
+		//Constructor
+		this.setPoints(data.points);
+		//Setting name
+		if(typeof data.name !== 'undefined' && data.name !== '') {
+			this.setName(data.name);
+		}
+		else {
+			this.setName("Unamed dataset");
+		}
+		//Setting Chain
+		if(typeof data.chain !== 'undefined' && data.chain !== '') {
+			this.chain = data.chain;
+		}
+		else {
+			this.chain = false;
+		}
+		//Setting loaded
+		this.loaded = true;		
 		
 
 	}
@@ -446,19 +478,20 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		//Initialize materials
 		for(var i=0;i<this.numClust;i++){
 			this.materials[i] =  new THREE.ParticleBasicMaterial({
-				size: 1,
+				size: 2,
 				opacity:0.5,
 				blending: THREE.NoBlending,
 				transparent: true
 			});
 			this.materials[i].color.setHex(colors[i]);
+
 			if(typeof jsonObj.labels !== 'undefined') {
 				this.labels[i] = jsonObj.labels[i];
 			}
 			else{
 				this.labels[i] = "cluster "+(i+1);
 			}
-		}
+	}
 
 		//setter for cluster color
 		this.setColor = function(numClust, color) {
