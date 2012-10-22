@@ -1,0 +1,40 @@
+\documentclass{bioinfo}
+\copyrightyear{2005}
+\pubyear{2005}
+
+\begin{document}
+\firstpage{1}
+
+\title[Application Note]{bioWeb3D a simple online webGL three-dimensional data visualization tool}
+\author[Sample \textit{et~al}]{Jean-Baptiste Pettit\,$^{1,*}$ and John Marioni\,$^{1}$\footnote{to whom correspondence should be addressed}}
+\address{$^{1}$Department of XXXXXXX, Address XXXX etc.\\
+$^{1}$European Bioinformatics Institute}
+
+\history{Received on XXXXX; revised on XXXXX; accepted on XXXXX}
+
+\editor{Associate Editor: XXXXXXX}
+
+\maketitle
+
+\begin{abstract}
+
+\section{Summary:}
+An online HTML5/webGL based three dimensional visualization tool has been developed to allow biologists to quickly and simply view interactive and customizable three dimensional representations of their data along with multiple layers of information. Using the Javascript library Three.js, bioWeb3D allows the simultaneous visualization of multiple large datasets through a simple JSON file read and analyzed locally thanks to HTML5 capabilities.
+
+\section{Availability:}
+http://ebi.ac.uk/~jbpettit/bioWeb3D
+
+\section{Contact:} \href{jbpettit@ebi.ac.uk}{jbpettit@ebi.ac.uk}
+\end{abstract}
+
+\section{Introduction}
+
+Large biological datasets analysis is helped to a great extent by visualization especially when analyzing organized structures. In many fields now, three dimensional datasets are generated along with visualization softwares but never before has a tool allowed biologists to view their research data directly online in an easy, fast, secure and interactive way. Using webGL and HTML 5 three dimensional capabilities and wide range availability, bioWeb3D aims to be a simple non specialized tool for data and information overview.
+
+
+
+\section{Technological overview}
+
+bioWeb3D allows the representation of any 3D dataset by defining two file format enabling users to input quickly their own datasets in the application. The format is based on JSON, a widely used structured format on the web. \\
+The first file carries the coordinates of all the points in the dataset while the second file describes one or several information layer about the previously defined points. The application allows superposition of different datasets in the same referential.\\
+Datasets can be viewed and compared in up to four referential at the same time. What we call information layer represents characteristics attached to the points defined in the dataset or in other words a classification of the data points in different calsses.  Although web based, the application fully written in Javascript doesn
