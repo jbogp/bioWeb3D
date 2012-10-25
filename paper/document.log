@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2011.1.24)  22 OCT 2012 15:48
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2011.1.24)  25 OCT 2012 17:06
 entering extended mode
  %&-line parsing enabled.
 **document.tex
@@ -331,409 +331,97 @@ Underfull \hbox (badness 10000) detected at line 17
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 21.
 
-Underfull \hbox (badness 1867) in paragraph at lines 21--23
-\OT1/phv/b/n/8 Summary: \OT1/phv/m/n/8 An online HTML5/webGL based three dimens
-ional
- []
-
-
-Underfull \hbox (badness 5161) in paragraph at lines 21--23
-\OT1/phv/m/n/8 Using the Javascript library Three.js, bioWeb3D allows the
+Underfull \hbox (badness 1297) in paragraph at lines 21--23
+\OT1/phv/m/n/8 their data along with multiple layers of information. Using the
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 30.
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ô in font ptmr7t!
 
-Underfull \hbox (badness 1281) in paragraph at lines 38--44
-\OT1/ptm/m/n/9 The first file carries the coordinates of all the points in the
+Underfull \hbox (badness 1087) in paragraph at lines 32--33
+\OT1/ptm/m/n/9 were published for very specific use cases such as radiology
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 38--44
+Underfull \hbox (badness 10000) in paragraph at lines 38--43
 
  []
 
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
 
-Underfull \hbox (badness 2837) in paragraph at lines 51--52
-[]\OT1/ptm/m/n/9 The points property which is a two dimensional array
+Underfull \hbox (badness 1231) in paragraph at lines 48--49
+[]\OT1/ptm/m/n/9 The "points" property which is a two dimensional array
  []
 
 
-Underfull \hbox (badness 1946) in paragraph at lines 51--52
+Underfull \hbox (badness 1946) in paragraph at lines 48--49
 \OT1/ptm/m/n/9 representing a list of (x,y,z) vectors defining the points
  []
 
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
 
-Underfull \hbox (badness 3849) in paragraph at lines 54--56
-[]\OT1/ptm/m/n/9 The information layer file has to have its root element
+Underfull \hbox (badness 1281) in paragraph at lines 54--55
+[]\OT1/ptm/m/n/9 The "numClust" property which indicates the number of
  []
 
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 57.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 55.
 (/usr/share/texmf/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 57.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 55.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ú in font ptmr7t!
-Missing character: There is no ‚ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ù in font ptmr7t!
- <fig1.png, id=17, 1364.54347pt x 684.77614pt>
+Underfull \hbox (badness 1210) in paragraph at lines 58--59
+\OT1/ptm/m/n/9 Exact specifications and examples of the file formats can be
+ []
+
+<fig1.png, id=18, 1364.54347pt x 684.77614pt>
 File: fig1.png Graphic file (type png)
-
-<use fig1.png>
+ <use fig1.png>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 67.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
+
+Underfull \hbox (badness 1221) in paragraph at lines 63--63
+[]\OT1/ptm/b/n/8 Fig. 1. \OT1/ptm/m/n/8 left:Marine annelid Platynereis dumeril
+ii single cell clustering
+ []
+
+
+Underfull \hbox (badness 5652) in paragraph at lines 74--75
+\OT1/ptm/m/n/9 Many 3D visualization software exist and provide similar
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 89.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:121.50238pt when 329.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:121.50238pt when 330.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 331.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 332.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 333.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 334.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 335.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 336.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 337.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 338.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 339.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 340.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 341.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 342.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 343.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 344.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 345.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 346.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 347.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 348.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 349.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 350.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 351.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 352.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 353.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 354.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 355.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:112.50238pt when 356.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 357.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 358.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 359.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 360.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 361.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 362.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 363.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 364.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 365.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 366.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 367.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 368.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 369.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 370.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 371.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 372.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 373.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:85.50238pt when 374.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 375.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 376.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 377.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 378.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 379.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 380.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 381.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 382.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 383.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 384.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 385.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 386.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 387.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 388.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 389.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 390.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 391.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:67.50238pt when 392.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:49.50238pt when 393.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:49.50238pt when 394.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:49.50238pt when 395.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:49.50238pt when 396.41617pt
-Extra height:0.0pt when 397.41617pt
-(2)Left:397.41617pt Right:219.50238pt Output:397.41617pt
-- LAST -
-Extra skip:0.0pt
-Left:397.41617pt
-Right:219.50238pt
-Output:397.41617pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 90.
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no ° in font ptmr7t!
+Missing character: There is no ‚ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ì in font ptmr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+[]\OT1/ptm/m/n/7 Oracle (2012) Oracle Security Alert for CVE-2012-4681,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--104
+\OT1/ptm/m/it/7 http://www.oracle.com/technetwork/topics/security/alert-cve-201
+2-4681-
+ []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 119.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 105.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 119.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 105.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -747,20 +435,64 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
  []
 
-[2 <./fig1.png>] (./document.aux)
+[2 <./fig1.png>]
+Missing character: There is no √ in font ptmr7t!
+Missing character: There is no § in font ptmr7t!
+
+Underfull \hbox (badness 10000) in paragraph at lines 107--108
+[]\OT1/ptm/m/n/7 Oracle (2012) United States Computer Emergency Readiness Team,
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 46.72272pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:10.0pt when 47.72272pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+Extra height:0.0pt when 48.72272pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+(2)Left:48.72272pt Right:48.44545pt Output:48.72272pt
+- LAST -
+Extra skip:0.0pt
+Left:48.72272pt
+Right:48.44545pt
+Output:48.72272pt
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Overfull \hbox (261.0pt too wide) has occurred while \output is active
+[][] 
+ []
+
+
+Overfull \vbox (1.0pt too high) has occurred while \output is active []
+
+ [3
+
+]
+(./document.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 2369 strings out of 256216
- 26646 string characters out of 1917072
- 87917 words of memory out of 1500000
- 5594 multiletter control sequences out of 10000+200000
+ 2371 strings out of 256216
+ 26686 string characters out of 1917072
+ 85917 words of memory out of 1500000
+ 5596 multiletter control sequences out of 10000+200000
  47093 words of font info for 92 fonts, out of 1200000 for 2000
  649 hyphenation exceptions out of 8191
- 35i,11n,26p,645b,299s stack positions out of 5000i,500n,6000p,200000b,15000s
+ 35i,11n,26p,1198b,313s stack positions out of 5000i,500n,6000p,200000b,15000s
 {/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/b
 luesky/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi9.pfb></usr/sh
 are/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky
@@ -771,9 +503,9 @@ sy9.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf
 c/uhvr8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share
 /texmf/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf/fonts/type1/urw/times
 /utmr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on document.pdf (2 pages, 289290 bytes).
+Output written on document.pdf (3 pages, 301918 bytes).
 PDF statistics:
- 68 PDF objects out of 1000 (max. 8388607)
+ 71 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
