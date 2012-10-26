@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 <style>
 	body {
-		background-color: #ffffff;
+		background-color: #000000;
 		margin: 0px;
 		overflow: hidden;
 		font-family:arial,sans-serif;
@@ -192,9 +192,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 
 		//Creating 3 axis
-		this.createAxis(v(-axisLength, 0, 0), v(axisLength, 0, 0), 0x000000);
-		this.createAxis(v(0, -axisLength, 0), v(0, axisLength, 0), 0x000000);
-		this.createAxis(v(0, 0, -axisLength), v(0, 0, axisLength), 0x000000);
+		this.createAxis(v(-axisLength, 0, 0), v(axisLength, 0, 0), 0xffffff);
+		this.createAxis(v(0, -axisLength, 0), v(0, axisLength, 0), 0xffffff);
+		this.createAxis(v(0, 0, -axisLength), v(0, 0, axisLength), 0xffffff);
 
 
 		//Creating Axis labels

@@ -13,8 +13,8 @@
 		//Creating DOM element
 		this.DOM = document.createElement( 'div' );
 		this.DOM.style.position = 'absolute';
-		this.DOM.style.background = '#ffffff';
-		this.DOM.style.color = '#000000';
+		this.DOM.style.background = '#0000000';
+		this.DOM.style.color = '#ffffff';
 		this.DOM.style.height = '20px';
 		this.DOM.style.width = '50px';
 		this.DOM.innerHTML = text;
