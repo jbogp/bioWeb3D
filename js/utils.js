@@ -11,6 +11,7 @@
 	function initRenderer(width,height) {
 		//Creating application Three.js renderer
 		renderer = new THREE.WebGLRenderer({ antialias: true });
+		renderer.sortObjects = false;
 
 		//Creating new DOM element
 		container = document.createElement('div');
