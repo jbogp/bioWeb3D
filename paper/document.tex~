@@ -60,7 +60,7 @@ Exact specifications and examples of the file formats can be found on the BioWeb
 
 \begin{figure}[h!]%figure1
 \centerline{\includegraphics[totalheight=0.2\textheight]{fig1.png}}
-\caption{bioWeb3D in action. left:Marine annelid Platynereis dumerilii single cell clustering results. Two clusters are shown along with the shadow of the remaining cells. right: Main carbon chain structure of a Bacterial pentameric ligand-gated ion channel, in red the $\alpha$-helix are highlighted in green the $\beta$-sheets}\label{fig:01}
+\caption{left:Marine annelid Platynereis dumerilii single cell clustering results. Two clusters are shown along with the shadow of the remaining cells. right: Main carbon chain structure of a Bacterial pentameric ligand-gated ion channel, in red the $\alpha$-helix are highlighted in green the $\beta$-sheets. The User interface is visible on the right of the screen and can be hidden with the "show/hide" button located on the bottom left}\label{fig:01}
 \end{figure}
 
 \subsection{User interface}

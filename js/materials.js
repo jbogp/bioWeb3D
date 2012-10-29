@@ -15,20 +15,5 @@ var labelMaterial =  new THREE.ParticleBasicMaterial({
 });
 
 
-//Dataset Materials
-var dataSetMaterial =  new THREE.ParticleBasicMaterial({
-	color: 0xffffff,
-	size: 1,
-	opacity:0.1,
-	blending: THREE.NormalBlending,
-	transparent: true
-});
 
-//Line Material
-var lineMaterial = new THREE.LineBasicMaterial({
-        color: 0xffffff,
-	linewidth: 4,
-	transparent : true,
-	opacity : 0.8,
-});
 

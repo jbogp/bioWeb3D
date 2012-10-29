@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2011.1.24)  25 OCT 2012 17:06
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2011.1.24)  29 OCT 2012 11:08
 entering extended mode
  %&-line parsing enabled.
 **document.tex
@@ -378,17 +378,11 @@ Underfull \hbox (badness 1210) in paragraph at lines 58--59
 \OT1/ptm/m/n/9 Exact specifications and examples of the file formats can be
  []
 
-<fig1.png, id=18, 1364.54347pt x 684.77614pt>
+<fig1.png, id=18, 1441.63594pt x 721.94719pt>
 File: fig1.png Graphic file (type png)
  <use fig1.png>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 63.
-
-Underfull \hbox (badness 1221) in paragraph at lines 63--63
-[]\OT1/ptm/b/n/8 Fig. 1. \OT1/ptm/m/n/8 left:Marine annelid Platynereis dumeril
-ii single cell clustering
- []
-
 
 Underfull \hbox (badness 5652) in paragraph at lines 74--75
 \OT1/ptm/m/n/9 Many 3D visualization software exist and provide similar
@@ -494,18 +488,18 @@ Here is how much of TeX's memory you used:
  649 hyphenation exceptions out of 8191
  35i,11n,26p,1198b,313s stack positions out of 5000i,500n,6000p,200000b,15000s
 {/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/b
-luesky/cm/cmmi8.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmmi9.pfb></usr/sh
-are/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/share/texmf/fonts/type1/bluesky
-/cm/cmr9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy6.pfb></usr/share/tex
-mf/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cm
-sy9.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf
-/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf/fonts/type1/urw/helveti
-c/uhvr8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvro8a.pfb></usr/share
-/texmf/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf/fonts/type1/urw/times
-/utmr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on document.pdf (3 pages, 301918 bytes).
+luesky/cm/cmmi9.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr7.pfb></usr/sha
+re/texmf/fonts/type1/bluesky/cm/cmr9.pfb></usr/share/texmf/fonts/type1/bluesky/
+cm/cmsy6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy7.pfb></usr/share/tex
+mf/fonts/type1/bluesky/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/urw/helvetic/
+uhvb8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/t
+exmf/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf/fonts/type1/urw/helv
+etic/uhvro8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></usr/share
+/texmf/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf/fonts/type1/urw/times
+/utmri8a.pfb>
+Output written on document.pdf (3 pages, 328347 bytes).
 PDF statistics:
- 71 PDF objects out of 1000 (max. 8388607)
+ 67 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 131072)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 

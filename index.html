@@ -288,18 +288,6 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 				this.controls.update();
 
 				if(this.visible) {
-					//Zooming with arrow keys
-					if(KeyDown){
-						if (dir == 1){
-							this.camera.fov = camera.fov-1;
-							this.camera.updateProjectionMatrix();
-						}
-						else if (dir ==2){
-							this.camera.fov = camera.fov+1;
-							this.camera.updateProjectionMatrix();
-						}
-					}
-
 					//Updating labels
 					this.labelSet.render();
 					renderer.setViewport(this.x, this.y, this.innerWidth, this.innerHeight);
@@ -324,6 +312,24 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		this.chain;
 		this.mean = new Array();
 
+
+		//Dataset Material
+		this.dataSetMaterial =  new THREE.ParticleBasicMaterial({
+			color: 0xffffff,
+			size: 1.0,
+			opacity:0.1,
+			blending: THREE.AdditiveBlending,
+			transparent: true
+		});
+
+		//Line Material
+		this.lineMaterial = new THREE.LineBasicMaterial({
+			color: 0xffffff,
+			linewidth: 4,
+			transparent : true,
+			opacity : 0.8,
+		});
+
 		
 		//Create Three.js particle system for new dataset
 		this.createParticuleSystem = function(cluster){
@@ -346,10 +352,10 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					}
 					if(!this.chain) {
 						// create the particle systems
-						particleSystem[0] = new THREE.ParticleSystem(geometry[0],dataSetMaterial);
+						particleSystem[0] = new THREE.ParticleSystem(geometry[0],this.dataSetMaterial);
 					}
 					else {
-						particleSystem[0] = new THREE.Line(geometry[0], lineMaterial);
+						particleSystem[0] = new THREE.Line(geometry[0], this.lineMaterial);
 					}
 				}
 				//Create particule Systems for cluster sets
@@ -373,11 +379,11 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 							particleSystem[i] = new THREE.ParticleSystem(geometry[i],this.clusterSets[cluster].materials[i]);
 						}
 						else{
-							particleSystem[i] = new THREE.ParticleSystem(geometry[i],dataSetMaterial);
+							particleSystem[i] = new THREE.ParticleSystem(geometry[i],this.dataSetMaterial);
 						}
 					}
 					if(this.chain) {
-						particleSystem[i+1] = new THREE.Line(geometryLine, lineMaterial);
+						particleSystem[i+1] = new THREE.Line(geometryLine, this.lineMaterial);
 					}
 					
 				}
@@ -472,7 +478,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		
 		//Initialize visibility
 		for(var i=0;i<this.numClust;i++){
-			this.visible[i] = true;
+			this.visible[i] = false;
 		}
 
 		//Initialize materials
