@@ -125,9 +125,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					<div>
 						<div class="coefs" style="padding:10px !important;">
 							Axis Coefficients :</br>
-							Antero-posterior axis<div class="sliderCoord" id="sliderX"></div>
-							Dorso-versal axis<div class="sliderCoord" id="sliderY"></div>
-							Latero-medial axis<div class="sliderCoord" id="sliderZ"></div>
+							X axis<div class="sliderCoord" id="sliderX"></div>
+							Y axis<div class="sliderCoord" id="sliderY"></div>
+							Z axis<div class="sliderCoord" id="sliderZ"></div>
 							
 
 
@@ -317,7 +317,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		this.dataSetMaterial =  new THREE.ParticleBasicMaterial({
 			color: 0xffffff,
 			size: 1.0,
-			opacity:0.1,
+			opacity:0.3,
 			blending: THREE.AdditiveBlending,
 			transparent: true
 		});
@@ -353,10 +353,13 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					if(!this.chain) {
 						// create the particle systems
 						particleSystem[0] = new THREE.ParticleSystem(geometry[0],this.dataSetMaterial);
+
 					}
 					else {
 						particleSystem[0] = new THREE.Line(geometry[0], this.lineMaterial);
 					}
+					particleSystem[0].dynamic = true;
+					particleSystem[0].sortParticles = true;
 				}
 				//Create particule Systems for cluster sets
 				else {
@@ -381,9 +384,13 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 						else{
 							particleSystem[i] = new THREE.ParticleSystem(geometry[i],this.dataSetMaterial);
 						}
+						particleSystem[i].dynamic = true;
+						particleSystem[i].sortParticles = true;
 					}
 					if(this.chain) {
 						particleSystem[i+1] = new THREE.Line(geometryLine, this.lineMaterial);
+						particleSystem[i+1].dynamic = true;
+						particleSystem[i+1].sortParticles = true;
 					}
 					
 				}
@@ -485,7 +492,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		for(var i=0;i<this.numClust;i++){
 			this.materials[i] =  new THREE.ParticleBasicMaterial({
 				size: 2,
-				opacity:0.5,
+				opacity:1,
 				blending: THREE.NoBlending,
 				transparent: true
 			});

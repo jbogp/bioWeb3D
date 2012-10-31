@@ -37,7 +37,7 @@ Large biological datasets analysis is helped to a great extent by visualization 
 
 bioWeb3D allows the representation of any 3D dataset by defining two file formats enabling users to input quickly their own datasets in the application. The format is based on JSON, a widely used structured format on the web.\\
 The first file type carries the coordinates of all the points in the dataset while the second describes one or several information layer about the previously defined points.\\
-Datasets can be viewed and compared in up to four worlds at the same time. We call information layer the characteristics attached to the points defined in the dataset or in other words a classification of the data points in different classes.  Although web based, the application fully written in Javascript does not need to send any data to the host server. To this end the modern browsers local file system reading capabilities are used through the HTML 5 FileReader functionality. This allows the application to handle in a very short time large datasets while remaining entirely safe for the user privacy. \\
+Datasets can be viewed and compared in up to four "worlds" (each world is a separate visualization sub-window) at the same time. We call information layer the characteristics attached to the points defined in the dataset or in other words a classification of the data points in different classes.  Although web based, the application fully written in Javascript does not need to send any data to the host server. To this end the modern browsers local file system reading capabilities are used through the HTML 5 FileReader functionality. This allows the application to handle in a very short time large datasets while remaining entirely safe for the user privacy. \\
 Although aimed to remain very simple and easy to use, some options are available for the user to customize the way their datasets are represented. The application can be used to visualize sequential information such as 3D protein structure in which case links can be drawn between the points. In other cases, the points can be left unlinked as individual particles. \\
 The way the information layers are shown in the visualization is by colouring the 3D points with regard to which class each point belongs.\\
 \subsection{Defining the input files format}
@@ -60,7 +60,7 @@ Exact specifications and examples of the file formats can be found on the BioWeb
 
 \begin{figure}[h!]%figure1
 \centerline{\includegraphics[totalheight=0.2\textheight]{fig1.png}}
-\caption{left:Marine annelid Platynereis dumerilii single cell clustering results. Two clusters are shown along with the shadow of the remaining cells. right: Main carbon chain structure of a Bacterial pentameric ligand-gated ion channel, in red the $\alpha$-helix are highlighted in green the $\beta$-sheets. The User interface is visible on the right of the screen and can be hidden with the "show/hide" button located on the bottom left}\label{fig:01}
+\caption{Marine annelid Platynereis dumerilii single cell clustering results. Two clusters are shown along with the shadow of the remaining cells.The User interface is visible on the right of the screen and can be hidden with the "show/hide" button located on the bottom left}\label{fig:01}
 \end{figure}
 
 \subsection{User interface}
@@ -74,7 +74,7 @@ Finally the "Settings" panel provides the user with a few options affecting all 
 Many 3D visualization software exist and provide similar functionalities with standard 3D format input such as .OBJ, some are extremely generic and powerful but have a steep learning curve like Blender. Those are not usually oriented towards science specifically. Others are science oriented but very specific to a type of data especially in medical sciences \citep{Wang09}. In this context we believe that bioWeb3D can be useful as it is completely generic and web based. It should also be noted that recent browsers improvements regarding GPU acceleration through the webGL paradigm allow bioWeb3D to visualize several hundred thousand three dimensional data points and to interact with then with a perfect fluidity even on a laptop competing directly in that sense with local software. Local software are usually platform specific, which is not the case for web based applications.
 
 	\subsection{bioWeb3D and Java Applets}
-As mentioned before web based 3D visualization tools exists mainly in the form of Java Applets. This technology has attracted much criticism in 2012 regarding security flaws, leading the "United States Computer Emergency Readiness Team" to advise to disable Java Applets altogether for current and future Java vulnerabilities \citep{USCERT12}. The developpement of WebGL technology is viewed by many as a candidate replacement for Applets. 
+As mentioned before web based 3D visualization tools exists mainly in the form of Java Applets. This technology has attracted much criticism in 2012 regarding security flaws, leading the "United States Computer Emergency Readiness Team" to advise to disable Java Applets altogether for current and future Java vulnerabilities (http://www.kb.cert.org/vuls/id/636312). The developpement of WebGL technology is viewed by many as a candidate replacement for Applets. 
 
 	\subsection{Current limits}
 The main limitation of a webGl based application in 2012 is the machine and browser compatibility. Only computers with fairly recent graphic cards will be able to run a 3D environment. It should also be noted that if Microsoft has notify the developer community that Internet Explorer was scheduled to support WebGL, both Chrome and Firefox now fully support webGL applications.
@@ -87,25 +87,21 @@ The authors would like to acknowledge Ricardo Cabello (also known as Mrdoob), Sa
 
 
 \begin{thebibliography}{}
-\bibitem[Shannon {\it et~al}., 2003]{Shannon03} Shannon P, Markiel A, Ozier O, Baliga NS, Wang JT, Ramage D, Amin N, Schwikowski B, Ideker T (2003) Cytoscape: a software environment for integrated models of biomolecular interaction networks., {\it Genome Res}, {\bf 13(11)}, 12498-2504.
 
-\bibitem[Wang {\it et~al}., 2009]{Wang09} Qi Wanga, Qun Lianga, Xiuqing Zhanga (2009) 3D Genome Tuner: Compare Multiple Circular Genomes in a 3D Context., {\it Genomics, Proteomics and Bioinformatics}, {\bf 7(3)}, 143–146.
-
-\bibitem[Pavlopoulos {\it et~al}., 2008]{Pavlopoulos08} Georgios A Pavlopoulos, Seán I O'Donoghue, Venkata P Satagopam, Theodoros G Soldatos, Evangelos Pafilis and Reinhard Schneider (2008) Arena3D: visualization of biological networks in 3D., {\it BMC Systems Biology}, {\bf 2(104)}.
 
 \bibitem[Dinesh {\it et~al}., 2012]{Dinesh12} Dinesh B. KulkarniMahesh M. DoijadeChetan S. DevrukhkarGanesh R. ZilpeRajesh R. Surana (2012) NetraRIS - a Web based DICOM Viewer., {\it International Journal of Computer Applications}, {\bf 48(24)}.
 
+\bibitem[Hartshorn, 2002]{Hartshorn02} Hartshorn (2002) Astex Technology Ltd., 436 Cambridge Science Park, Milton Road, Cambridge, CB5 9QA.
+
 \bibitem[Lein {\it et~al}., 2007]{Lein07} Lein ES, Hawrylycz MJ, Ao N, Ayres M, Bensinger A, Bernard A, Boe AF, Boguski MS, Brockway KS, Byrnes EJ, Chen L, Chen L, Chen TM, Chin MC, Chong J, Crook BE, Czaplinska A, Dang CN, Datta S, Dee NR, et al (2007) Genome-wide atlas of gene expression in the adult mouse brain., {\it Nature}, {\bf 445}, 168–176.
 
-
-\bibitem[Hartshorn, 2002]{Hartshorn02} Hartshorn (2002) Astex Technology Ltd., 436 Cambridge Science Park, Milton Road, Cambridge, CB5 9QA, UK. m.hartshorn@astex-technology.com.
-
-\bibitem[Oracle, 2012]{Oracle12} Oracle (2012) Oracle Security Alert for CVE-2012-4681, {\it http://www.oracle.com/technetwork/topics/security/alert-cve-2012-4681-1835715.html}.
+\bibitem[Pavlopoulos {\it et~al}., 2008]{Pavlopoulos08} Georgios A Pavlopoulos, Seán I O'Donoghue, Venkata P Satagopam, Theodoros G Soldatos, Evangelos Pafilis and Reinhard Schneider (2008) Arena3D: visualization of biological networks in 3D., {\it BMC Systems Biology}, {\bf 2(104)}.
 
 \bibitem[Rubel {\it et~al}., 2010]{Rubel10} Rubel O, Weber GH, Huang MY, Bethel EW, Biggin MD, Fowlkes CC, Luengo Hendriks CL, Keränen SV, Eisen MB, Knowles DW, Malik J, Hagen H, Hamann B (2010)Integrating Data Clustering and Visualization for the Analysis of 3D Gene Expression Data., {\it IEEE/ACM Trans Comput Biol Bioinform}, {\bf 7(1)}.
 
-\bibitem[US-CERT, 2012]{USCERT12} Oracle (2012) United States Computer Emergency Readiness Team, {\it http://www.kb.cert.org/vuls/id/636312}.
+\bibitem[Shannon {\it et~al}., 2003]{Shannon03} Shannon P, Markiel A, Ozier O, Baliga NS, Wang JT, Ramage D, Amin N, Schwikowski B, Ideker T (2003) Cytoscape: a software environment for integrated models of biomolecular interaction networks., {\it Genome Res}, {\bf 13(11)}, 12498-2504.
 
+\bibitem[Wang {\it et~al}., 2009]{Wang09} Qi Wanga, Qun Lianga, Xiuqing Zhanga (2009) 3D Genome Tuner: Compare Multiple Circular Genomes in a 3D Context., {\it Genomics, Proteomics and Bioinformatics}, {\bf 7(3)}, 143–146.
 
 
 

@@ -8,7 +8,7 @@ var colorsCSS = ["#FFFFFF","#B7CEEC","#AFDCEC","#92C7C7","#79BAEC","#1919FF","#5
 //Creating LabelMaterial
 var labelMaterial =  new THREE.ParticleBasicMaterial({
 	color: 0xffffff,
-	size: 1,
+	size: 2.0,
 	opacity:0.05,
 	blending: THREE.NormalBlending,
 	transparent: true

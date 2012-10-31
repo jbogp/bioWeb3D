@@ -1,7 +1,7 @@
 /***************************************************************************
 			LABEL MANAGEMENT CLASSES
 ***************************************************************************/
-
+	var defaultLabel = ["x","x","z","z","y","y"];
 
 	//Defining Label
 	function Label2D(text,geometry,vector){
@@ -13,8 +13,8 @@
 		//Creating DOM element
 		this.DOM = document.createElement( 'div' );
 		this.DOM.style.position = 'absolute';
-		this.DOM.style.background = '#0000000';
-		this.DOM.style.color = '#ffffff';
+		this.DOM.style.background = '#ffffff';
+		this.DOM.style.color = '#000000';
 		this.DOM.style.height = '20px';
 		this.DOM.style.width = '50px';
 		this.DOM.innerHTML = text;
@@ -81,22 +81,13 @@
 
 		
 		//Creating 2D labels
-		this.labelSet.push(new Label2D("lateral",this.labelGeometry,v(-axisLength, 0, 0)));
-		this.labelSet.push(new Label2D("medial",this.labelGeometry,v(axisLength, 0, 0)));
-		this.labelSet.push(new Label2D("versal",this.labelGeometry,v(0, -axisLength, 0)));
-		this.labelSet.push(new Label2D("dorsal",this.labelGeometry,v(0, axisLength, 0)));
-		this.labelSet.push(new Label2D("anterior",this.labelGeometry,v(0, 0, -axisLength)));
-		this.labelSet.push(new Label2D("posterior",this.labelGeometry,v(0, 0, axisLength)));
+		this.labelSet.push(new Label2D(defaultLabel[0],this.labelGeometry,v(-axisLength, 0, 0)));
+		this.labelSet.push(new Label2D(defaultLabel[1],this.labelGeometry,v(axisLength, 0, 0)));
+		this.labelSet.push(new Label2D(defaultLabel[2],this.labelGeometry,v(0, -axisLength, 0)));
+		this.labelSet.push(new Label2D(defaultLabel[3],this.labelGeometry,v(0, axisLength, 0)));
+		this.labelSet.push(new Label2D(defaultLabel[4],this.labelGeometry,v(0, 0, -axisLength)));
+		this.labelSet.push(new Label2D(defaultLabel[5],this.labelGeometry,v(0, 0, axisLength)));
 
-
-		//Creating LabelMaterial
-		labelMaterial =  new THREE.ParticleBasicMaterial({
-		    color: 0xffffff,
-			size: 10.0,
-			opacity:0.05,
-			blending: THREE.NormalBlending,
-			transparent: true
-		});
 
 
 		//Creating Particle System with labels
@@ -106,6 +97,13 @@
 
 
 		this.vecGeoLabs = new Array();
+		
+		this.hideAll = function() {
+			for(var i=0;i<this.labelSet.length;i++){
+				this.labelSet[i].hide();
+			}
+		
+		}
 
 		this.render = function() {
 			var x = new Array();
@@ -125,7 +123,7 @@
 				}
 				
 				//limiting showing labels to scene
-				if((this.vecGeoLabs[i].x * (world.innerWidth/2) + (world.innerWidth/2)+world.x) > (world.innerWidth) || (this.vecGeoLabs[i].x * (world.innerWidth/2) + (world.innerWidth/2)+world.x) < (world.x)) {
+				if((this.vecGeoLabs[i].x * (world.innerWidth/2) + (world.innerWidth/2)+world.x) > (world.innerWidth+world.x) || (this.vecGeoLabs[i].x * (world.innerWidth/2) + (world.innerWidth/2)+world.x) < (world.x)) {
 					this.labelSet[i].hide();
 				}
 				if((this.vecGeoLabs[i+1].x * (world.innerWidth/2) + (world.innerWidth/2)+world.x) > (world.innerWidth+world.x) || (this.vecGeoLabs[i+1].x * (world.innerWidth/2) + (world.innerWidth/2)+world.x) < (world.x)) {
@@ -138,6 +136,7 @@
 				if((this.vecGeoLabs[i+1].y* +(world.innerHeight/2) + (world.innerHeight/2)+world.y) > (world.innerHeight+world.y) || (this.vecGeoLabs[i+1].y * (world.innerHeight/2) + (world.innerHeight/2)+world.y) < (world.y)) {
 					this.labelSet[i+1].hide();
 				}
+				
 				
 
 				//Updating labels positions
