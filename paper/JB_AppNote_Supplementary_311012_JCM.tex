@@ -1,8 +1,7 @@
 \documentclass{bioinfo}
 \usepackage{color}
 \usepackage{listings}
-\lstset{ %
-language=JavaScript                % choose the language of the code
+\lstset{ 
 basicstyle=\footnotesize,       % the size of the fonts that are used for the code
 numbers=left,                   % where to put the line-numbers
 numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
@@ -37,10 +36,11 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 \section{Input file formats}
 \subsection{Raw data file}
 
-\vbox{When you add a raw data file, a new Dataset section is going to be created in the "Data" panel of the application. One raw data file contains one dataset. The dataset is composed only of 3D coordinates (x,y,z) along with a few information about the dataset (optional name). Here is what a minimal 3 points dataset file should look like :
+\vbox{When you add a raw data file, a new Dataset section is going to be created in the "Data" panel of the application. One raw data file contains one dataset. The dataset is composed only of 3D coordinates (x,y,z) along with a few information about the dataset (optional name, optional "chain" boolean has to be set to true to link the points together). Here is what a minimal 3 points dataset file should look like :
 \begin{lstlisting}
 { "dataset" : {
       "name" : "my superb dataset",
+      "chain" : true,
         "points" : [
           [
             0.5,
