@@ -108,4 +108,90 @@ In this case the Information layer file would look like:
   ]
 }
 \end{lstlisting}}
+
+\section{Converting CSV files to Json}
+A lot of data generated in biology is stored within CSV files. Converting CSV document to the Json format used in this application can be a bit complicated. We provide scripts written in Perl to do this conversion. Of course to work the converters need the CSV files to follow a certain format.
+\subsection{CSV to Dataset file}
+To use the ``csv_to_dataset.pl" converter, the input CSV file must contain only the points coordinates. Each line representing a point, the three coordinates on each line must separated by ``tabulation" characters. Example :
+\begin{lstlisting}
+0.5	100	-50.5
+200	10	0.0
+3	250.15	15
+\end{lstlisting}
+The syntax to use the converter is the following :
+\begin{lstlisting}
+perl csv_to_dataset.pl [csv file] [dataset name] [Chain parameter : true if the points should be linked, false otherwise]\\
+\end{lstlisting}
+for example if, the previous CSV file is named ``example.csv", and the points should be linked, then the command line will be:
+\begin{lstlisting}
+perl csv_to_dataset.pl example.csv my_dataset true
+\end{lstlisting}
+The result file named ``example.csv.json" will contain :
+\begin{lstlisting}
+{ ``dataset" : {
+      ``name" : ``my_dataset",
+      ``chain" : true,
+        ``points" : [
+          [
+            0.5,
+            100,
+            -50.5
+          ],
+          [
+            200,
+            10,
+            0.0
+          ],
+          [
+            3,
+            250.15,
+            15
+          ]
+        ]
+     }
+}
+\end{lstlisting}}
+
+\subsection{CSV to information layer file}
+To use the ``csv_to_information_layer.pl" converter, each column of the CSV files will be one information layer. The fisrt element of each column will be the name of the information layer the rest of the column represents in which class each point belongs. The separation character between colums must be a ``tabulation". for example :
+\begin{lstlisting}
+clustering_algo_1	clustering_algo_2
+1	1
+1	2
+2	3
+\end{lstlisting}
+The syntax to use the converter is the following :
+\begin{lstlisting}
+perl csv_to_information_layer.pl [csv file]
+\end{lstlisting}
+for example if, the previous CSV file is named ``example_information_layer.csv", and the points should be linked, then the command line will be:
+\begin{lstlisting}
+perl csv_to_information_layer.pl example_information_layer.csv
+\end{lstlisting}
+The result file named ``example_information_layer.csv.json" will contain :
+\begin{lstlisting}
+{ ``cluster" :
+  [
+    {
+      ``name": ``clustering_algo_1",
+      ``numClust": "2",
+      ``values": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      ``name": ``clustering_algo_2",
+      ``numClust": ``3",
+      ``values": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}
+\end{lstlisting}
+Note that at the moment it is not possible to use the ``labels" property with this converter.
 \end{document}
