@@ -3,10 +3,7 @@
 \usepackage{listings}
 \lstset{ 
 basicstyle=\footnotesize,       % the size of the fonts that are used for the code
-numbers=left,                   % where to put the line-numbers
-numberstyle=\footnotesize,      % the size of the fonts that are used for the line-numbers
-stepnumber=1,                   % the step between two line-numbers. If it is 1 each line will be numbered
-numbersep=5pt,                  % how far the line-numbers are from the code
+                  % how far the line-numbers are from the code
 backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
 showspaces=false,               % show spaces adding particular underscores
 showstringspaces=false,         % underline spaces within strings
@@ -153,20 +150,20 @@ The result file named ``example.csv.json" will contain :
 \end{lstlisting}
 
 \subsection{CSV to information layer file}
-To use the ``csv\_to\_information\_layer.pl" converter, each column of the CSV files will be one information layer. The fisrt element of each column will be the name of the information layer the rest of the column represents in which class each point belongs. The separation character between colums must be a ``tabulation". for example :
+To use the ``csv\_to\_information\_layer.pl" converter, each column of the CSV file will be one information layer. The fisrt element of each column will be the name of the information layer the rest of the column represents in which class each point belongs. The separation character between colums must be a ``tabulation". for example :
 \begin{lstlisting}
-clustering\_algo\_1	clustering\_algo\_2
+clustering_algo_1	clustering_algo_2
 1	1
 1	2
 2	3
 \end{lstlisting}
 The syntax to use the converter is the following :
 \begin{lstlisting}
-perl csv\_to\_information\_layer.pl [csv file]
+perl csv_to_information_layer.pl [csv file]
 \end{lstlisting}
 for example if, the previous CSV file is named ``example\_information\_layer.csv", and the points should be linked, then the command line will be:
 \begin{lstlisting}
-perl csv\_to\_information\_layer.pl example\_information\_layer.csv
+perl csv_to_information_layer.pl example_information_layer.csv
 \end{lstlisting}
 The result file named ``example\_information\_layer.csv.json" will contain :
 \begin{lstlisting}
