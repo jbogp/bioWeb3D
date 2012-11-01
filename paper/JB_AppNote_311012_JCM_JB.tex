@@ -43,6 +43,7 @@ The JSON format has been chosen because of its rigorous structure, which allows 
 The {\it{dataset}} file should have a root object called ``dataset" which contains :
 \begin{itemize}
 \item The ``name" property of the dataset (\textit{e.g.}, ``my dataset") 
+\item The ``chain" parameter which should be \textit{true} if the points should be linked, \textit{false} otherwise (optional, the default value is \textit{false})
 \item The ``points" property, which is a two dimensional array representing a list of (x,y,z) vectors that define the co-ordinates of the points
 \end{itemize}
 
@@ -78,7 +79,7 @@ The main current limitation of a webGL based application is the machine and brow
 
 
 \section*{Acknowledgement}
-The authors would like to acknowledge Samuel Croset, Tom Oldfield and Sergio Martinez Cuesta for helpful discussion and criticism.
+The authors would like to acknowledge Samuel Croset, Tom Oldfield and Sergio Martinez Cuesta for helpful discussion and criticism as well as Ricardo Cabello the creator of the JavaScript library Three.js.
 
 %\bibliographystyle{natbib}
 %\bibliographystyle{achemnat}
