@@ -191,4 +191,19 @@ The result file named ``example\_information\_layer.csv.json" will contain :
 }
 \end{lstlisting}
 Please note that at the moment it is not possible to use the ``labels" property with this converter. 
+\section{further examples}
+\subsection{Visualizing simultaneous worlds}
+You can choose to split the application screen in up to 4 different worlds in order to visualize and compare different Information Layer of the same dataset or different datasets. 
+\begin{figure}[h!]%figure1
+\centerline{\includegraphics[totalheight=0.19\textheight]{Supp_fig1.png}}
+\caption{In this figure, the left-hand world shows two clusters (in blue and green) in the brain of the marine annelid {\it Platynereis dumerilii} and the right-hand world shows the expression data for the gene C-Opsin (in red) in the same dataset. Data for this figure was taken from \citep{Tomer10}.}\label{fig:01}
+\end{figure}
+If the ``chain" property in the dataet file is set to ``true", the point will be linked together in the 3D visualization.
+\begin{figure}[h!]%figure1
+\centerline{\includegraphics[totalheight=0.2\textheight]{Supp_fig2.png}}
+\caption{An example of a sequential dataset where the points are linked together. Here we present the 3D structure of the main carbon chain of a bacterial pentameric ligand-gated ion channel. In red we show the carbon atoms which are part of an $\alpha$-helix secondary structure, in green we show the atoms which are part of a $\beta$-sheet secondary structure. Data for this figure was taken from the Protein Data Bank in Europe website}\label{fig:02}
+\end{figure}
+\begin{thebibliography}{}
+\bibitem[Tomer {\it et~al}., 2010]{Tomer10} Tomer R., Denes A.S., Tessmar-Raible K., Arendt D. (2010). Profiling by image registration reveals common origin of annelid mushroom bodies and vertebrate pallium. {\it{Cell}}, {\bf{142}}:800-809. 
+\end{thebibliography}
 \end{document}
