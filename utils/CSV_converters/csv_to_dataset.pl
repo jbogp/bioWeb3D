@@ -12,7 +12,7 @@ else {
 	if (-e $file) {
 		
 		#reading chain
-		if($chain) {
+		if($chain  eq "true") {
 			$chain = "true";
 		}
 		else {
