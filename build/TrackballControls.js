@@ -331,7 +331,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 		}
 		
 		document.addEventListener( 'mousemove', mousemove, false );
+		document.addEventListener( 'touchmove', mousemove, false );
 		document.addEventListener( 'mouseup', mouseup, false );
+		document.addEventListener( 'touchup', mouseup, false );
 
 	}
 
@@ -365,7 +367,9 @@ THREE.TrackballControls = function ( object, domElement ) {
 		_state = STATE.NONE;
 
 		document.removeEventListener( 'mousemove', mousemove );
+		document.removeEventListener( 'touchmove', mousemove );
 		document.removeEventListener( 'mouseup', mouseup );
+		document.removeEventListener( 'touchup', mouseup );
 
 	}
 
@@ -395,6 +399,7 @@ THREE.TrackballControls = function ( object, domElement ) {
 	this.domElement.addEventListener( 'contextmenu', function ( event ) { event.preventDefault(); }, false );
 
 	this.domElement.addEventListener( 'mousedown', mousedown, false );
+	this.domElement.addEventListener( 'touchdown', mousedown, false );
 	this.domElement.addEventListener( 'DOMMouseScroll', mousewheel, false );
 	this.domElement.addEventListener( 'mousewheel', mousewheel, false );
 
