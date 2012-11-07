@@ -1,7 +1,7 @@
 my $file = $ARGV[0];
 open(F, $file); #Opening file
 open(F2, ">".$file.".json");
-print F2 "{ \"cluster\" : [\n";
+print F2 "{ \"information\" : [\n";
 # Reading file line by line
 $current_line = <F>;
 @genes = split("\t",$current_line);
@@ -31,7 +31,7 @@ while($current_line = <F>) {
 
 
 for($i=0;$i<scalar (@json);$i++) {
-	print F2 "{	\"name\": \"".$json[$i][0]."\",	\"numClust\": \"".(scalar(uniq(@{$json[$i]}))-1)."\",	\"values\": [\n";
+	print F2 "{	\"name\": \"".$json[$i][0]."\",	\"numClass\": \"".(scalar(uniq(@{$json[$i]}))-1)."\",	\"values\": [\n";
 	for($k=1;$k<$j;$k++){
 		if(($k+1)<$j){
 			print F2 $json[$i][$k].",\n";

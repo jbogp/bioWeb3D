@@ -21,7 +21,7 @@ function getClusterAsText(readFile,datasetId) {
 	// Obtain the read file data    
 	var fileString = evt.target.result;
 	//Reading Json and creating Object
-	var json = eval('(' + fileString + ')').cluster;
+	var json = eval('(' + fileString + ')').information;
 	addClusterUI(datasetId,datasetNum,json);
   }
   reader.onerror = errorClusterHandler;
