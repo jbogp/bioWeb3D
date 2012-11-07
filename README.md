@@ -5,11 +5,15 @@ Bio3D an HTML5 visualization tool for biological datasets
 
 ##Test it live now
 **Test the application in one click**
-[Single cell level brain of the marine worm Plateynereis dumerilii with clustered functional areas](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/platynereis.json&cluster=examples/10Clustbeta0Rand.json)
+
+- **[Single cell level brain of the marine worm Plateynereis dumerilii with clustered functional areas](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/platynereis.json&cluster=examples/10Clustbeta0Rand.json)**
+
 ![Plateynereis dumerilii's brain](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/paper/fig1.png "Plateynereis dumerilii's brain")
-[Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein) with beta structure highlighted](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster=examples/CChain-struc-3EAM.pdb.json)
+- **[Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein) with beta structure highlighted](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster=examples/CChain-struc-3EAM.pdb.json)**
+
 ![Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/paper/Supp_fig2.png "Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)")
-But remember, you can input any 3D dataset for a quick and interactive visualization ? **Want to see your own data in bioWeb3D ? You should look at the [FAQ](https://github.com/jibooo/bio3D/wiki) and the [Getting started page](https://github.com/jibooo/bio3D/wiki/Getting-started)** 
+But remember, you can input any 3D dataset for a quick and interactive visualization ! **Want to visualize your data in bioWeb3D ? You should look up the [FAQ](https://github.com/jibooo/bio3D/wiki) and the [Getting started page](https://github.com/jibooo/bio3D/wiki/Getting-started)** 
+
 If that's not enough, if you find a bug or if you have any improvement suggestion, please submit an [issue report here](https://github.com/jibooo/bio3D/issues)
 
 
@@ -18,10 +22,15 @@ Visualisation is a key feature in the analysis of large biological datasets, esp
 
 ###References
 Hartshorn M.J. (2002). AstexViewer: a visualisation aid for structure-based drug design. Journal of Computer-aided Molecule Design 16:871-881.
+
 Kulkarni D.B., Doijade M.M., Devrukhkar C.S., Zilpe G.R. and Surana R.R. (2012). NetraRIS - a Web based DICOM Viewer. International Journal of Computer Applications.48:40-44.
+
 Lein E.S., Hawrylycz M.J., Ao N., Ayres M., Bensinger A., Bernard A., Boe A.F., Boguski M.S., Brockway K.S., Byrnes E.J., et al.. (2007). Genome-wide atlas of gene expression in the adult mouse brain., Nature, 445:168-176.
+
 Rubel O., Weber G.H., Huang M.Y., Bethel E.W., Biggin M.D., Fowlkes C.C., Luengo Hendriks C.L., Ker ̈ nen S.V., Eisen M.B., Knowles D.W., et al. (2010). Integrating a Data Clustering and visualisation for the Analysis of 3D Gene Expression Data. IEEE/ACM Trans Comput Biol Bioinform, 7:64-79.
+
 Shannon P., Markiel A., Ozier O., Baliga N.S., Wang J.T., Ramage D., Amin N., Schwikowski B., Ideker T. (2003). Cytoscape: a software environment for integrated models of biomolecular interaction networks., Genome Res, 13:2498-2504.
+
 Wang Q., Lianga Q., Zhang X. (2009). 3D Genome Tuner: Compare Multiple Circular Genomes in a 3D Context., Genomics, Proteomics and Bioinformatics, 7:143-146.
 
 
