@@ -159,6 +159,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 		//Initialisation
 		this.visible = visible;
+		this.empty = true;
 		this.camera = new THREE.PerspectiveCamera( 75, innerWidth / innerHeight, 1, 100000 );
 		this.scene = new THREE.Scene();
 		this.controls = new THREE.TrackballControls( this.camera );
@@ -250,6 +251,8 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 				for( var i=0; i<this.datasets[""+setNum+""][0].length ; i++ ) {
 					this.scene.add(this.datasets[""+setNum+""][0][i]);
 				}
+				//Setting the world as non-empty
+				this.empty = false;
 			}
 			
 		}
