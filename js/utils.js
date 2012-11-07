@@ -244,7 +244,7 @@
 	function clusterSetFactory(jsonFile,index) {
 		$.getJSON(jsonFile,function(data) {
 			
-			addClusterUI((index-1),index,data.cluster);
+			addClusterUI((index-1),index,data.information);
 		});	
 	}
 	

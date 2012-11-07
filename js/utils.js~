@@ -11,6 +11,7 @@
 	function initRenderer(width,height) {
 		//Creating application Three.js renderer
 		renderer = new THREE.WebGLRenderer({ antialias: true });
+		renderer.sortObjects = false;
 
 		//Creating new DOM element
 		container = document.createElement('div');
@@ -233,16 +234,6 @@
 		$.getJSON(jsonFile,function(data) {
 			  //Reading Json and creating Object
 			  var index = datasets.push(new DataSet(data.dataset));
-			  datasets[index-1].setPoints(data.dataset.points);
-			  if(typeof data.dataset.name !== 'undefined' && data.dataset.name !== '') {
-				datasets[index-1].setName(data.dataset.name);
-			  }
-			  else {
-				datasets[index-1].setName("Dataset #"+index);
-			  }
-
-			  datasets[index-1].loaded = true;
-
 			  addDataSetUI(index);
 			  clusterSetFactory(cluster,index);
 		});	
