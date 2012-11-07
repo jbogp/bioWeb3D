@@ -6,7 +6,7 @@ Bio3D an HTML5 visualization tool for biological datasets
 ##Test it live now
 **Test the application in one click**
 
-- **[Single cell level brain of the marine worm Plateynereis dumerilii with clustered functional areas](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/platynereis.json&cluster=examples/10Clustbeta0Rand.json)**
+- **[Single cell level brain of the marine worm Plateynereis dumerilii with clustered functional areas](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/platynereis.json&cluster=examples/20Clustbeta0Rand.json)**
 
 ![Plateynereis dumerilii's brain](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/paper/fig1.png "Plateynereis dumerilii's brain")
 - **[Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein) with beta structure highlighted](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster=examples/CChain-struc-3EAM.pdb.json)**
