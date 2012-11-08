@@ -33,11 +33,16 @@ function updateProgress(evt) {
 function loaded(evt) {  
   // Obtain the read file data    
   var fileString = evt.target.result;
-  //Reading Json and creating Object
-  var data = eval('(' + fileString + ')').dataset;
-  var index = datasets.push(new DataSet(data));
-  //Adding dataSet to UI
-  addDataSetUI(index);
+  try {
+	  //Reading Json and creating Object
+	  var data = eval('(' + fileString + ')').dataset;
+	  var index = datasets.push(new DataSet(data));
+	  //Adding dataSet to UI
+	  addDataSetUI(index);
+	}
+  catch(e) {
+	  jsonError(e);
+ 	}
       
 }
 
@@ -47,16 +52,16 @@ function addDataSetUI(index) {
 	$("#accordionData").append("<h3><a href='#'>"+datasets[index-1].name+"</a></h3><div id='worldDataAccordion"+index+"'>");
 	$("#worldDataAccordion"+index+"").append("<div id='worldSelectData"+index+"'></div>");
 	for(var i=1;i<=worlds.length;i++) {
-		if(worlds[i-1].visible && worlds[i-1].empty) {
-			$("#worldSelectData"+index+"").append("<h2><a href=\"#\">world "+i+"</a></h2><div id='worldSelectData"+index+"-"+i+"'><select id='worldButtonData"+index+""+i+"'><option class='noaction'>Select Data</option><option class='raw' selected>Raw Data</option></select></div>");
-			$("#worldButtonData"+index+""+i+"").bind("change",{world:i,dataset:index},selectDataHandler);
+		$("#worldSelectData"+index+"").append("<h2><a href=\"#\">world "+i+"</a></h2><div id='worldSelectData"+index+"-"+i+"'><select id='worldButtonData"+index+""+i+"'><option class='noaction'>Select Data</option><option class='raw'>Raw Data</option></select></div>");
+		$("#worldButtonData"+index+""+i+"").bind("change",{world:i,dataset:index},selectDataHandler);
+		if(worlds[i-1].visible && worlds[i-1].empty()) {
 			//Viewing dataset in visible worlds
 			worlds[i-1].attachDataSet(datasets[index-1],index-1);
+			//selecting correct option in the dropdown list
+			$("#worldButtonData"+index+""+i+" option[class='raw']").prop('selected',true).change();
 		}
-		else {
-			$("#worldSelectData"+index+"").append("<h2><a href=\"#\">world "+i+"</a></h2><div id='worldSelectData"+index+"-"+i+"'><select id='worldButtonData"+index+""+i+"'><option class='noaction'>Select Data</option><option class='raw'>Raw Data</option></select></div>");
-			$("#worldButtonData"+index+""+i+"").bind("change",{world:i,dataset:index},selectDataHandler);
-		}
+
+
 	}
 	//create JqueryUI radio button
 	$( "#worldSelectData"+index+"" ).accordion({header: "h2", heightStyle: "content"});

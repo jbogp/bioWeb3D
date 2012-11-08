@@ -4,7 +4,7 @@
 	var defaultLabel = ["x","x","z","z","y","y"];
 
 	//Defining Label
-	function Label2D(text,geometry,vector){
+	function Label2D(text,geometry,vector,size,weight){
 
 		this.vector = vector;
 		this.text = text;
@@ -13,11 +13,17 @@
 		//Creating DOM element
 		this.DOM = document.createElement( 'div' );
 		this.DOM.style.position = 'absolute';
-		this.DOM.style.background = '#ffffff';
-		this.DOM.style.color = '#000000';
+		this.DOM.style.background = '#0000000';
+		this.DOM.style.color = '#ffffff';
 		this.DOM.style.height = '20px';
 		this.DOM.style.width = '50px';
 		this.DOM.innerHTML = text;
+		//Adding style if defined
+		try {
+			this.DOM.style.fontSize = size+"px";
+			this.DOM.style.fontWeight= weight;
+		}
+		catch(e){}
 
 		document.body.appendChild(this.DOM);
 		
@@ -78,6 +84,8 @@
 		this.labelGeometry = new THREE.Geometry();
 		this.labelSet = new Array();
 		this.projector = new THREE.Projector();
+		this.worldLabelgeometry = new THREE.Geometry();
+		this.worldLabel = new Label2D(world.id,this.worldLabelgeometry,v(10, 10, 0),20,700);
 
 		
 		//Creating 2D labels
@@ -99,6 +107,7 @@
 		this.vecGeoLabs = new Array();
 		
 		this.hideAll = function() {
+			this.worldLabel.hide();
 			for(var i=0;i<this.labelSet.length;i++){
 				this.labelSet[i].hide();
 			}
@@ -108,6 +117,9 @@
 		this.render = function() {
 			var x = new Array();
 			var y = new Array();
+
+			//Rendering worldLabel
+			this.worldLabel.setPos(10+world.x,winHeight-(world.innerHeight+world.y)+30);
 
 			//Loop on labels 2 by two because we don't want to show the one behind the camera
 			for(var i=0;i<6;i=i+2){

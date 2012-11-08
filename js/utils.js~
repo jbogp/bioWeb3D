@@ -73,9 +73,16 @@
 		
 		$(".checkWorld").bind("change",function (event) {
 			var $this = $(this);
-			worlds[$this.val()].toggle();
-			numWorlds = $(".checkWorld:checked").length;
-			setWorlds();
+			if($(".checkWorld:checked").length == 0){
+				$this.prop("checked",true);
+				$("#worldAccordion").buttonset();
+			}
+			else{
+				console.log("tesdt");
+				numWorlds = $(".checkWorld:checked").length;
+				worlds[$this.val()].toggle();
+				setWorlds();
+			}
 		});
 
 		//Bind Cluster File upload now and in the future
@@ -167,7 +174,7 @@
 		if(typeof timeout !== 'undefined'){
 			clearTimeout(timeout);
 		}
-		$("#console").text(text);
+		$("#console").html(text);
 		$("#console").fadeIn('slow');
 		timeout = setTimeout("$('#console').fadeOut('slow');",6000);
 	}
@@ -200,10 +207,6 @@
 		else if (numWorlds == 4) {
 			coord = [[winWidth/2,winHeight/2,0,0],[winWidth/2,winHeight/2,winWidth/2,0],[winWidth/2,winHeight/2,0,winHeight/2],[winWidth/2,winHeight/2,winWidth/2,winHeight/2]];
 		}
-		else {
-			alert("invalid number of worlds");
-		}
-		
 		while(coordNum < numWorlds) {
 			if(worlds[i].visible) {
 				worlds[i].changeSize(coord[coordNum][0],coord[coordNum][1],coord[coordNum][2],coord[coordNum][3]);
@@ -231,24 +234,35 @@
 
 	//Load Data From Json File
 	function setFactory(jsonFile,cluster) {
-		$.getJSON(jsonFile,function(data) {
+		$.ajax({
+		  url: jsonFile,
+		  dataType: 'json',
+		  success: function(data) {
 			  //Reading Json and creating Object
 			  var index = datasets.push(new DataSet(data.dataset));
 			  addDataSetUI(index);
 			  clusterSetFactory(cluster,index);
+		},
+		  error: jsonError()
 		});	
 	}
 	
 	
 	//Load cluster From Json File
 	function clusterSetFactory(jsonFile,index) {
-		$.getJSON(jsonFile,function(data) {
-			
-			addClusterUI((index-1),index,data.cluster);
-		});	
+		$.ajax({
+		  url: jsonFile,
+		  dataType: 'json',
+		  success: function(data) {
+			addClusterUI((index-1),index,data.information);
+		},
+		  error: jsonError()
+		});
 	}
 	
 	
+
+	//Reading variable in URl
 	function getUrlVars()
 	{
 		var vars = [], hash;
@@ -260,6 +274,16 @@
 			vars[hash[0]] = hash[1];
 		}
 		return vars;
+	}
+
+	//Json parsin error handle
+	function jsonError(e) {
+		if(typeof e !== 'undefined') {
+			consoleMess("Error while reading JSON, please check the file format <br/><a href='https://github.com/jibooo/bio3D/wiki/Getting-started' target='_blank'>more info on formats</a><br/>"+e.message);
+		}
+		else {
+			consoleMess("Error while reading JSON, please check the file format <br/><a href='https://github.com/jibooo/bio3D/wiki/Getting-started' target='_blank'>more info on formats</a><br/>");
+		}
 	}
 
  

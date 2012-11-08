@@ -20,9 +20,14 @@ function getClusterAsText(readFile,datasetId) {
   reader.onload = function (evt) {
 	// Obtain the read file data    
 	var fileString = evt.target.result;
-	//Reading Json and creating Object
-	var json = eval('(' + fileString + ')').information;
-	addClusterUI(datasetId,datasetNum,json);
+	try {
+		//Reading Json and creating Object
+		var json = eval('(' + fileString + ')').information;
+		addClusterUI(datasetId,datasetNum,json);
+	}
+	catch(e) {
+		jsonError(e);
+	}
   }
   reader.onerror = errorClusterHandler;
 }
@@ -37,6 +42,16 @@ function addClusterUI (datasetId,datasetNum,json) {
 
 			clustNum = datasets[datasetId].addClusterSet(new ClusterSet(json[i]));
 			$("#worldButtonData"+datasetNum+""+(j+1)+"").append("<option class='clust' value='"+clustNum+"'>"+datasets[datasetId].clusterSets[clustNum-1].name+"</option>");
+
+			//Loading first cluster set in visible worlds showing raw data of this dataset or if world is visible and empty
+			if(i == 0) {
+				if(worlds[j].isRaw(datasetId) || (worlds[j].visible && worlds[j].empty())) {
+					//attaching clusterset to world
+					worlds[j].attachDataSet(datasets[datasetId],datasetId,clustNum-1);
+					//Selecting correct option in dropdownlist
+					$("#worldButtonData"+datasetNum+""+(j+1)+" option[value='"+clustNum+"']").prop('selected',true).change();
+				}				
+			}
 		}
 		//Creating the clusters div
 		$("#worldSelectData"+datasetNum+"-"+(j+1)+"").append("<div id='clusters"+datasetNum+"-"+(j+1)+"'></div>");

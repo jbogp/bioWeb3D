@@ -155,11 +155,12 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 
 	//defining world model
-	function World(innerWidth,innerHeight,x,y,visible){
+	function World(id,innerWidth,innerHeight,x,y,visible){
 
 		//Initialisation
+		this.id = id;
 		this.visible = visible;
-		this.empty = true;
+		this.numDataSet = 0;
 		this.camera = new THREE.PerspectiveCamera( 75, innerWidth / innerHeight, 1, 100000 );
 		this.scene = new THREE.Scene();
 		this.controls = new THREE.TrackballControls( this.camera );
@@ -245,25 +246,53 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					this.detachDataSet(setNum);
 				}
 				//registering new PaticuleSystem
-				this.datasets[""+setNum+""] = [dataSet.createParticuleSystem(cluster),setNum,cluster];
-				ret = this.datasetID;
-				//Adding particule Systems to the scene
-				for( var i=0; i<this.datasets[""+setNum+""][0].length ; i++ ) {
-					this.scene.add(this.datasets[""+setNum+""][0][i]);
+				try{
+					this.datasets[""+setNum+""] = [dataSet.createParticuleSystem(cluster),setNum,cluster];
+					ret = this.datasetID;
+					//Adding particule Systems to the scene
+					for( var i=0; i<this.datasets[""+setNum+""][0].length ; i++ ) {
+						this.scene.add(this.datasets[""+setNum+""][0][i]);
+					}
+					//adding numDataSet
+					this.numDataSet++;
 				}
-				//Setting the world as non-empty
-				this.empty = false;
+				catch(e) {
+					console.log("particule system creation failed");
+				}
 			}
 			
 		}
 
+		//Is a dataset attached ?
+		this.isAttached = function(setNum) {
+			return(typeof this.datasets[""+setNum+""] !== 'undefined')
+		}
+
+		//Is a dataset showing raw or cluster data ?
+		this.isRaw = function(setNum) {
+			return(this.isAttached(setNum) && this.datasets[""+setNum+""][2] == -1)
+		}
+
+		//Is the world empty ?
+		this.empty = function() {
+			return(this.numDataSet == 0)
+		}
+
 		//detach a DataSet from the world
 		this.detachDataSet = function(numDataset) {
-			//deleting PaticuleSystem
-			for( var i=0; i<this.datasets[""+numDataset+""][0].length ; i++ ) {
-				this.scene.remove(this.datasets[""+numDataset+""][0][i]);
+			//Catching eventual error
+			try{
+				//deleting ParticuleSystem
+				for( var i=0; i<this.datasets[""+numDataset+""][0].length ; i++ ) {
+					this.scene.remove(this.datasets[""+numDataset+""][0][i]);
+				}
+				delete this.datasets[""+numDataset+""];
+				//Removing numDataSet
+				this.numDataSet--;
 			}
-			delete this.datasets[""+numDataset+""];
+			catch(e) {
+				console.log("Deleting non-existing dataset... Just moving on with loading");
+			}
 		}
 
 
@@ -336,6 +365,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		
 		//Create Three.js particle system for new dataset
 		this.createParticuleSystem = function(cluster){
+			var error = false;
 			cluster = typeof cluster !== 'undefined' ? cluster : -1;
 			if(this.loaded) {
 				var geometry=new Array(),particles, particle,particleSystem=new Array();	
@@ -370,7 +400,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					for( var i=0; i<this.clusterSets[cluster].numClust; i++ ) {
 						geometry[i] = new THREE.Geometry();
 					}
-					for (var i = 0; i < this.centered.length; i++) {
+					for (var i = 0; i < this.centered.length && !error; i++) {
 							var pX =  this.centered[i][0],
 							pY =  this.centered[i][1],
 							pZ =  this.centered[i][2],
@@ -378,9 +408,23 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 							if(this.chain) {
 								geometryLine.vertices.push( particle );
 							}
-							geometry[this.clusterSets[cluster].set[i]-1].vertices.push( particle );
+							//Handling error in case of mismatching dataset and clusterset
+							try{
+								geometry[this.clusterSets[cluster].set[i]-1].vertices.push( particle );
+							}
+							catch(e) {
+								error = true;
+								//Zeros or negative values as class
+								if(this.clusterSets[cluster].set[i] <= 0) {
+									consoleMess("Error, the information layer contains 0s or negative values");
+								}
+								else {
+									consoleMess("Error, the information layer does not define the class of all points");
+								}
+								throw "bad info layer error";
+							}
 					}
-					for( var i=0; i<this.clusterSets[cluster].numClust; i++ ) {
+					for( var i=0; i<this.clusterSets[cluster].numClust && !error; i++ ) {
 						if(this.clusterSets[cluster].visible[i]) {
 							particleSystem[i] = new THREE.ParticleSystem(geometry[i],this.clusterSets[cluster].materials[i]);
 						}
@@ -390,7 +434,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 						particleSystem[i].dynamic = true;
 						particleSystem[i].sortParticles = true;
 					}
-					if(this.chain) {
+					if(this.chain && !error) {
 						particleSystem[i+1] = new THREE.Line(geometryLine, this.lineMaterial);
 						particleSystem[i+1].dynamic = true;
 						particleSystem[i+1].sortParticles = true;
@@ -488,7 +532,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		
 		//Initialize visibility
 		for(var i=0;i<this.numClust;i++){
-			this.visible[i] = false;
+			this.visible[i] = true;
 		}
 
 		//Initialize materials
@@ -539,10 +583,10 @@ $(function(){
 	initUI();
 	
 	//Starting 4 world
-	worlds[0] = new World((window.innerWidth), (window.innerHeight),0,0,true);
-	worlds[1] = new World((window.innerWidth), (window.innerHeight),0,0,false);
-	worlds[2] = new World((window.innerWidth), (window.innerHeight),0,0,false);
-	worlds[3] = new World((window.innerWidth), (window.innerHeight),0,0,false);
+	worlds[0] = new World(1,(window.innerWidth), (window.innerHeight),0,0,true);
+	worlds[1] = new World(2,(window.innerWidth), (window.innerHeight),0,0,false);
+	worlds[2] = new World(3,(window.innerWidth), (window.innerHeight),0,0,false);
+	worlds[3] = new World(4,(window.innerWidth), (window.innerHeight),0,0,false);
 	
 	
 	numWorlds = 1;
