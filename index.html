@@ -47,13 +47,13 @@
 	}
 
 	.heightLimited {
-		max-height:500px;
+		max-height:450px;
 	}
 </style>
 <script type="text/javascript">
 
   var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-21852728-8']);
+  _gaq.push(['_setAccount', 'UA-21852728-12']);
   _gaq.push(['_trackPageview']);
 
   (function() {
@@ -592,7 +592,9 @@ $(function(){
 	numWorlds = 1;
 	setWorlds();
 	
-	setFactory(getUrlVars()["dataset"],getUrlVars()["cluster"]);
+	if(typeof getUrlVars()["dataset"] !== 'undefined'){ 
+		setFactory(getUrlVars()["dataset"],getUrlVars()["cluster"]);
+	}
 
 	
 	

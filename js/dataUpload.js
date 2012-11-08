@@ -41,7 +41,7 @@ function loaded(evt) {
 	  addDataSetUI(index);
 	}
   catch(e) {
-	  jsonError(e);
+	  jsonError(e.message);
  	}
       
 }

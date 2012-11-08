@@ -139,7 +139,8 @@
 					}
 					worlds[event.data.world-1].refreshDataSets();
 				});
-				//Iterating over each cluster				
+				//Iterating over each cluster
+				
 				for(var k=0;k<datasets[event.data.dataset-1].clusterSets[numClust].numClust;k++) {
 					var checked = (datasets[event.data.dataset-1].clusterSets[numClust].visible[k]) ? "checked" : "";
 					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<div id='divClust"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"' style='background-color:"+colorsCSS[k]+";padding-left:8px'>" +
@@ -245,9 +246,7 @@
 			  clusterSetFactory(cluster,index);
 		},
 		 error: function (xhr, ajaxOptions, thrownError){
-			alert(xhr.statusText);
-			alert(thrownError);
-			//jsonError();
+			jsonError(xhr.statusText);
 		} 
 		});	
 	}
@@ -262,9 +261,7 @@
 			addClusterUI((index-1),index,data.information);
 		},
 		  error: function (xhr, ajaxOptions, thrownError){
-			alert(xhr.statusText);
-			alert(thrownError);
-			jsonError();
+			jsonError(xhr.statusText);
 		}   
 		});
 	}
@@ -287,12 +284,7 @@
 
 	//Json parsin error handle
 	function jsonError(e) {
-		if(typeof e !== 'undefined') {
-			consoleMess("Error while reading JSON, please check the file format <br/><a href='https://github.com/jibooo/bio3D/wiki/Getting-started' target='_blank'>more info on formats</a><br/>"+e.message);
-		}
-		else {
-			consoleMess("Error while reading JSON, please check the file format <br/><a href='https://github.com/jibooo/bio3D/wiki/Getting-started' target='_blank'>more info on formats</a><br/>");
-		}
+		consoleMess("Error ("+e+") while reading JSON, please check the file format <br/><a href='https://github.com/jibooo/bio3D/wiki/Getting-started' target='_blank'>more info on formats</a>");
 	}
 
  
