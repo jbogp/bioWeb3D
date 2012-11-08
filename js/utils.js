@@ -244,7 +244,11 @@
 			  addDataSetUI(index);
 			  clusterSetFactory(cluster,index);
 		},
-		  error: jsonError()
+		 error: function (xhr, ajaxOptions, thrownError){
+			alert(xhr.statusText);
+			alert(thrownError);
+			jsonError();
+		} 
 		});	
 	}
 	
@@ -257,7 +261,11 @@
 		  success: function(data) {
 			addClusterUI((index-1),index,data.information);
 		},
-		  error: jsonError()
+		  error: function (xhr, ajaxOptions, thrownError){
+			alert(xhr.statusText);
+			alert(thrownError);
+			jsonError();
+		}   
 		});
 	}
 	
