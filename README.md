@@ -8,8 +8,8 @@ Bio3D an HTML5 visualization tool for biological datasets
 
 - **[Single cell level brain of the marine worm Plateynereis dumerilii with clustered functional areas](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/platynereis.json&cluster=examples/20Clustbeta0Rand.json)**
 
-[![Plateynereis dumerilii's brain](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/paper/Supp_fig3.png "Plateynereis dumerilii's brain")
-- **[Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein) with beta structure highlighted](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster=examples/CChain-struc-3EAM.pdb.json)**](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/platynereis.json&cluster=examples/20Clustbeta0Rand.json)
+[![Plateynereis dumerilii's brain](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/paper/Supp_fig3.png "Plateynereis dumerilii's brain")](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/platynereis.json&cluster=examples/20Clustbeta0Rand.json)
+- **[Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein) with beta structure highlighted](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster=examples/CChain-struc-3EAM.pdb.json)**
 
 ![Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/paper/Supp_fig2.png "Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)")
 But remember, you can input any 3D dataset for a quick and interactive visualization ! **Want to visualize your data in bioWeb3D ? You should look up the [FAQ](https://github.com/jibooo/bio3D/wiki) and the [Getting started page](https://github.com/jibooo/bio3D/wiki/Getting-started)** 
