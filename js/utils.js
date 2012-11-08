@@ -247,7 +247,7 @@
 		 error: function (xhr, ajaxOptions, thrownError){
 			alert(xhr.statusText);
 			alert(thrownError);
-			jsonError();
+			//jsonError();
 		} 
 		});	
 	}
