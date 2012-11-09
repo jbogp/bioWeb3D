@@ -26,45 +26,65 @@ function getClusterAsText(readFile,datasetId) {
 		addClusterUI(datasetId,datasetNum,json);
 	}
 	catch(e) {
-		jsonError(e.message);
+		if(e.message == "ParticleSystem error") {
+			consoleMess("Error while loading data, please check that your information layer defines a class for all the points");
+		}
+		else {
+			jsonError(e.message);
+		}
 	}
+
+
   }
   reader.onerror = errorClusterHandler;
 }
 
 
 function addClusterUI (datasetId,datasetNum,json) {
-	//Creating World buttons		
-	for(var j=0;j<worlds.length;j++) {
+	var select = false;
+	try {
+		//Creating World buttons		
+		for(var j=0;j<worlds.length;j++) {
+			select = false
 
-		//iterating on clustering sets
-		for(var i=0;i<json.length;i++) {
+			//iterating on clustering sets
+			for(var i=0;i<json.length;i++) {
 
-			clustNum = datasets[datasetId].addClusterSet(new ClusterSet(json[i]));
-			$("#worldButtonData"+datasetNum+""+(j+1)+"").append("<option class='clust' value='"+clustNum+"'>"+datasets[datasetId].clusterSets[clustNum-1].name+"</option>");
-
+				clustNum = datasets[datasetId].addClusterSet(new ClusterSet(json[i]));
+				//Loading first cluster set in visible worlds showing raw data of this dataset or if world is visible and empty
+				if(i == 0) {
+					if(worlds[j].isRaw(datasetId) || (worlds[j].visible && worlds[j].empty())) {
+						//attaching clusterset to world
+						worlds[j].attachDataSet(datasets[datasetId],datasetId,clustNum-1);
+						select = true;
+					}
+				}
 			
-			//Creating the clusters div
-			$("#worldSelectData"+datasetNum+"-"+(j+1)+"").append("<div id='clusters"+datasetNum+"-"+(j+1)+"'></div>");
-			//Loading first cluster set in visible worlds showing raw data of this dataset or if world is visible and empty
-			if(i == 0) {
-				if(worlds[j].isRaw(datasetId) || (worlds[j].visible && worlds[j].empty())) {
-					//attaching clusterset to world
-					worlds[j].attachDataSet(datasets[datasetId],datasetId,clustNum-1);
-					//Selecting correct option in dropdownlist
-					$("#worldButtonData"+datasetNum+""+(j+1)+" option[value='"+clustNum+"']").prop('selected',true);
-					$("#worldButtonData"+datasetNum+""+(j+1)+"").change()
-				}				
+				
+				$("#worldButtonData"+datasetNum+""+(j+1)+"").append("<option class='clust' value='"+clustNum+"'>"+datasets[datasetId].clusterSets[clustNum-1].name+"</option>");
+
+				
+				//Creating the clusters div
+				$("#worldSelectData"+datasetNum+"-"+(j+1)+"").append("<div id='clusters"+datasetNum+"-"+(j+1)+"'></div>");
+				//updating dropdown menu if creation went well
+				if(i == 0) {
+					if(select) {
+						//Selecting correct option in dropdownlist
+						$("#worldButtonData"+datasetNum+""+(j+1)+" option[value='"+clustNum+"']").prop('selected',true);
+						$("#worldButtonData"+datasetNum+""+(j+1)+"").change()
+					}				
+				}
 			}
-		}
 
-			
+				
+		}
+		consoleMess("Loaded "+json.length+" cluster sets for dataset \""+datasets[datasetId].name+"\"");
+		$('#clustAccordion'+datasetNum+'').accordion({ header: "h3" , heightStyle: "content"});
+		$('#clustAccordion'+datasetNum+'').accordion( "refresh" );
+		$("#accordionData").accordion( "refresh" );
+		$("#accordion").accordion( "refresh" );
 	}
-	consoleMess("Loaded "+json.length+" cluster sets for dataset \""+datasets[datasetId].name+"\"");
-	$('#clustAccordion'+datasetNum+'').accordion({ header: "h3" , heightStyle: "content"});
-	$('#clustAccordion'+datasetNum+'').accordion( "refresh" );
-	$("#accordionData").accordion( "refresh" );
-	$("#accordion").accordion( "refresh" );
+	catch(e) {}
 }
 
 function updateClusterProgress(evt) {
