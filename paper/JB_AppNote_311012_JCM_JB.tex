@@ -40,9 +40,20 @@ Datasets can be viewed and compared in up to four ``worlds" (each world refers t
 Although the focus is on making bioWeb3D simple and easy to use, some options are available to customise how datasets are represented. For example, the application can be used to visualise sequential information, such as 3D protein structures, in which case links can be drawn between the points. In other cases, such as when a population of cells are considered, the points can be left unlinked as individual particles. The information layers are visualised by colouring the 3D points according to the class that each point belongs to.
 \subsection{Defining the input file format}
 The JSON format has been chosen because of its rigorous structure, which allows fast Javascript object generation within the browser interpreter. Compared to other data-interchange languages, such as XML, JSON is also easily human readable thanks to a light-weight syntax. It is also supported by all of the primary internet browsers.\\
-The {\it{dataset}} file should have a root object called ``dataset" which contains: (i) The ``name" property of the dataset (\textit{e.g.}, ``my dataset"). (ii) The ``chain" parameter which has to be set to \textit{true} if the points should be linked, to \textit{false} otherwise (optional, the default value is \textit{false}). (iii) The ``points" property, which is a two dimensional array representing a list of (x,y,z) vectors that define the co-ordinates of the points.\\
+The {\it{dataset}} file should have a root object called ``dataset" which contains: 
+\begin{itemize}
+\item{The ``name" property of the dataset (\textit{e.g.}, ``my dataset").}
+\item{The ``chain" parameter which has to be set to \textit{true} if the points should be linked, to \textit{false} otherwise (optional) the default value is \textit{false}).}
+\item{The ``points" property, which is a two dimensional array representing a list of (x,y,z) vectors that define the co-ordinates of the points.}
+\end{itemize}
 
-The {\it{information layer}} files must have a root element named  ``information". Since one information file can define multiple information sets, the structure below ``information" is a list. Each element of the list is structured as follows : (i) The ``name" property (optional). (ii) The ``numClass" property, which indicates the number of different classes the data will be assigned to. (iii) The ``labels" property, which defines a list of names for the ``numClass" classes previously defined (optional). (iv) The ``values" property, which defines the class of each point in the dataset. As points do not have single IDs, this property must be in the same order and have the same length as the points defined in the {\it{dataset}} file.\\
+The {\it{information layer}} files must have a root element named  ``information". Since one information file can define multiple information sets, the structure below ``information" is a list. Each element of the list is structured as follows :
+\begin{itemize}
+\item{ The ``name" property (optional).}
+\item{The ``numClass" property, which indicates the number of different classes the data will be assigned to.}
+\item{The ``labels" property, which defines a list of names for the ``numClass" classes previously defined (optional).}
+\item{The ``values" property, which defines the class of each point in the dataset. As points do not have single IDs, this property must be in the same order and have the same length as the points defined in the {\it{dataset}} file.}
+\end{itemize}
 Exact specifications and examples of the file formats can be found on the bioWeb3D gitHub repository wiki and in the supplementary materials. Since many biological results are in fact stored as CSV files we also provide easy to use Perl scripts that can quickly generate JSON files from CSV data. These scripts are also available from the GitHub repository.
 
 
@@ -68,7 +79,7 @@ The main current limitation of a webGL based application is the machine and brow
 
 
 \section*{Acknowledgement}
-The authors would like to acknowledge Samuel Croset, Tom Oldfield and Sergio Martinez Cuesta for helpful discussion and criticism as well as Ricardo Cabello the creator of the JavaScript library Three.js.
+The authors would like to acknowledge Samuel Croset, Tom Oldfield, Konrad Rudolph and Sergio Martinez Cuesta for helpful discussion and criticism as well as Ricardo Cabello the creator of the JavaScript library Three.js.
 
 %\bibliographystyle{natbib}
 %\bibliographystyle{achemnat}
