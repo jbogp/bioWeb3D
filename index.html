@@ -99,7 +99,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		<div class="session" style="position:absolute;left:0px;top:0px;;width:100%;height:30px;border:1px solid #000;background:#fff;padding-top:5px;opacity:0.6;filter:alpha(opacity=60);">
 			<div id="current" style="display:inline"><b>Bio3D-1.0</b></div>
 			<div style="float:right;display:inline;margin-right:25px;">
-				<a href='https://github.com/jibooo/bio3D/wiki/Getting-started' target='_blank'>Getting started</a>
+				<a href='https://github.com/jibooo/bio3D/wiki/Getting-started' target='_blank'>Getting started</a>&nbsp&nbsp&nbsp&nbsp
 				<a href='https://github.com/jibooo/bio3D' target='_blank'>See project on Github</a>
 			</div>
 		</div>
@@ -282,10 +282,17 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		//detach a DataSet from the world
 		this.detachDataSet = function(numDataset) {
 			//Catching eventual error
+			
 			try{
 				//deleting ParticuleSystem
 				for( var i=0; i<this.datasets[""+numDataset+""][0].length ; i++ ) {
 					this.scene.remove(this.datasets[""+numDataset+""][0][i]);
+					this.datasets[""+numDataset+""][0][i].traverse( function ( object ) {
+						renderer.deallocateObject( object );
+						object.geometry.deallocate();
+						object.material.deallocate();
+						object.deallocate();
+					} );
 				}
 				delete this.datasets[""+numDataset+""];
 				//Removing numDataSet

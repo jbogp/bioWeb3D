@@ -60,7 +60,7 @@ function addClusterUI (datasetId,datasetNum,json) {
 
 			
 	}
-	consoleMess("Loaded "+json.length+" cluster sets for dataset "+datasetNum);
+	consoleMess("Loaded "+json.length+" cluster sets for dataset \""+datasets[datasetId].name+"\"");
 	$('#clustAccordion'+datasetNum+'').accordion({ header: "h3" , heightStyle: "content"});
 	$('#clustAccordion'+datasetNum+'').accordion( "refresh" );
 	$("#accordionData").accordion( "refresh" );

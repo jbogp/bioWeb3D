@@ -72,7 +72,7 @@ function addDataSetUI(index) {
 	$("#worldDataAccordion"+index+"").append("</div>");
 	$("#accordionData").accordion({ header: "h3" , heightStyle: "content"});
 	$("#accordionData").accordion('destroy');
-	$("#accordionData").accordion({ header: "h3" , heightStyle: "content"});
+	$("#accordionData").accordion({active: (index-1), header: "h3" , heightStyle: "content"});
 	$("#accordion").accordion( "refresh" );
 	consoleMess("Loaded dataset \""+datasets[index-1].name+"\" containing "+datasets[index-1].points.length+" points");
 }

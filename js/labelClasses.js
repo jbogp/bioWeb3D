@@ -159,5 +159,9 @@
 			}
 			
 		}
+		//construct 
+		if(!world.visible) {
+			this.hideAll();
+		}
 	}
 
