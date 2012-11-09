@@ -1,4 +1,4 @@
-Bio3D an HTML5 visualization tool for biological datasets
+BioWeb3D an HTML5 visualization tool for biological datasets
 =========================================================
 ##What does it do ?
 `bioWeb3D` is an HTML5/webGL based 3D visualisation tool has been developed to allow biologists to quickly and easily view interactive and customizable three dimensional representations of their data along with multiple layers of information. Using the WebGL library Three.js written in Javascript, bioWeb3D allows the simultaneous visualisation of multiple large datasets inputted via a simple JSON file, which can be read and analysed locally thanks to HTML5 capabilities.
@@ -12,9 +12,9 @@ Bio3D an HTML5 visualization tool for biological datasets
 - **[Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein) with beta structure highlighted](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster=examples/CChain-struc-3EAM.pdb.json)**
 
 [![Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/paper/Supp_fig2.png "Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)")](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster=examples/CChain-struc-3EAM.pdb.json)
-But remember, you can input any 3D dataset for a quick and interactive visualization ! **Want to visualize your data in bioWeb3D ? You should look up the [FAQ](https://github.com/jibooo/bio3D/wiki) and the [Getting started page](https://github.com/jibooo/bio3D/wiki/Getting-started)** 
+But remember, you can input any 3D dataset for a quick and interactive visualization ! **Want to visualize your data in bioWeb3D ? You should look up the [FAQ](https://github.com/jibooo/bioWeb3D/wiki) and the [Getting started page](https://github.com/jibooo/bioWeb3D/wiki/Getting-started)** 
 
-If that's not enough, if you find a bug or if you have any improvement suggestion, please submit an [issue report here](https://github.com/jibooo/bio3D/issues)
+If that's not enough, if you find a bug or if you have any improvement suggestion, please submit an [issue report here](https://github.com/jibooo/bioWeb3D/issues)
 
 
 ## Motivation

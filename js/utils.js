@@ -146,7 +146,7 @@
 					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<div id='divClust"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"' style='background-color:"+colorsCSS[k]+";padding-left:8px'>" +
 						"<input type='checkbox' "+checked+" class='clusters"+(event.data.dataset)+"-"+(event.data.world)+"' id='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'> "+
 						"<label for='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'>"+datasets[event.data.dataset-1].clusterSets[numClust].labels[k]+"</label>"+
-						"<div style='float:right'><input type='text'size='10' id='colors"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"' style='font-size:10px;background:#"+('000000'+datasets[event.data.dataset-1].clusterSets[numClust].materials[k].color.getHex().toString(16)).slice(-6)+"' class=\"color\" value='"+('000000'+datasets[event.data.dataset-1].clusterSets[numClust].materials[k].color.getHex().toString(16)).slice(-6)+"'></div>"+
+						"<div style='float:right'><input type='text' size='10' id='colors"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"' style='font-size:9px;background:#"+('000000'+datasets[event.data.dataset-1].clusterSets[numClust].materials[k].color.getHex().toString(16)).slice(-6)+"' class=\"color\" value='"+('000000'+datasets[event.data.dataset-1].clusterSets[numClust].materials[k].color.getHex().toString(16)).slice(-6)+"'></div>"+
 						"</div>");
 					//Binding checkboxes
 					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"").bind("change",{world:event.data.world-1,dataset:event.data.dataset-1,clusterSet:numClust,cluster:k}, function(event) {
