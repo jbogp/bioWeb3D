@@ -1,76 +1,616 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Bio3d by jibooo</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-    <div class="wrapper">
-      <header>
-        <h1>Bio3d</h1>
-        <p>Bio3D an HTML5 visualization tool for biological datasets</p>
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bio3D</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+<style>
+	body {
+		background-color: #000000;
+		margin: 0px;
+		overflow: hidden;
+		font-family:arial,sans-serif;
+	}
 
-        <p class="view"><a href="https://github.com/jibooo/bio3D">View the Project on GitHub <small>jibooo/bio3D</small></a></p>
+	a {
+		color:#0078ff;
+		text-decoration:none;
+	}
+	
+	a:hover {
+		text-decoration:underline;
+	}
+	
+	h3 {
+		font-size : 12px;
+	}
+
+	.UI {
+		z-index:99;
+	}
+	
+	.UIControl {
+		position:absolute;
+		left:5px;
+		bottom:-5px;
+		height:20px;
+		border: 5px solid transparent;
+		-moz-border-radius: 15px;
+		border-radius: 5px;
+		font-size:0.8em;
+		background:#fff;
+		padding : 5px 5px;
+		cursor: pointer;
+		opacity:0.6;
+		text-align:center;
+		filter:alpha(opacity=60);
+	}
+
+	.heightLimited {
+		max-height:450px;
+	}
+</style>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-21852728-12']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+</head>
+
+<body>  
+<script src="build/json2.js"></script>	
+<script src="build/jquery-1.8.0.min.js"></script>
+<script src="build/jquery-ui-1.9.0.custom.min.js"></script>
+<link type="text/css" href="css/jquery-ui-1.8.24.custom.css" rel="Stylesheet" />	
+<script src="build/three.min.js"></script>
+<script src="build/underscore.js"></script>
+<script src="build/backbone.js"></script>
+<script src="build/backbone-localstorage.js"></script>
+<script src="build/Stats.js"></script>
+<script src="build/Detector.js"></script>
+<script src="build/TrackballControls.js"></script>
+<script src="build/jscolor/jscolor.js"></script>
 
 
-        <ul>
-          <li><a href="https://github.com/jibooo/bio3D/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/jibooo/bio3D/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/jibooo/bio3D">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h3>Welcome to GitHub Pages.</h3>
 
-<p>This automatic page generator is the easiest way to create beautiful pages for all of your projects. Author your page content here using GitHub Flavored Markdown, select a template crafted by a designer, and publish. After your page is generated, you can check out the new branch:</p>
+<script>
+//Checking for WebGL
+if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
-<pre><code>$ cd your_repo_root/repo_name
-$ git fetch origin
-$ git checkout gh-pages
-</code></pre>
+//Defining application global variables
+var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeight=window.innerHeight,winWidth=window.innerWidth,datasets=new Array(),numWorlds,timeout;
+</script>
 
-<p>If you're using the GitHub for Mac, simply sync your repository and you'll see the new branch.</p>
 
-<h3>Designer Templates</h3>
+<!-- creating the UI -->
+	<div class="UIControl">
+		Show/Hide UI
+	</div>
+	<div id='console' style="position:absolute;width:30%;padding:15px;text-align:center;font-weight:bold;background:#fff;display:none;font-color:#66A3FF;top:50%;left:35%"></div>
+	<div class="UI">
+		<div class="session" style="position:absolute;left:0px;top:0px;;width:100%;height:30px;border:1px solid #000;background:#fff;padding-top:5px;opacity:0.6;filter:alpha(opacity=60);">
+			<div id="current" style="display:inline"><b>Bio3D-1.0</b></div>
+			<div style="float:right;display:inline;margin-right:25px;">
+				<a href='https://github.com/jibooo/bio3D/wiki/Getting-started' target='_blank'>Getting started</a>
+				<a href='https://github.com/jibooo/bio3D' target='_blank'>See project on Github</a>
+			</div>
+		</div>
+		<div class="controls" style="position:absolute;right:0px;top:36px;overflow: auto;width:400px;border:1px solid #000;background:#000;opacity:0.6;filter:alpha(opacity=60);">
+			<div id="accordion">
+			
+				<h3><a href="#">Datasets</a></h3>
+					<div class="heightLimited">
+						<input type="file" id="newDataSet">
+						<div id="accordionData">
+						</div>
+					</div>
+				<h3><a href="#">View</a></h3>
+					<div>
+						<div id='worldAccordion' style="text-align:center">
+							<input type='checkbox' checked class="checkWorld" id='worldAccordion1' value=0 /><label for='worldAccordion1'>world 1</label>
+							<input type='checkbox' class="checkWorld" id='worldAccordion2' value=1 /><label for='worldAccordion2'>world 2</label><br />
+							<input type='checkbox' class="checkWorld" id='worldAccordion3' value=2 /><label for='worldAccordion3'>world 3</label>
+							<input type='checkbox' class="checkWorld" id='worldAccordion4' value=3 /><label for='worldAccordion4'>world 4</label>
+						</div>
+					</div>
+				<h3><a href="#">Settings</a></h3>
+					<div>
+						<div class="coefs" style="padding:10px !important;">
+							Axis Coefficients :</br>
+							X axis<div class="sliderCoord" id="sliderX"></div>
+							Y axis<div class="sliderCoord" id="sliderY"></div>
+							Z axis<div class="sliderCoord" id="sliderZ"></div>
+							
 
-<p>We've crafted some handsome templates for you to use. Go ahead and continue to layouts to browse through them. You can easily go back to edit your page before publishing. After publishing your page, you can revisit the page generator and switch to another theme. Your Page content will be preserved if it remained markdown format.</p>
 
-<h3>Rather Drive Stick?</h3>
+						</div>
+					</div>
+			</div>
 
-<p>If you prefer to not use the automatic generator, push a branch named <code>gh-pages</code> to your repository to create a page manually. In addition to supporting regular HTML content, GitHub Pages support Jekyll, a simple, blog aware static site generator written by our own Tom Preston-Werner. Jekyll makes it easy to create site-wide headers and footers without having to copy them across every page. It also offers intelligent blog support and other advanced templating features.</p>
 
-<h3>Authors and Contributors</h3>
 
-<p>You can <a href="https://github.com/blog/821" class="user-mention">@mention</a> a GitHub username to generate a link to their profile. The resulting <code>&lt;a&gt;</code> element will link to the contributor's GitHub Profile. For example: In 2007, Chris Wanstrath (<a href="https://github.com/defunkt" class="user-mention">@defunkt</a>), PJ Hyett (<a href="https://github.com/pjhyett" class="user-mention">@pjhyett</a>), and Tom Preston-Werner (<a href="https://github.com/mojombo" class="user-mention">@mojombo</a>) founded GitHub.</p>
+		</div>
+	</div> 
 
-<h3>Support or Contact</h3>
+<!-- importing application scripts -->
+<script src="js/utils.js"></script>
+<script src="js/materials.js"></script>
+<script src="js/labelClasses.js"></script>
+<script src="js/dataUpload.js"></script>
+<script src="js/clusterUpload.js"></script>
 
-<p>Having trouble with Pages? Check out the documentation at <a href="http://help.github.com/pages">http://help.github.com/pages</a> or contact <a href="mailto:support@github.com">support@github.com</a> and we’ll help you sort it out.</p>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/jibooo">jibooo</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-              <script type="text/javascript">
-            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
-            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
-          </script>
-          <script type="text/javascript">
-            try {
-              var pageTracker = _gat._getTracker("&lt;script type=&quot;text/javascript&quot;&gt;    var _gaq = _gaq || [];   _gaq.push(['_setAccount', 'UA-21852728-11']);   _gaq.push(['_trackPageview']);    (function() {     var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;     ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);   })();  &lt;/script&gt;");
-            pageTracker._trackPageview();
-            } catch(err) {}
-          </script>
 
-  </body>
-</html>
+
+<script>
+
+
+
+
+	//defining world model
+	function World(id,innerWidth,innerHeight,x,y,visible){
+
+		//Initialisation
+		this.id = id;
+		this.visible = visible;
+		this.numDataSet = 0;
+		this.camera = new THREE.PerspectiveCamera( 75, innerWidth / innerHeight, 1, 100000 );
+		this.scene = new THREE.Scene();
+		this.controls = new THREE.TrackballControls( this.camera );
+		
+		this.x = x;
+		this.y = y;
+		this.innerWidth = innerWidth;
+		this.innerHeight = innerHeight;
+		
+		//Attached visualizations
+		this.datasets = new Array();
+		this.clusters = new Array();
+
+
+		//Setting camera position
+		this.camera.position.z = 100;
+		this.camera.position.x = 100;
+		this.camera.position.y = 100;
+
+		//Adding camera to the scene
+		this.scene.add( this.camera );
+
+
+		//Create axis (point1, point2, colour)
+		this.createAxis = function(p1, p2, color){
+			var line, lineGeometry = new THREE.Geometry(),lineMat = new THREE.LineBasicMaterial({color: color, lineWidth: 1});
+			lineGeometry.vertices.push(p1, p2);
+			line = new THREE.Line(lineGeometry, lineMat);
+			this.scene.add(line);
+		}
+
+
+		//Creating 3 axis
+		this.createAxis(v(-axisLength, 0, 0), v(axisLength, 0, 0), 0xffffff);
+		this.createAxis(v(0, -axisLength, 0), v(0, axisLength, 0), 0xffffff);
+		this.createAxis(v(0, 0, -axisLength), v(0, 0, axisLength), 0xffffff);
+
+
+		//Creating Axis labels
+		this.labelSet = new WorldLabelSet(this);
+		
+
+		//Turn off controls
+		this.disableControls = function () {
+			this.controls.enabled = false;
+		}
+
+		//Turn on controls
+		this.enableControls = function () {
+			this.controls.enabled = true;
+		}
+		
+		
+		//Change world size and localization
+		this.changeSize = function(innerWidth,innerHeight,x,y) {
+			this.innerWidth = innerWidth;
+			this.innerHeight = innerHeight;
+			this.x = x;
+			this.y = y;
+		}
+		
+		//toggle visibility
+		this.toggle = function() {
+			if(this.visible) {
+				this.visible = false;
+				this.labelSet.hideAll();
+			}
+			else{
+				this.visible = true;
+				this.labelSet.worldLabel.show();
+			}
+		}
+
+		//attach a DataSet to the world
+		this.attachDataSet = function(dataSet,setNum,cluster) {
+			cluster = typeof cluster !== 'undefined' ? cluster : -1;
+			//Check if the dataset has been loaded
+			if(!dataSet.loaded) { 
+				alert("loading is not finished");
+			}
+			else{
+				//Removing same already attached dataset (even if different cluster) if any
+				if(typeof this.datasets[""+setNum+""] !== 'undefined'){
+					this.detachDataSet(setNum);
+				}
+				//registering new PaticuleSystem
+				try{
+					this.datasets[""+setNum+""] = [dataSet.createParticuleSystem(cluster),setNum,cluster];
+					ret = this.datasetID;
+					//Adding particule Systems to the scene
+					for( var i=0; i<this.datasets[""+setNum+""][0].length ; i++ ) {
+						this.scene.add(this.datasets[""+setNum+""][0][i]);
+					}
+					//adding numDataSet
+					this.numDataSet++;
+				}
+				catch(e) {
+					console.log("particule system creation failed");
+				}
+			}
+			
+		}
+
+		//Is a dataset attached ?
+		this.isAttached = function(setNum) {
+			return(typeof this.datasets[""+setNum+""] !== 'undefined')
+		}
+
+		//Is a dataset showing raw or cluster data ?
+		this.isRaw = function(setNum) {
+			return(this.isAttached(setNum) && this.datasets[""+setNum+""][2] == -1)
+		}
+
+		//Is the world empty ?
+		this.empty = function() {
+			return(this.numDataSet == 0)
+		}
+
+		//detach a DataSet from the world
+		this.detachDataSet = function(numDataset) {
+			//Catching eventual error
+			try{
+				//deleting ParticuleSystem
+				for( var i=0; i<this.datasets[""+numDataset+""][0].length ; i++ ) {
+					this.scene.remove(this.datasets[""+numDataset+""][0][i]);
+				}
+				delete this.datasets[""+numDataset+""];
+				//Removing numDataSet
+				this.numDataSet--;
+			}
+			catch(e) {
+				console.log("Deleting non-existing dataset... Just moving on with loading");
+			}
+		}
+
+
+		//Refresh DataSets
+		this.refreshDataSets = function() {
+			var numDataset;
+			var numClust;
+			var self = this;
+			$.each(this.datasets, function(key, value) { 
+				if(typeof value !== 'undefined') {
+					numDataSet = value[1];
+					numClust = value[2];
+					self.detachDataSet(key);
+					self.attachDataSet(datasets[numDataSet],numDataSet,numClust);
+				}
+			});
+		}
+		
+
+		
+		//Creating the Render function
+		this.render = function () {
+
+				//Updating controls
+				this.controls.update();
+
+				if(this.visible) {
+					//Updating labels
+					this.labelSet.render();
+					renderer.setViewport(this.x, this.y, this.innerWidth, this.innerHeight);
+					renderer.render( this.scene, this.camera );
+				}
+		}
+
+	};
+
+
+
+
+
+	//defining dataset Model
+	function DataSet(data){
+
+		this.points;
+		this.name;
+		this.centered = new Array();
+		this.clusterSets = new Array();
+		this.loaded = false;
+		this.chain;
+		this.mean = new Array();
+
+
+		//Dataset Material
+		this.dataSetMaterial =  new THREE.ParticleBasicMaterial({
+			color: 0xffffff,
+			size: 1.0,
+			opacity:0.1,
+			blending: THREE.AdditiveBlending,
+			transparent: true
+		});
+
+		//Line Material
+		this.lineMaterial = new THREE.LineBasicMaterial({
+			color: 0xffffff,
+			linewidth: 4,
+			transparent : true,
+			opacity : 0.8,
+		});
+
+		
+		//Create Three.js particle system for new dataset
+		this.createParticuleSystem = function(cluster){
+			var error = false;
+			cluster = typeof cluster !== 'undefined' ? cluster : -1;
+			if(this.loaded) {
+				var geometry=new Array(),particles, particle,particleSystem=new Array();	
+				//For chain
+				var geometryLine=new THREE.Geometry();
+				//Create particule system for raw data
+				if(cluster == -1) {
+					//create DataSet geometry
+					geometry[0] = new THREE.Geometry();
+					for (var i = 0; i < this.centered.length; i++) {
+							var pX =  this.centered[i][0],
+							pY =  this.centered[i][1],
+							pZ =  this.centered[i][2],
+							particle = new THREE.Vector3(pX, pY, pZ);
+
+							geometry[0].vertices.push( particle );
+					}
+					if(!this.chain) {
+						// create the particle systems
+						particleSystem[0] = new THREE.ParticleSystem(geometry[0],this.dataSetMaterial);
+
+					}
+					else {
+						particleSystem[0] = new THREE.Line(geometry[0], this.lineMaterial);
+					}
+					particleSystem[0].dynamic = true;
+					particleSystem[0].sortParticles = true;
+				}
+				//Create particule Systems for cluster sets
+				else {
+					//Creating geometries
+					for( var i=0; i<this.clusterSets[cluster].numClust; i++ ) {
+						geometry[i] = new THREE.Geometry();
+					}
+					for (var i = 0; i < this.centered.length && !error; i++) {
+							var pX =  this.centered[i][0],
+							pY =  this.centered[i][1],
+							pZ =  this.centered[i][2],
+							particle = new THREE.Vector3(pX, pY, pZ);
+							if(this.chain) {
+								geometryLine.vertices.push( particle );
+							}
+							//Handling error in case of mismatching dataset and clusterset
+							try{
+								geometry[this.clusterSets[cluster].set[i]-1].vertices.push( particle );
+							}
+							catch(e) {
+								error = true;
+								//Zeros or negative values as class
+								if(this.clusterSets[cluster].set[i] <= 0) {
+									consoleMess("Error, the information layer contains 0s or negative values");
+								}
+								else {
+									consoleMess("Error, the information layer does not define the class of all points");
+								}
+								throw "bad info layer error";
+							}
+					}
+					for( var i=0; i<this.clusterSets[cluster].numClust && !error; i++ ) {
+						if(this.clusterSets[cluster].visible[i]) {
+							particleSystem[i] = new THREE.ParticleSystem(geometry[i],this.clusterSets[cluster].materials[i]);
+						}
+						else{
+							particleSystem[i] = new THREE.ParticleSystem(geometry[i],this.dataSetMaterial);
+						}
+						particleSystem[i].dynamic = true;
+						particleSystem[i].sortParticles = true;
+					}
+					if(this.chain && !error) {
+						particleSystem[i+1] = new THREE.Line(geometryLine, this.lineMaterial);
+						particleSystem[i+1].dynamic = true;
+						particleSystem[i+1].sortParticles = true;
+					}
+					
+				}
+				return particleSystem;
+			}
+		}
+		
+		//Setter for loaded points
+		this.setPoints = function(points) {
+			this.points = points;
+			this.computeMeans();
+			this.center([1,1,1]);
+		}
+
+		//Setter for dataset Name
+		this.setName = function(name) {
+			this.name = name;
+		}
+
+
+		//Add clusterset to this dataset
+		this.addClusterSet = function(clusterSet) {	
+			return	this.clusterSets.push(clusterSet);
+		}
+
+
+		//Computing mean of raw data to center on 0
+		this.computeMeans = function() {
+			var mean = new Array();
+			for (var i = 0; i < this.points.length; i++) {
+				if(i == 0) {
+					this.mean = [this.points[i][0],this.points[i][1],this.points[i][2]];
+				}
+				else {
+					this.mean[0] += this.points[i][0];
+					this.mean[1] += this.points[i][1];
+					this.mean[2] += this.points[i][2];
+				}
+			}
+			this.mean[0] = this.mean[0]/this.points.length;
+			this.mean[1] = this.mean[1]/this.points.length;
+			this.mean[2] = this.mean[2]/this.points.length;
+					
+
+		}
+
+		//Centering data on 0 accounting for the axis respective coeficients
+		this.center = function(coef) {
+			for (var i = 0; i < this.points.length; i++) {
+				this.centered[i] = new Array();
+				for(var j = 0; j < 3; j++) {
+						this.centered[i][j] = (((this.points[i][j])-this.mean[j])*coef[j]);
+				}
+			}
+		}
+
+
+		//Constructor
+		this.setPoints(data.points);
+		//Setting name
+		if(typeof data.name !== 'undefined' && data.name !== '') {
+			this.setName(data.name);
+		}
+		else {
+			this.setName("Unamed dataset");
+		}
+		//Setting Chain
+		if(typeof data.chain !== 'undefined' && data.chain !== '') {
+			this.chain = data.chain;
+		}
+		else {
+			this.chain = false;
+		}
+		//Setting loaded
+		this.loaded = true;		
+		
+
+	}
+
+
+
+	//defining cluster Model
+	function ClusterSet(jsonObj){
+		
+		this.set=jsonObj.values;
+		this.numClust = jsonObj.numClass;
+		this.name = jsonObj.name;
+		this.visible = new Array();
+		this.materials = new Array();
+		this.labels = new Array();
+
+		
+		//Initialize visibility
+		for(var i=0;i<this.numClust;i++){
+			this.visible[i] = true;
+		}
+
+		//Initialize materials
+		for(var i=0;i<this.numClust;i++){
+			this.materials[i] =  new THREE.ParticleBasicMaterial({
+				size: 2,
+				opacity:1,
+				blending: THREE.NoBlending,
+				transparent: true
+			});
+			this.materials[i].color.setHex(colors[i]);
+
+			if(typeof jsonObj.labels !== 'undefined') {
+				this.labels[i] = jsonObj.labels[i];
+			}
+			else{
+				this.labels[i] = "cluster "+(i+1);
+			}
+	}
+
+		//setter for cluster color
+		this.setColor = function(numClust, color) {
+			this.materials[numClust].color.setHex(color);
+		}
+
+	}
+
+	
+	//Request Animation Frame
+	function animate() {
+
+		requestAnimationFrame( animate );
+		renderWorlds();
+
+
+	}
+
+
+	/********************************************************
+			LAUNCHING APPLICATION
+	*********************************************************/
+	
+$(function(){
+	//Initializing Renderer
+	initRenderer(window.innerWidth,window.innerHeight);
+	
+	//Initializing UI
+	initUI();
+	
+	//Starting 4 world
+	worlds[0] = new World(1,(window.innerWidth), (window.innerHeight),0,0,true);
+	worlds[1] = new World(2,(window.innerWidth), (window.innerHeight),0,0,false);
+	worlds[2] = new World(3,(window.innerWidth), (window.innerHeight),0,0,false);
+	worlds[3] = new World(4,(window.innerWidth), (window.innerHeight),0,0,false);
+	
+	
+	numWorlds = 1;
+	setWorlds();
+	
+	if(typeof getUrlVars()["dataset"] !== 'undefined'){ 
+		setFactory(getUrlVars()["dataset"],getUrlVars()["cluster"]);
+	}
+
+	
+	
+	animate();
+
+	
+});
+
+
+
+
+</script>
+
+
+
+</body>
+
+
