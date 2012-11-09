@@ -26,7 +26,12 @@ function getClusterAsText(readFile,datasetId) {
 		addClusterUI(datasetId,datasetNum,json);
 	}
 	catch(e) {
+		if(e.message == "ParticleSystem error") {
+			consoleMess("Error while loading data :"+e.message);
+		}
+		else {
 			jsonError(e.message);
+		}
 	}
 
 

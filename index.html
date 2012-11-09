@@ -430,7 +430,8 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 									consoleMess("Error, the information layer contains 0s or negative values");
 								}
 								else {
-									consoleMess("Error, the information layer does not define the class of all points");
+									consoleMess("Error, the information layer could not be read properly. Check :"
+									+"<ul><li> that you define a class for every point in the dataset</li><li>that the file is <a href=\"https://github.com/jibooo/bioWeb3D/wiki/Getting-started\" target='_blank'>well formated</a></li></ul>");
 								}
 								throw "bad info layer error";
 							}
