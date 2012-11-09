@@ -26,12 +26,7 @@ function getClusterAsText(readFile,datasetId) {
 		addClusterUI(datasetId,datasetNum,json);
 	}
 	catch(e) {
-		if(e.message == "ParticleSystem error") {
-			consoleMess("Error while loading data, please check that your information layer defines a class for all the points");
-		}
-		else {
 			jsonError(e.message);
-		}
 	}
 
 
