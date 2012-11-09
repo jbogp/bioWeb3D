@@ -284,7 +284,7 @@
 
 	//Json parsin error handle
 	function jsonError(e) {
-		consoleMess("Error ("+e+") while reading JSON, please check the file format <br/><a href='https://github.com/jibooo/bio3D/wiki/Getting-started' target='_blank'>more info on formats</a>");
+		consoleMess("Error ("+e+") while reading JSON, please check the file format <br/><a href='https://github.com/jibooo/bioWeb3D/wiki/Getting-started' target='_blank'>more info on formats</a>");
 	}
 
  
