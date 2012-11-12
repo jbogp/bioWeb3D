@@ -290,19 +290,21 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 				//deleting ParticuleSystem
 				for( var i=0; i<this.datasets[""+numDataset+""][0].length ; i++ ) {
 					this.scene.remove(this.datasets[""+numDataset+""][0][i]);
-					this.datasets[""+numDataset+""][0][i].traverse( function ( object ) {
-						renderer.deallocateObject( object );
-						object.geometry.deallocate();
-						object.material.deallocate();
-						object.deallocate();
-					} );
+					if(typeof this.datasets[""+numDataset+""][0][i] !== 'undefined') {
+						this.datasets[""+numDataset+""][0][i].traverse( function ( object ) {
+							renderer.deallocateObject( object );
+							object.geometry.deallocate();
+							object.material.deallocate();
+							object.deallocate();
+						} );
+					}
 				}
 				delete this.datasets[""+numDataset+""];
 				//Removing numDataSet
 				this.numDataSet--;
 			}
 			catch(e) {
-				console.log("Deleting non-existing dataset... Just moving on with loading");
+				console.log("Deleting non-existing dataset... Just moving on with loading: "+e.message);
 			}
 		}
 
