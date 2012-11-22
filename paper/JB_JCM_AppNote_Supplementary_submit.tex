@@ -62,7 +62,7 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 
 \subsection{Information layer files}
 
-The {\it{Information layer}} file contains information about the points described in the Dataset file. The information entered in this file has to be inputted in the same order as the points defined in the Dataset file. Multiple information layers can be defined in the same file as follows:
+The {\it{Information layer}} file contains information about the points described in the Dataset file. The information in this file has to be present in the same order as the points defined in the Dataset file. Multiple information layers can be defined in the same file as follows:
 \begin{itemize}
 \item{a name}
 \item{a number of categories called numClass}
@@ -151,7 +151,7 @@ The result file named ``example.csv.json" will contain :
 \end{lstlisting}
 
 \subsection{CSV to information layer file}
-To use the ``csv\_to\_information\_layer.pl" converter, each column of the CSV file should contain one information layer. The first element of each column will be the name of the information layer, and the rest of the column represents in which class each point belongs. The separation character between columns must be a ``tabulation". for example :
+To use the ``csv\_to\_information\_layer.pl" converter, each column of the CSV file should contain one information layer. The first element of each column will be the name of the information layer, and the rest of the column represents in which class each point belongs. The separation character between columns must be a ``tabulation", for example :
 \begin{lstlisting}
 clustering_algo_1	clustering_algo_2
 1	1

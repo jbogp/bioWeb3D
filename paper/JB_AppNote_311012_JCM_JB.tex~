@@ -28,7 +28,7 @@ http://www.ebi.ac.uk/$\sim$jbpettit/bioWeb3D \\ https://github.com/jibooo/bioWeb
 
 \section{Introduction}
 
-Visualisation is a key feature in the analysis of large biological datasets, especially when analysing organized structures with distinct sub-clusters \citep{Rubel10}. This is particularly important when analysing 3-Dimensional (3D) datasets, which is becoming more and more common. While various visualisation tools have been developed, they have typically been available via a locally installed piece of software such as Arena3D \citep{Pavlopoulos08},  3D Genome Tuner \citep{Wang09}, the Allen Brain Atlas \citep{Lein07} or Cytoscape \citep{Shannon03}. Other 3D visualisation tools have been built online and are accessible through the browser directly, such as AstexViewer \citep{Hartshorn02}, which is utilised by the Protein Databank Europe via a Java Applet. More recently, visualisation tools developed using HTML5/WebGL capabilities have been described, although they have focused on very specific applications, such as analysing radiology data  \citep{Dinesh12}. However, no tool has allowed biologists to view their own 3D data directly online in an easy, fast, secure and interactive way. Using webGL and the JavaScript 3D library Three.js, bioWeb3D aims to be a simple, generic, tool for visualising such data.
+Visualisation is a key feature in the analysis of large biological datasets, especially when analysing organized structures with distinct sub-clusters \citep{Rubel10}. This is particularly important when analysing 3-Dimensional (3D) datasets, which is becoming more and more common. While various visualisation tools have been developed, they have typically been available via a locally installed piece of software such as BioLayout Express$^{3D}$\citep{Freeman07}, Arena3D \citep{Pavlopoulos08},  3D Genome Tuner \citep{Wang09}, the Allen Brain Atlas \citep{Lein07} or Cytoscape \citep{Shannon03}. Other 3D visualisation tools have been built online and are accessible through the browser directly, such as AstexViewer \citep{Hartshorn02}, which is utilised by the Protein Databank Europe via a Java Applet. More recently, visualisation tools developed using HTML5/WebGL capabilities have been described, although they have focused on very specific applications, such as analysing radiology data  \citep{Dinesh12}. However, no tool has allowed biologists to view their own 3D data directly online in an easy, fast, secure and interactive way. Using webGL and the JavaScript 3D library Three.js, bioWeb3D aims to be a simple, generic, tool for visualising such data.
 
 
 
@@ -43,7 +43,7 @@ The JSON format has been chosen because of its rigorous structure, which allows 
 The {\it{dataset}} file should have a root object called ``dataset" which contains: 
 \begin{itemize}
 \item{The ``name" property of the dataset (\textit{e.g.}, ``my dataset").}
-\item{The ``chain" parameter which has to be set to \textit{true} if the points should be linked, to \textit{false} otherwise (optional) the default value is \textit{false}).}
+\item{The ``chain" parameter which has to be set to \textit{true} if the points should be linked, to \textit{false} otherwise (optional) the default value is \textit{false}). The data will be considered sequential, each point linked to the next in the dataset.}
 \item{The ``points" property, which is a two dimensional array representing a list of (x,y,z) vectors that define the co-ordinates of the points.}
 \end{itemize}
 
@@ -92,6 +92,8 @@ The authors would like to acknowledge Samuel Croset, Tom Oldfield, Konrad Rudolp
 %\bibliography{Document}
 
 \begin{thebibliography}{}
+
+\bibitem[Freeman {\it et~al}., 2007]{Freeman07} Freeman T.C., Goldovsky L., Brosch M., van Dongen S., Mazière P., Grocock R.J., Freilich S., Thornton J., Enright A.J. (2007). Construction, visualisation, and clustering of transcription networks from microarray expression data. {\it{PLoS Comput Biol.}}, {\bf{3(10)}}:2032-42.
 
 \bibitem[Hartshorn, 2002]{Hartshorn02} Hartshorn M.J. (2002). AstexViewer: a visualisation aid for structure-based drug design. {\it{Journal of Computer-aided Molecule Design}} {\bf{16}}:871-881.
 

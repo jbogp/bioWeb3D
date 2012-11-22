@@ -1,87 +1,75 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2012.11.9)  9 NOV 2012 18:08
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2011.1.24)  22 NOV 2012 09:24
 entering extended mode
-**C:/Users/jbpettit/Desktop/bio3D/paper/JB_AppNote_311012_JCM_JB.tex
-(C:/Users/jbpettit/Desktop/bio3D/paper/JB_AppNote_311012_JCM_JB.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, afrikaans, ancientgreek, ar
-abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
-croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
-lician, german, german-x-2009-06-19, greek, gujarati, hindi, hungarian, iceland
-ic, indonesian, interlingua, irish, italian, kannada, kurmanji, lao, latin, lat
-vian, lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerm
-an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese, 
-romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
-sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
-senglishmax, welsh, loaded.
-(C:\Users\jbpettit\Desktop\bio3D\paper\bioinfo.cls
+ %&-line parsing enabled.
+**JB_JCM_AppNote_submit.tex
+(./JB_JCM_AppNote_submit.tex
+LaTeX2e <2005/12/01>
+Babel <v3.8h> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, arabic, basque, bulgarian, coptic, welsh, czech, slovak, german, ng
+erman, danish, esperanto, spanish, catalan, galician, estonian, farsi, finnish,
+ french, greek, monogreek, ancientgreek, croatian, hungarian, interlingua, ibyc
+us, indonesian, icelandic, italian, latin, mongolian, dutch, norsk, polish, por
+tuguese, pinyin, romanian, russian, slovenian, uppersorbian, serbian, swedish, 
+turkish, ukenglish, ukrainian, loaded.
+(./bioinfo.cls
 Document Class: bioinfo 2003/02/08 0.1
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
-Package: inputenc 2008/03/30 v1.1d Input encoding file
+(/usr/share/texmf/tex/latex/base/inputenc.sty
+Package: inputenc 2006/05/05 v1.1b Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
-)
-(C:\Users\jbpettit\Desktop\bio3D\paper\crop.sty
+) (./crop.sty
 Package: crop 2001/11/16 v1.6 cropmarks (mf)
 \CROP@width=\dimen102
 \CROP@height=\dimen103
 \CROP@index=\count79
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 2006/02/20 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+(/usr/share/texmf/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+(/usr/share/texmf/tex/latex/config/graphics.cfg
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 90.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
-Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
-)
+(/usr/share/texmf/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2007/01/08 v0.04d Graphics/color for pdfTeX
 \Gread@gobject=\count80
 ))
 \CROP@offset=\count81
 Package crop Info: Local config file crop.cfg used on input line 344.
-
-(C:\Users\jbpettit\Desktop\bio3D\paper\crop.cfg))
+ (./crop.cfg))
 Package crop Info: using pdf(la)tex graphics driver on input line 33.
 
-(C:\Users\jbpettit\Desktop\bio3D\paper\graphicx.sty
+(./graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+ (/usr/share/texmf/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks16
 )
 \Gin@req@height=\dimen104
 \Gin@req@width=\dimen105
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+(/usr/share/texmf/tex/latex/amsmath/amsmath.sty
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip41
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+(/usr/share/texmf/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+(/usr/share/texmf/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks17
 \ex@=\dimen106
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+(/usr/share/texmf/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen107
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+(/usr/share/texmf/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count82
@@ -121,34 +109,31 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
-)
-(C:\Users\jbpettit\Desktop\bio3D\paper\array.sty
+) (./array.sty
 Package: array 1998/05/13 v2.3m Tabular extension package (FMi)
 \col@sep=\dimen115
 \extrarowheight=\dimen116
 \NC@list=\toks22
 \extratabsurround=\skip44
 \backup@length=\skip45
-)
-(C:\Users\jbpettit\Desktop\bio3D\paper\color.sty
+) (./color.sty
 Package: color 1999/02/16 v1.0i Standard LaTeX Color (DPC)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\color.cfg"
+(/usr/share/texmf/tex/latex/config/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 125.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amssymb.sty"
-Package: amssymb 2009/06/22 v3.00
+(/usr/share/texmf/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2002/01/22 v2.2d
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.sty"
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+(/usr/share/texmf/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2001/10/25 v2.2f
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
-))
-(C:\Users\jbpettit\Desktop\bio3D\paper\flushend.sty
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 132.
+)) (./flushend.sty
 Package: flushend 1997/10/01
 \@aaa=\box28
 \@ccc=\box29
@@ -158,12 +143,11 @@ Package: flushend 1997/10/01
 \@extra@skip=\dimen117
 \@nd@page@rule=\dimen118
 )
-(C:\Users\jbpettit\Desktop\bio3D\paper\stfloats.sty
+(./stfloats.sty
 Package: stfloats 1999/10/22
 \@dblbotnum=\count94
 \c@dblbotnumber=\count95
-)
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\classes\amsthm.sty"
+) (/usr/share/texmf/tex/latex/amscls/amsthm.sty
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks24
 \thm@bodyfont=\toks25
@@ -174,13 +158,11 @@ Package: amsthm 2004/08/06 v2.20
 \thm@postskip=\skip47
 \thm@headsep=\skip48
 \dth@everypar=\toks29
-)
-(C:\Users\jbpettit\Desktop\bio3D\paper\chngpage.sty
+) (./chngpage.sty
 Package: chngpage 2001/01/31 v1.1b change page layout
 \c@cp@cnt=\count96
 \c@cp@tempcnt=\count97
-)
-(C:\Users\jbpettit\Desktop\bio3D\paper\times.sty
+) (./times.sty
 Package: times 2000/01/12 PSNFSS-v8.1 Times font as default roman (SPQR) 
 )
 \c@section=\count98
@@ -198,15 +180,15 @@ Package: times 2000/01/12 PSNFSS-v8.1 Times font as default roman (SPQR)
 \rotdimen=\dimen119
 \tempdime=\dimen120
 \temptbox=\box32
-
-(C:\Users\jbpettit\Desktop\bio3D\paper\natbib.sty
+ (./natbib.sty
 Package: natbib 2000/07/24 7.0a (PWD)
 \bibhang=\skip54
 \bibsep=\skip55
 LaTeX Info: Redefining \cite on input line 508.
 \c@NAT@ctr=\count105
-))
-(C:\Users\jbpettit\Desktop\bio3D\paper\JB_AppNote_311012_JCM_JB.aux)
+)) (./JB_JCM_AppNote_submit.aux)
+\openout1 = `JB_JCM_AppNote_submit.aux'.
+
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
@@ -221,24 +203,12 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
 LaTeX Font Info:    ... okay on input line 5.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 5.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+(/usr/share/texmf/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count106
-\scratchdimen=\dimen121
-\scratchbox=\box33
-\nofMPsegments=\count107
-\nofMParguments=\count108
-\everyMPshowfont=\toks30
-\MPscratchCnt=\count109
-\MPscratchDim=\dimen122
-\MPnumerator=\count110
-\everyMPtoPDFconversion=\toks31
-)
 LaTeX Font Info:    Try loading font information for OT1+phv on input line 16.
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\ot1phv.fd"
+
+(/usr/share/texmf/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
@@ -283,17 +253,35 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
 (Font)              size <6> substituted on input line 16.
 
+
+LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 16.
+
 LaTeX Font Info:    Try loading font information for U+msa on input line 16.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+(/usr/share/texmf/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
+
+LaTeX Font Warning: Font shape `U/msa/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 16.
+
+
+LaTeX Font Warning: Font shape `U/msa/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 16.
+
 LaTeX Font Info:    Try loading font information for U+msb on input line 16.
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+(/usr/share/texmf/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 )
-LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 16.
 
+LaTeX Font Warning: Font shape `U/msb/m/n' in size <13> not available
+(Font)              size <12> substituted on input line 16.
+
+
+LaTeX Font Warning: Font shape `U/msb/m/n' in size <6.5> not available
+(Font)              size <6> substituted on input line 16.
+
+LaTeX Font Info:    Calculating math sizes for size <9.09996> on input line 16.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.54997> not available
@@ -308,43 +296,87 @@ LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.54997> not available
 (Font)              size <5> substituted on input line 16.
 
 
+LaTeX Font Warning: Font shape `U/msa/m/n' in size <4.54997> not available
+(Font)              size <5> substituted on input line 16.
+
+
+LaTeX Font Warning: Font shape `U/msb/m/n' in size <4.54997> not available
+(Font)              size <5> substituted on input line 16.
+
+
 Underfull \hbox (badness 10000) detected at line 16
 []
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 20.
+
+Underfull \hbox (badness 1297) in paragraph at lines 20--22
+\OT1/phv/m/n/8 their data along with multiple layers of information. Using the
+ []
+
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
 (Font)              Font shape `OT1/phv/b/n' tried instead on input line 29.
+
+Underfull \hbox (badness 1681) in paragraph at lines 31--32
+\OT1/ptm/m/n/9 datasets, especially when analysing organized structures with
+ []
+
+
+Underfull \hbox (badness 1194) in paragraph at lines 31--32
+\OT1/ptm/m/n/9 distinct sub-clusters (Rubel \OT1/ptm/m/it/9 et al\OT1/ptm/m/n/9
+ ., 2010). This is particularly
+ []
+
+
+Underfull \hbox (badness 1975) in paragraph at lines 31--32
+\OT1/ptm/m/n/9 via a locally installed piece of software such as BioLayout
+ []
+
+
+Underfull \hbox (badness 1173) in paragraph at lines 50--52
+\OT1/ptm/m/n/9 ``information". Since one information file can define multiple
+ []
+
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 LaTeX Font Info:    Try loading font information for OMS+phv on input line 52.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\psnfss\omsphv.fd"
+(/usr/share/texmf/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 52.
  [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
-]
-<fig1.png, id=16, 729.47531pt x 447.92343pt>
+] <fig1.png, id=18, 729.47531pt x 447.92343pt>
 File: fig1.png Graphic file (type png)
- <use fig1.png>
-Package pdftex.def Info: fig1.png used on input line 61.
-(pdftex.def)             Requested size: 211.05266pt x 129.59802pt.
+
+<use fig1.png>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 62.
+
+Underfull \hbox (badness 2680) in paragraph at lines 74--75
+\OT1/ptm/m/n/9 As mentioned previously, web based 3D visualisation tools
+ []
+
+
+Underfull \hbox (badness 1082) in paragraph at lines 82--83
+\OT1/ptm/m/n/9 The authors would like to acknowledge Samuel Croset, Tom
+ []
+
+Missing character: There is no Ã in font ptmr7t!
+Missing character: There is no ¨ in font ptmr7t!
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 96.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 102.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 101.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 102.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 101.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -358,47 +390,27 @@ Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
  []
 
-[2 <C:/Users/jbpettit/Desktop/bio3D/paper/fig1.png>]
+[2 <./fig1.png (PNG copy)>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 96.22272pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 97.22272pt
+Extra height:10.0pt when 109.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 98.22272pt
+Extra height:10.0pt when 110.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 99.22272pt
+Extra height:0.0pt when 111.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 100.22272pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 101.22272pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 102.22272pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:0.0pt when 103.22272pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-(2)Left:103.22272pt Right:102.44545pt Output:103.22272pt
+(2)Left:111.72272pt Right:111.44545pt Output:111.72272pt
 - LAST -
 Extra skip:0.0pt
-Left:103.22272pt
-Right:102.44545pt
-Output:103.22272pt
+Left:111.72272pt
+Right:111.44545pt
+Output:111.72272pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -413,34 +425,33 @@ Overfull \vbox (1.0pt too high) has occurred while \output is active []
  [3
 
 ]
-(C:\Users\jbpettit\Desktop\bio3D\paper\JB_AppNote_311012_JCM_JB.aux)
+(./JB_JCM_AppNote_submit.aux)
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
  ) 
 Here is how much of TeX's memory you used:
- 2896 strings out of 494049
- 36018 string characters out of 3146056
- 98949 words of memory out of 3000000
- 6118 multiletter control sequences out of 15000+200000
- 49594 words of font info for 98 fonts, out of 3000000 for 9000
- 719 hyphenation exceptions out of 8191
- 35i,11n,26p,1308b,307s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program F
-iles (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy9.pfb><C:/Program Files (x86
-)/MiKTeX 2.9/fonts/type1/urw/helvetic/uhvb8a.pfb><C:/Program Files (x86)/MiKTeX
- 2.9/fonts/type1/urw/helvetic/uhvbo8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
-nts/type1/urw/helvetic/uhvr8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type
-1/urw/helvetic/uhvro8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/t
-imes/utmb8a.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmr8a
-.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on JB_AppNote_311012_JCM_JB.pdf (3 pages, 415658 bytes).
+ 2364 strings out of 256216
+ 26704 string characters out of 1917072
+ 85916 words of memory out of 1500000
+ 5589 multiletter control sequences out of 10000+200000
+ 47723 words of font info for 89 fonts, out of 1200000 for 2000
+ 649 hyphenation exceptions out of 8191
+ 35i,11n,26p,1311b,309s stack positions out of 5000i,500n,6000p,200000b,15000s
+{/usr/share/texmf/fonts/enc/dvips/base/8r.enc}</usr/share/texmf/fonts/type1/b
+luesky/cm/cmmi6.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmr6.pfb></usr/sha
+re/texmf/fonts/type1/bluesky/cm/cmsy6.pfb></usr/share/texmf/fonts/type1/bluesky
+/cm/cmsy7.pfb></usr/share/texmf/fonts/type1/bluesky/cm/cmsy8.pfb></usr/share/te
+xmf/fonts/type1/bluesky/cm/cmsy9.pfb></usr/share/texmf/fonts/type1/urw/helvetic
+/uhvb8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/
+texmf/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texmf/fonts/type1/urw/hel
+vetic/uhvro8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></usr/shar
+e/texmf/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf/fonts/type1/urw/time
+s/utmri8a.pfb>
+Output written on JB_JCM_AppNote_submit.pdf (3 pages, 395069 bytes).
 PDF statistics:
- 58 PDF objects out of 1000 (max. 8388607)
- 0 named destinations out of 1000 (max. 500000)
+ 66 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 131072)
  6 words of extra memory for PDF output out of 10000 (max. 10000000)
 
