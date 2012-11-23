@@ -379,6 +379,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		//Create Three.js particle system for new dataset
 		this.createParticuleSystem = function(cluster){
 			var error = false;
+			var pX,pY,pZ;
 			cluster = typeof cluster !== 'undefined' ? cluster : -1;
 			if(this.loaded) {
 				var geometry=new Array(),particles, particle,particleSystem=new Array();	
@@ -389,7 +390,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					//create DataSet geometry
 					geometry[0] = new THREE.Geometry();
 					for (var i = 0; i < this.centered.length; i++) {
-							var pX =  this.centered[i][0],
+							pX =  this.centered[i][0],
 							pY =  this.centered[i][1],
 							pZ =  this.centered[i][2],
 							particle = new THREE.Vector3(pX, pY, pZ);
