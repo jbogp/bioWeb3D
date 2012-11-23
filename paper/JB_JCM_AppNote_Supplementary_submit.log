@@ -1,4 +1,4 @@
-This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2011.1.24)  22 NOV 2012 09:24
+This is pdfTeXk, Version 3.141592-1.40.3 (Web2C 7.5.6) (format=pdflatex 2011.1.24)  22 NOV 2012 15:37
 entering extended mode
  %&-line parsing enabled.
 **JB_JCM_AppNote_Supplementary_submit.tex
@@ -219,131 +219,131 @@ Package: listings 2004/10/17 1.3b (Carsten Heinz)
 (./JB_JCM_AppNote_Supplementary_submit.aux)
 \openout1 = `JB_JCM_AppNote_Supplementary_submit.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 22.
+LaTeX Font Info:    ... okay on input line 22.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 22.
 
 (/usr/share/texmf/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
-LaTeX Font Info:    Try loading font information for OT1+phv on input line 32.
+LaTeX Font Info:    Try loading font information for OT1+phv on input line 33.
 
 (/usr/share/texmf/tex/latex/psnfss/ot1phv.fd
 File: ot1phv.fd 2001/06/04 scalable font definitions for OT1/phv.
 )
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <9> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 32.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 32.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <9> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 32.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 32.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <19> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 32.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/phv/m/it' in size <8> not available
-(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 32.
+(Font)              Font shape `OT1/phv/m/sl' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <9> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 32.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 33.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <16> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 32.
-LaTeX Font Info:    Calculating math sizes for size <13> on input line 32.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 33.
+LaTeX Font Info:    Calculating math sizes for size <13> on input line 33.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 32.
+(Font)              size <12> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 32.
+(Font)              size <6> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <13> not available
-(Font)              size <12> substituted on input line 32.
+(Font)              size <12> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <6.5> not available
-(Font)              size <6> substituted on input line 32.
+(Font)              size <6> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 32.
+(Font)              size <12> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 32.
+(Font)              size <6> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `OMX/cmex/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 32.
+(Font)              size <12> substituted on input line 33.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 32.
+LaTeX Font Info:    Try loading font information for U+msa on input line 33.
 (/usr/share/texmf/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2002/01/19 v2.2g AMS font definitions
 )
 
 LaTeX Font Warning: Font shape `U/msa/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 32.
+(Font)              size <12> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `U/msa/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 32.
+(Font)              size <6> substituted on input line 33.
 
-LaTeX Font Info:    Try loading font information for U+msb on input line 32.
+LaTeX Font Info:    Try loading font information for U+msb on input line 33.
 (/usr/share/texmf/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2002/01/19 v2.2g AMS font definitions
 )
 
 LaTeX Font Warning: Font shape `U/msb/m/n' in size <13> not available
-(Font)              size <12> substituted on input line 32.
+(Font)              size <12> substituted on input line 33.
 
 
 LaTeX Font Warning: Font shape `U/msb/m/n' in size <6.5> not available
-(Font)              size <6> substituted on input line 32.
+(Font)              size <6> substituted on input line 33.
 
 
-Underfull \hbox (badness 10000) detected at line 32
+Underfull \hbox (badness 10000) detected at line 33
 []
  []
 
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <10> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 33.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 34.
 
-Underfull \hbox (badness 1769) in paragraph at lines 36--37
+Underfull \hbox (badness 1769) in paragraph at lines 37--38
 \OT1/ptm/m/n/9 is created in the ``Data" panel of the application. One raw
  []
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 37.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 38.
 (/usr/share/texmf/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Font Info:    Try loading font information for OMS+phv on input line 112.
+LaTeX Font Info:    Try loading font information for OMS+phv on input line 113.
 
 
 (/usr/share/texmf/tex/latex/psnfss/omsphv.fd
 File: omsphv.fd 
 )
 LaTeX Font Info:    Font shape `OMS/phv/m/n' in size <7> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 112.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 113.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
 
 
 ]
-Overfull \hbox (45.13177pt too wide) in paragraph at lines 165--166
+Overfull \hbox (45.13177pt too wide) in paragraph at lines 166--167
 \OT1/ptm/m/n/9 For example if, the previous CSV file is named ``example[]inform
 ation[]layer.csv",
  []
@@ -352,7 +352,7 @@ ation[]layer.csv",
 File: Supp_fig1.png Graphic file (type png)
  <use Supp_fig1.png>
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 200.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 201.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -364,13 +364,13 @@ File: Supp_fig2.png Graphic file (type png)
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 209.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 210.
 LaTeX Font Info:    Font shape `OT1/phv/bx/n' in size <8> not available
-(Font)              Font shape `OT1/phv/b/n' tried instead on input line 210.
+(Font)              Font shape `OT1/phv/b/n' tried instead on input line 211.
 LaTeX Font Info:    Font shape `OT1/phv/bx/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/it' tried instead on input line 210.
+(Font)              Font shape `OT1/phv/b/it' tried instead on input line 211.
 LaTeX Font Info:    Font shape `OT1/phv/b/it' in size <8> not available
-(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 210.
+(Font)              Font shape `OT1/phv/b/sl' tried instead on input line 211.
 
 Overfull \hbox (261.0pt too wide) has occurred while \output is active
 [][] 
@@ -390,225 +390,193 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 233.34946pt
+Extra height:52.51544pt when 238.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 234.34946pt
+Extra height:52.51544pt when 239.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 235.34946pt
+Extra height:52.51544pt when 240.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 236.34946pt
+Extra height:52.51544pt when 241.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 237.34946pt
+Extra height:52.51544pt when 242.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 238.34946pt
+Extra height:52.51544pt when 243.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 239.34946pt
+Extra height:52.51544pt when 244.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 240.34946pt
+Extra height:52.51544pt when 245.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 241.34946pt
+Extra height:52.51544pt when 246.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 242.34946pt
+Extra height:52.51544pt when 247.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 243.34946pt
+Extra height:52.51544pt when 248.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 244.34946pt
+Extra height:52.51544pt when 249.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 245.34946pt
+Extra height:52.51544pt when 250.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 246.34946pt
+Extra height:52.51544pt when 251.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 247.34946pt
+Extra height:52.51544pt when 252.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+Extra height:21.51544pt when 253.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 248.34946pt
+Extra height:21.51544pt when 254.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+Extra height:21.51544pt when 255.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 249.34946pt
+Extra height:21.51544pt when 256.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+Extra height:21.51544pt when 257.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 250.34946pt
+Extra height:21.51544pt when 258.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+Extra height:21.51544pt when 259.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:52.51544pt when 251.34946pt
+Extra height:21.51544pt when 260.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:21.51544pt when 252.34946pt
+Extra height:21.51544pt when 261.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:21.51544pt when 253.34946pt
+Extra height:10.0pt when 262.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:21.51544pt when 254.34946pt
+Extra height:10.0pt when 263.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:21.51544pt when 255.34946pt
+Extra height:10.0pt when 264.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:21.51544pt when 256.34946pt
+Extra height:10.0pt when 265.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:21.51544pt when 257.34946pt
+Extra height:10.0pt when 266.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:21.51544pt when 258.34946pt
+Extra height:10.0pt when 267.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:21.51544pt when 259.34946pt
+Extra height:10.0pt when 268.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:21.51544pt when 260.34946pt
+Extra height:10.0pt when 269.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 261.34946pt
+Extra height:10.0pt when 270.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 262.34946pt
+Extra height:10.0pt when 271.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 263.34946pt
+Extra height:10.0pt when 272.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 264.34946pt
+Extra height:0.0pt when 273.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-Extra height:10.0pt when 265.34946pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 266.34946pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 267.34946pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 268.34946pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 269.34946pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 270.34946pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 271.34946pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:10.0pt when 272.34946pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-Extra height:0.0pt when 273.34946pt
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-(2)Left:273.34946pt Right:276.8454pt Output:273.34946pt
+(2)Left:273.19345pt Right:276.8454pt Output:273.19345pt
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -641,7 +609,7 @@ LaTeX Font Warning: Size substitutions with differences
 Here is how much of TeX's memory you used:
  3562 strings out of 256216
  44367 string characters out of 1917072
- 162223 words of memory out of 1500000
+ 162240 words of memory out of 1500000
  6768 multiletter control sequences out of 10000+200000
  45673 words of font info for 86 fonts, out of 1200000 for 2000
  649 hyphenation exceptions out of 8191
@@ -654,7 +622,7 @@ are/texmf/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf/fonts/type1/ur
 w/helvetic/uhvr8a.pfb></usr/share/texmf/fonts/type1/urw/helvetic/uhvro8a.pfb></
 usr/share/texmf/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf/fonts/type1/
 urw/times/utmr8a.pfb></usr/share/texmf/fonts/type1/urw/times/utmri8a.pfb>
-Output written on JB_JCM_AppNote_Supplementary_submit.pdf (3 pages, 419792 byte
+Output written on JB_JCM_AppNote_Supplementary_submit.pdf (3 pages, 420183 byte
 s).
 PDF statistics:
  59 PDF objects out of 1000 (max. 8388607)

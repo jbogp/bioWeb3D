@@ -17,11 +17,12 @@ escapeinside={\%*}{*)}          % if you want to add a comment within your code
 }
 \copyrightyear{2005}
 \pubyear{2005}
+\renewcommand{\figurename}{Supplementary figure}
 
 \begin{document}
 \firstpage{1}
 
-\title[Application Note]{Supplementary for bioWeb3D: an online webGL 3D data visualisation tool}
+\title[Application Note]{Supplementary Material for bioWeb3D: an online webGL 3D data visualisation tool}
 \author[Pettit \textit{et~al}]{Jean-Baptiste Pettit\,$^{*}$ and John C. Marioni$^{*}$}
 \address{EMBL-EBI, European Molecular Biology Laboratory - European Bioinformatics Institute, Cambridge, CB10 1SD, UK}
 
@@ -66,7 +67,7 @@ The {\it{Information layer}} file contains information about the points describe
 \begin{itemize}
 \item{a name}
 \item{a number of categories called numClass}
-\item{A list of labels for the classes (optional)}
+\item{a list of labels for the classes (optional)}
 \end{itemize}
 For example coming back to the 3 points defined previously, two information layers could correspond to: 
 \begin{itemize}
@@ -110,7 +111,7 @@ In this case the Information layer file would look like:
 \section{Converting CSV files to Json}
 Much data generated in the biological sciences is stored within CSV files. Converting CSV document to the JSON format used in this application is not always trivial. In order to facilitate this process, we provide scripts written in Perl to perform the conversion. We describe hereafter the CSV formats handled by the converters.
 \subsection{CSV to dataset file}
-To use the ``csv\_to\_dataset.pl" converter, the input CSV file must contain only the points coordinates. Each line represents a point and the three coordinates on each line must be separated by ``tabulation" characters. Example :
+To use the ``csv\_to\_dataset.pl" converter, the input CSV file must contain only the co-ordinates of each point. Each line represents a point and the three coordinates on each line must be separated by ``tabulation" characters. Example :
 \begin{lstlisting}
 0.5	100	-50.5
 200	10	0.0
@@ -194,13 +195,13 @@ The result file named ``example\_information\_layer.csv.json" will contain :
 Please note that at the moment it is not possible to use the ``labels" property with this converter. 
 \section{further examples}
 \subsection{Visualizing simultaneous worlds}
-You can choose to split the application screen in up to 4 different worlds in order to visualize and compare different information layers of the same dataset or different datasets (figure \ref{fig:01}).
+You can choose to split the application screen in up to 4 different worlds in order to visualize and compare different information layers of the same dataset or different datasets (Supplementary figure \ref{fig:01}).
 \begin{figure}[h!]%figure1
 \centerline{\includegraphics[totalheight=0.19\textheight]{Supp_fig1.png}}
 \caption{In this figure, the left-hand world shows two clusters (in blue and green) in the brain of the marine annelid {\it Platynereis dumerilii} and the right-hand world shows the expression data for the gene C-Opsin (in red) in the same dataset. Data for this figure was taken from \citep{Tomer10}.}\label{fig:01}
 \end{figure}
 \subsection{Visualizing sequential information}
-If the ``chain" property in the dataset file is set to ``true", the point will be linked together in the 3D visualization (figure \ref{fig:02}).
+If the ``chain" property in the dataset file is set to ``true", the points will be linked together in the 3D visualization (Supplementary figure \ref{fig:02}).
 \begin{figure}[h!]%figure1
 \centerline{\includegraphics[totalheight=0.2\textheight]{Supp_fig2.png}}
 \caption{An example of a sequential dataset where the points are linked together. Here we present the 3D structure of the main carbon chain of a bacterial pentameric ligand-gated ion channel. In red we show the carbon atoms which are part of an $\alpha$-helix secondary structure, in green we show the atoms which are part of a $\beta$-sheet secondary structure. Data for this figure was taken from the Protein Data Bank in Europe website}\label{fig:02}
