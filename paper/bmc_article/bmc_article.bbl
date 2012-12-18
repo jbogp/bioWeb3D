@@ -1,0 +1,34 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{[#1]}
+\providecommand{\urlprefix}{}
+
+\bibitem{freeman07}
+Freeman T~C BMvDSMPGRFSTJEA Goldovsky~L: \textbf{Construction, visualisation,
+  and clustering of transcription networks from microarray expression data.}
+  \emph{PLoS Comput Biol.} 2007, \textbf{3(10)}:2032--42.
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>Construction, visualisation, and clustering of transcription
+  networks from microarray expression data.</p></title>
+  <aug>
+    <au><snm>Freeman T C.</snm><fnm>BMvDSMPGRFSTJEA</fnm></au>
+  </aug>
+  <source>PLoS Comput Biol.</source>
+  <pubdate>2007</pubdate>
+  <volume>3(10)</volume>
+  <fpage>2032</fpage>
+  <lpage>42</lpage>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment

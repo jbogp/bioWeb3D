@@ -1,0 +1,48 @@
+% bmc_article.bib
+% 
+%  An example of bibtex entries.
+%  Entries taken from BMC instructions for authors page.
+
+
+@article{blank,
+	author  = {}, 
+	title   = {},
+	journal = {}, 
+	year  = {},
+	  month = {}, 
+	  volume= {}, 
+	  number= {}, 
+	  pages = {},
+	  note  = {} 
+}
+
+@article{freeman07,
+	author  = {Freeman T.C., Goldovsky L., Brosch M., van Dongen S., Mazière P., Grocock R.J., Freilich S., Thornton J., Enright A.J.}, 
+	title   = {Construction, visualisation, and clustering of transcription networks from microarray expression data.},
+	journal = {PLoS Comput Biol.}, 
+	year  = {2007},
+	  volume= {3(10)}, 
+	  pages = {2032-42},
+}	
+
+% Article within a journal
+@ARTICLE{koon,
+	author  = {Koonin, E V and Altschul, S F and P Bork}, 
+	title   = {BRCA1 protein products: functional motifs}, 
+	journal = {Nat Genet}, 
+	year    = {1996},
+	volume  = {13}, 
+	pages   = {266-267}
+}	
+
+
+
+%%%%%%%%
+% Webpage Link / URL
+%
+@webpage{mouse,
+	title  = {The Mouse Tumor Biology Database},
+	url = {http://tumor.informatics.jax.org/cancer_links.html}
+}
+
+
