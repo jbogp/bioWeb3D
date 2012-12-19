@@ -16,14 +16,91 @@
 	  note  = {} 
 }
 
-@article{freeman07,
-	author  = {Freeman T.C., Goldovsky L., Brosch M., van Dongen S., Mazière P., Grocock R.J., Freilich S., Thornton J., Enright A.J.}, 
-	title   = {Construction, visualisation, and clustering of transcription networks from microarray expression data.},
-	journal = {PLoS Comput Biol.}, 
-	year  = {2007},
-	  volume= {3(10)}, 
-	  pages = {2032-42},
-}	
+@article{Freeman07,
+  added-at = {2012-03-07T00:00:00.000+0100},
+  author = {Freeman, Tom C. and Goldovsky, Leon and Brosch, Markus and van Dongen, Stijn and Mazière, Pierre and Grocock, Russell J. and Freilich, Shiri and Thornton, Janet and Enright, Anton J.},
+  biburl = {http://www.bibsonomy.org/bibtex/229bb7f64c6751b54334b6a5c410e068f/dblp},
+  ee = {http://dx.doi.org/10.1371/journal.pcbi.0030206},
+  interhash = {9bd1b8edb6acc21004d0edbc225c927b},
+  intrahash = {29bb7f64c6751b54334b6a5c410e068f},
+  journal = {PLoS Computational Biology},
+  keywords = {dblp},
+  number = 10,
+  timestamp = {2012-03-07T00:00:00.000+0100},
+  title = {Construction, Visualisation, and Clustering of Transcription Networks from Microarray Expression Data.},
+  url = {http://dblp.uni-trier.de/db/journals/ploscb/ploscb3.html#FreemanGBDMGFTE07},
+  volume = 3,
+  year = 2007
+}
+
+
+@Article{Hartshorn02,
+   Author="Hartshorn, M. J. ",
+   Title="{{A}stex{V}iewer: a visualisation aid for structure-based drug design}",
+   Journal="J. Comput. Aided Mol. Des.",
+   Year="2002",
+   Volume="16",
+   Number="12",
+   Pages="871--881",
+   Month="Dec"
+}
+
+@article{Dinesh12,
+	author = {Dinesh B. Kulkarni and Mahesh M. Doijade and Chetan S. Devrukhkar and Ganesh R. Zilpe and Rajesh R. Surana},
+	title = {Article: NetraRIS - a Web based DICOM Viewer},
+	journal = {International Journal of Computer Applications},
+	year = {2012},
+	volume = {48},
+	number = {24},
+	pages = {40-44},
+	month = {June},
+	note = {Published by Foundation of Computer Science, New York, USA}
+}
+
+
+@Article{Lein12,
+   Author="Lein, E. S.  and Hawrylycz, M. J.  and Ao, N.  and Ayres, M.  and Bensinger, A.  and Bernard, A.  and Boe, A. F.  and Boguski, M. S.  and Brockway, K. S.  and Byrnes, E. J.  and Chen, L.  and Chen, L.  and Chen, T. M.  and Chin, M. C.  and Chong, J.  and Crook, B. E.  and Czaplinska, A.  and Dang, C. N.  and Datta, S.  and Dee, N. R.  and Desaki, A. L.  and Desta, T.  and Diep, E.  and Dolbeare, T. A.  and Donelan, M. J.  and Dong, H. W.  and Dougherty, J. G.  and Duncan, B. J.  and Ebbert, A. J.  and Eichele, G.  and Estin, L. K.  and Faber, C.  and Facer, B. A.  and Fields, R.  and Fischer, S. R.  and Fliss, T. P.  and Frensley, C.  and Gates, S. N.  and Glattfelder, K. J.  and Halverson, K. R.  and Hart, M. R.  and Hohmann, J. G.  and Howell, M. P.  and Jeung, D. P.  and Johnson, R. A.  and Karr, P. T.  and Kawal, R.  and Kidney, J. M.  and Knapik, R. H.  and Kuan, C. L.  and Lake, J. H.  and Laramee, A. R.  and Larsen, K. D.  and Lau, C.  and Lemon, T. A.  and Liang, A. J.  and Liu, Y.  and Luong, L. T.  and Michaels, J.  and Morgan, J. J.  and Morgan, R. J.  and Mortrud, M. T.  and Mosqueda, N. F.  and Ng, L. L.  and Ng, R.  and Orta, G. J.  and Overly, C. C.  and Pak, T. H.  and Parry, S. E.  and Pathak, S. D.  and Pearson, O. C.  and Puchalski, R. B.  and Riley, Z. L.  and Rockett, H. R.  and Rowland, S. A.  and Royall, J. J.  and Ruiz, M. J.  and Sarno, N. R.  and Schaffnit, K.  and Shapovalova, N. V.  and Sivisay, T.  and Slaughterbeck, C. R.  and Smith, S. C.  and Smith, K. A.  and Smith, B. I.  and Sodt, A. J.  and Stewart, N. N.  and Stumpf, K. R.  and Sunkin, S. M.  and Sutram, M.  and Tam, A.  and Teemer, C. D.  and Thaller, C.  and Thompson, C. L.  and Varnam, L. R.  and Visel, A.  and Whitlock, R. M.  and Wohnoutka, P. E.  and Wolkey, C. K.  and Wong, V. Y.  and Wood, M.  and Yaylaoglu, M. B.  and Young, R. C.  and Youngstrom, B. L.  and Yuan, X. F.  and Zhang, B.  and Zwingman, T. A.  and Jones, A. R. ",
+   Title="{{G}enome-wide atlas of gene expression in the adult mouse brain}",
+   Journal="Nature",
+   Year="2007",
+   Volume="445",
+   Number="7124",
+   Pages="168--176",
+   Month="Jan"
+}
+
+
+% 19040715 
+@Article{Pavlopoulos08,
+   Author="Pavlopoulos, G. A.  and O'Donoghue, S. I.  and Satagopam, V. P.  and Soldatos, T. G.  and Pafilis, E.  and Schneider, R. ",
+   Title="{{A}rena3{D}: visualization of biological networks in 3{D}}",
+   Journal="BMC Syst Biol",
+   Year="2008",
+   Volume="2",
+   Pages="104"
+}
+
+@Article{Rubel10,
+   Author="Rubel, O.  and Weber, G. H.  and Huang, M. Y.  and Bethel, E. W.  and Biggin, M. D.  and Fowlkes, C. C.  and Luengo Hendriks, C. L.  and Keranen, S. V.  and Eisen, M. B.  and Knowles, D. W.  and Malik, J.  and Hagen, H.  and Hamann, B. ",
+   Title="{{I}ntegrating data clustering and visualization for the analysis of 3{D} gene expression data}",
+   Journal="IEEE/ACM Trans Comput Biol Bioinform",
+   Year="2010",
+   Volume="7",
+   Number="1",
+   Pages="64--79"
+}
+
+@article{Tomer10, title={Profiling by image registration reveals common origin of annelid mushroom bodies and vertebrate pallium.}, volume={142}, url={http://dx.doi.org/10.1016/j.cell.2010.07.043}, number={5}, journal={Cell}, publisher={Elsevier Ltd}, author={Tomer, Raju and Denes, Alexandru S and Tessmar-Raible, Kristin and Arendt, Detlev}, year={2010}, pages={800--809}}
+
+@article{Shannon03, title={Cytoscape: a software environment for integrated models of biomolecular interaction networks.}, volume={13}, url={http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=403769&tool=pmcentrez&rendertype=abstract}, number={11}, journal={Genome Research}, publisher={Cold Spring Harbor Lab}, author={Shannon, Paul and Markiel, Andrew and Ozier, Owen and Baliga, Nitin S and Wang, Jonathan T and Ramage, Daniel and Amin, Nada and Schwikowski, Benno and Ideker, Trey}, year={2003}, pages={2498--504}}
+
+
+
+
+
+
+
+
 
 % Article within a journal
 @ARTICLE{koon,
