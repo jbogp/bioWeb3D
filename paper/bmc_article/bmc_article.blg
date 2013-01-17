@@ -3,44 +3,44 @@ The top-level auxiliary file: bmc_article.aux
 The style file: bmc_article.bst
 Reallocated wiz_functions (elt_size=4) to 6000 items from 472446405560.
 Database file #1: bmc_article.bib
-You've used 1 entry,
+You've used 10 entries,
             3603 wiz_defined-function locations,
-            698 strings with 5435 characters,
-and the built_in function-call counts, 3223 in all, are:
-= -- 288
-> -- 28
-< -- 10
-+ -- 30
-- -- 9
-* -- 395
-:= -- 533
-add.period$ -- 2
-call.type$ -- 1
-change.case$ -- 9
+            784 strings with 9525 characters,
+and the built_in function-call counts, 40561 in all, are:
+= -- 3549
+> -- 487
+< -- 169
++ -- 507
+- -- 159
+* -- 5371
+:= -- 6395
+add.period$ -- 21
+call.type$ -- 10
+change.case$ -- 162
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 223
-empty$ -- 250
-format.name$ -- 37
-if$ -- 620
+cite$ -- 10
+duplicate$ -- 3173
+empty$ -- 3028
+format.name$ -- 644
+if$ -- 7740
 int.to.chr$ -- 0
-int.to.str$ -- 2
-missing$ -- 63
-newline$ -- 39
-num.names$ -- 2
-pop$ -- 39
+int.to.str$ -- 20
+missing$ -- 848
+newline$ -- 331
+num.names$ -- 20
+pop$ -- 437
 preamble$ -- 1
 purify$ -- 0
-quote$ -- 2
-skip$ -- 17
+quote$ -- 20
+skip$ -- 154
 stack$ -- 0
-substring$ -- 496
-swap$ -- 44
-text.length$ -- 1
+substring$ -- 5557
+swap$ -- 626
+text.length$ -- 19
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 13
-width$ -- 2
-write$ -- 66
+while$ -- 233
+width$ -- 12
+write$ -- 858

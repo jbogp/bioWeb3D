@@ -94,6 +94,10 @@
 
 @article{Shannon03, title={Cytoscape: a software environment for integrated models of biomolecular interaction networks.}, volume={13}, url={http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=403769&tool=pmcentrez&rendertype=abstract}, number={11}, journal={Genome Research}, publisher={Cold Spring Harbor Lab}, author={Shannon, Paul and Markiel, Andrew and Ozier, Owen and Baliga, Nitin S and Wang, Jonathan T and Ramage, Daniel and Amin, Nada and Schwikowski, Benno and Ideker, Trey}, year={2003}, pages={2498--504}}
 
+@article{Wang09, title={3D Genome Tuner: Compare Multiple Circular Genomes in a 3D Context}, volume={7}, url={http://linkinghub.elsevier.com/retrieve/pii/S1672022908600431}, number={3}, journal={Genomics Proteomics Bioinformatics}, publisher={Beijing Genomics Institute}, author={Wang, Qi and Liang, Qun and Zhang, Xiuqing}, year={2009}, pages={143--146}}
+
+@article{Wilde07, title={Putting Things to REST}, volume={15}, url={http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.96.7936}, number={November}, journal={Transport}, publisher={Citeseer}, author={Wilde, Erik}, year={2007}, pages={567--583}}
+
 
 
 
