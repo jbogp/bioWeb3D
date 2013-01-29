@@ -45,7 +45,7 @@ function addClusterUI (datasetId,datasetNum,json) {
 	try {
 		//Creating World buttons		
 		for(var j=0;j<worlds.length;j++) {
-			select = false
+			//select = false
 
 			//iterating on clustering sets
 			for(var i=0;i<json.length;i++) {
@@ -53,7 +53,7 @@ function addClusterUI (datasetId,datasetNum,json) {
 				clustNum = datasets[datasetId].addClusterSet(new ClusterSet(json[i]));
 				//Loading first cluster set in visible worlds showing raw data of this dataset or if world is visible and empty
 				if(i == 0) {
-					if(worlds[j].isRaw(datasetId) || (worlds[j].visible && worlds[j].empty())) {
+					if((worlds[j].isRaw(datasetId) || worlds[j].empty()) && worlds[j].visible && select == false) {
 						//attaching clusterset to world
 						worlds[j].attachDataSet(datasets[datasetId],datasetId,clustNum-1);
 						select = true;

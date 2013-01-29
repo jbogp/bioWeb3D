@@ -2,6 +2,7 @@ function startRead() {
   // obtain input element through DOM 
   
   var file = document.getElementById('newDataSet').files[0];
+alert(document.getElementById('newDataSet').files[0].name);
   if(file){
     consoleMess("Loading dataset...");
     getAsText(file);
@@ -11,7 +12,6 @@ function startRead() {
 function getAsText(readFile) {
         
   var reader = new FileReader();
-  
   // Read file into memory as UTF-8      
   reader.readAsText(readFile);
   

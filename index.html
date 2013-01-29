@@ -596,19 +596,38 @@ $(function(){
 	
 	//Initializing UI
 	initUI();
+
+
+	//How many worlds
+	if(typeof getUrlVars()["numW"] !== 'undefined'){ 
+		numWorlds = getUrlVars()["numW"];
+		for(var i=1;i<=numWorlds;i++) {
+			$('#worldAccordion'+i+'').prop('checked',true);
+			$("#worldAccordion").buttonset();
+		}
+	}
+	else {
+		numWorlds = 1;	
+	}
 	
 	//Starting 4 world
-	worlds[0] = new World(1,(window.innerWidth), (window.innerHeight),0,0,true);
-	worlds[1] = new World(2,(window.innerWidth), (window.innerHeight),0,0,false);
-	worlds[2] = new World(3,(window.innerWidth), (window.innerHeight),0,0,false);
-	worlds[3] = new World(4,(window.innerWidth), (window.innerHeight),0,0,false);
+	worlds[0] = new World(1,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=1);
+	worlds[1] = new World(2,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=2);
+	worlds[2] = new World(3,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=3);
+	worlds[3] = new World(4,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=4);
+
+alert(numWorlds>=3)
 	
 	
-	numWorlds = 1;
+
 	setWorlds();
-	
+	var i=0;
 	if(typeof getUrlVars()["dataset"] !== 'undefined'){ 
-		setFactory(getUrlVars()["dataset"],getUrlVars()["cluster"]);
+		setFactory(getUrlVars()["dataset"]);
+		while(typeof getUrlVars()["cluster"+i] !== 'undefined'){ 
+			setTimeout('clusterSetFactory(getUrlVars()["cluster'+i+'"],1)',i*2000);
+			i++;
+		}
 	}
 
 	

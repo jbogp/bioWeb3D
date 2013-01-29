@@ -229,10 +229,6 @@ The {\it{information layer}} files must have a root element named  ``information
 Exact specifications and examples of the file formats can be found on the bioWeb3D gitHub repository wiki and in the supplementary materials. Since many biological results are in fact stored as CSV files we also provide easy to use Perl scripts that can quickly generate JSON files from CSV data. These scripts are also available from the GitHub repository.
 
 
-\begin{figure}[h!]%figure1
-
-\end{figure}
-
 \subsection{User interface}
 The user can interact with the visualisation via an interface on the right of the screen (Figure 1), which contains three panels. In the ``dataset" panel, the user can choose the {\it{datasets}} and {\it{information layer}} files that should be represented in each world. This panel also allows the user to show/hide specific classes of the selected information layers. Each dataset file entered will create a new sub-panel where the user can input {\it{information layer}} files for each world. Selecting an {\it{information layer}} in the drop-down list will display the data in the current world and generate a list of classes that the user can modify regarding their visibility and colour. The ``View" panel enables the user to choose which of the worlds are shown on the screen, ranging from 1 to 4 simultaneous worlds (Supplementary Fig 1). Finally, the ``Settings" panel provides the user with a number of options that affect all the worlds and all datasets, such as allowing the axes scales to be modified.
 
@@ -249,7 +245,7 @@ The main current limitation of a webGL based application is the machine and brow
 
 \section{Conclusions}
 
-\section{Availabilty and requirements}
+\section{Availability and requirements}
 
 
 

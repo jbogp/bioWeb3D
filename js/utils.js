@@ -245,7 +245,7 @@
 
 
 	//Load Data From Json File
-	function setFactory(jsonFile,cluster) {
+	function setFactory(jsonFile) {
 		$.ajax({
 		  url: jsonFile,
 		  dataType: 'json',
@@ -253,7 +253,6 @@
 			  //Reading Json and creating Object
 			  var index = datasets.push(new DataSet(data.dataset));
 			  addDataSetUI(index);
-			  clusterSetFactory(cluster,index);
 		},
 		 error: function (xhr, ajaxOptions, thrownError){
 			jsonError(xhr.statusText);
