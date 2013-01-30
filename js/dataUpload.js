@@ -55,6 +55,7 @@ function addDataSetUI(index) {
 		$("#worldSelectData"+index+"").append("<h2><a href=\"#\">world "+i+"</a></h2><div id='worldSelectData"+index+"-"+i+"'><select id='worldButtonData"+index+""+i+"'><option class='noaction'>Select Data</option><option class='raw'>Raw Data</option></select></div>");
 		$("#worldButtonData"+index+""+i+"").bind("change",{world:i,dataset:index},selectDataHandler);
 		if(worlds[i-1].visible && worlds[i-1].empty()) {
+			console.log("added DataSet "+index+" to world "+i);
 			//Viewing dataset in visible worlds
 			worlds[i-1].attachDataSet(datasets[index-1],index-1);
 			//selecting correct option in the dropdown list

@@ -263,7 +263,6 @@
 	
 	//Load cluster From Json File
 	function clusterSetFactory(jsonFile,index) {
-	alert(jsonFile);
 		$.ajax({
 		  url: jsonFile,
 		  dataType: 'json',

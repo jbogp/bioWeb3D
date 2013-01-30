@@ -42,42 +42,49 @@ function getClusterAsText(readFile,datasetId) {
 
 function addClusterUI (datasetId,datasetNum,json) {
 	var select = false;
+	var thisOneSelected = false;
 	try {
-		//Creating World buttons		
-		for(var j=0;j<worlds.length;j++) {
-			//select = false
 
-			//iterating on clustering sets
-			for(var i=0;i<json.length;i++) {
+		//iterating on clustering sets
+		for(var i=0;i<json.length;i++) {
 
-				clustNum = datasets[datasetId].addClusterSet(new ClusterSet(json[i]));
+			clustNum = datasets[datasetId].addClusterSet(new ClusterSet(json[i]));
+			select = false;
+
+			//Creating World buttons		
+			for(var j=0;j<worlds.length;j++) {
+				thisOneSelected = false;
+
+
 				//Loading first cluster set in visible worlds showing raw data of this dataset or if world is visible and empty
 				if(i == 0) {
-					if((worlds[j].isRaw(datasetId) || worlds[j].empty()) && worlds[j].visible && select == false) {
+					if((worlds[j].isRaw(datasetId) || worlds[j].empty()) && worlds[j].visible && !select) {
+						console.log("added information layer "+clustNum+" to world "+j);
 						//attaching clusterset to world
 						worlds[j].attachDataSet(datasets[datasetId],datasetId,clustNum-1);
 						select = true;
+						thisOneSelected = true;
 					}
 				}
+		
 			
-				
 				$("#worldButtonData"+datasetNum+""+(j+1)+"").append("<option class='clust' value='"+clustNum+"'>"+datasets[datasetId].clusterSets[clustNum-1].name+"</option>");
 
-				
+			
 				//Creating the clusters div
 				$("#worldSelectData"+datasetNum+"-"+(j+1)+"").append("<div id='clusters"+datasetNum+"-"+(j+1)+"'></div>");
 				//updating dropdown menu if creation went well
 				if(i == 0) {
-					if(select) {
+					if(thisOneSelected) {
 						//Selecting correct option in dropdownlist
 						$("#worldButtonData"+datasetNum+""+(j+1)+" option[value='"+clustNum+"']").prop('selected',true);
 						$("#worldButtonData"+datasetNum+""+(j+1)+"").change()
 					}				
 				}
 			}
+		}
 
 				
-		}
 		consoleMess("Loaded "+json.length+" cluster sets for dataset \""+datasets[datasetId].name+"\"");
 		$('#clustAccordion'+datasetNum+'').accordion({ header: "h3" , heightStyle: "content"});
 		$('#clustAccordion'+datasetNum+'').accordion( "refresh" );

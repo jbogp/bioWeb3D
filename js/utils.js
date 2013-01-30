@@ -79,7 +79,6 @@
 				consoleMess("You need at least one world");
 			}
 			else{
-				console.log("tesdt");
 				numWorlds = $(".checkWorld:checked").length;
 				worlds[$this.val()].toggle();
 				setWorlds();
