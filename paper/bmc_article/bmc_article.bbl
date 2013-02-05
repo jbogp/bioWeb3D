@@ -16,8 +16,7 @@ Freeman TC, Goldovsky L, Brosch M, van Dongen S, Mazière P, Grocock RJ,
   Freilich S, Thornton J, Enright AJ: \textbf{Construction, Visualisation, and
   Clustering of Transcription Networks from Microarray Expression Data.}
   \emph{PLoS Computational Biology} 2007, \textbf{3}(10),
-  \urlprefix\url{[http://dblp.uni-trier.de/db/journals/ploscb/ploscb3.html#Fre%
-emanGBDMGFTE07]}.
+  \urlprefix\url{[http://dblp.uni-trier.de/db/journals/ploscb/ploscb3.html#FreemanGBDMGFTE07]}.
 
 \bibitem{Pavlopoulos08}
 Pavlopoulos GA, O'Donoghue SI, Satagopam VP, Soldatos TG, Pafilis E, Schneider
@@ -28,8 +27,7 @@ Pavlopoulos GA, O'Donoghue SI, Satagopam VP, Soldatos TG, Pafilis E, Schneider
 Wang Q, Liang Q, Zhang X: \textbf{3D Genome Tuner: Compare Multiple Circular
   Genomes in a 3D Context}. \emph{Genomics Proteomics Bioinformatics} 2009,
   \textbf{7}(3):143--146,
-  \urlprefix\url{[http://linkinghub.elsevier.com/retrieve/pii/S167202290860043%
-1]}.
+  \urlprefix\url{[http://linkinghub.elsevier.com/retrieve/pii/S1672022908600431]}.
 
 \bibitem{Lein07}
 Lein ES, Hawrylycz MJ, Ao N, Ayres M, Bensinger A, Bernard A, Boe AF, Boguski
@@ -55,8 +53,7 @@ Shannon P, Markiel A, Ozier O, Baliga NS, Wang JT, Ramage D, Amin N,
   Schwikowski B, Ideker T: \textbf{Cytoscape: a software environment for
   integrated models of biomolecular interaction networks.} \emph{Genome
   Research} 2003, \textbf{13}(11):2498--504,
-  \urlprefix\url{[http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=40%
-3769&tool=pmcentrez&rendertype=abstract]}.
+  \urlprefix\url{[http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=403769&tool=pmcentrez&rendertype=abstract]}.
 
 \bibitem{Hartshorn02}
 Hartshorn MJ: \textbf{{{A}stex{V}iewer: a visualisation aid for structure-based
@@ -72,8 +69,26 @@ Kulkarni DB, Doijade MM, Devrukhkar CS, Zilpe GR, Surana RR: \textbf{Article:
 \bibitem{Wilde07}
 Wilde E: \textbf{Putting Things to REST}. \emph{Transport} 2007,
   \textbf{15}(November):567--583,
-  \urlprefix\url{[http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.96.7%
-936]}.
+  \urlprefix\url{[http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.96.7936]}.
+
+\bibitem{three}
+\textbf{Three.js - JavaScript 3D library}
+  \urlprefix\url{[http://mrdoob.github.com/three.js/]}.
+
+\bibitem{webgl}
+\textbf{WebGL 1.0 Specification}
+  \urlprefix\url{[https://www.khronos.org/registry/webgl/specs/1.0/]}.
+
+\bibitem{security}
+\textbf{United States Computer Emergency Readiness Team}
+  \urlprefix\url{[http://www.kb.cert.org/vuls/id/636312]}.
+
+\bibitem{github}
+\textbf{bioWeb3D on github} \urlprefix\url{[http://github.com/jbogp/bioWeb3D]}.
+
+\bibitem{bioWeb3D}
+\textbf{bioWeb3D online}
+  \urlprefix\url{[http://www.ebi.ac.uk/~jbpettit/bioWeb3D]}.
 
 \bibitem{Tomer10}
 Tomer R, Denes AS, Tessmar-Raible K, Arendt D: \textbf{Profiling by image
@@ -133,8 +148,7 @@ Tomer R, Denes AS, Tessmar-Raible K, Arendt D: \textbf{Profiling by image
   <pubdate>2007</pubdate>
   <volume>3</volume>
   <issue>10</issue>
-  <url>http://dblp.uni-trier.de/db/journals/ploscb/ploscb3.html#FreemanGBDMGFT%
-E07</url>
+  <url>http://dblp.uni-trier.de/db/journals/ploscb/ploscb3.html#FreemanGBDMGFTE07</url>
 </bibl>
 
 <bibl id="B3">
@@ -314,8 +328,7 @@ E07</url>
   <issue>11</issue>
   <fpage>2498</fpage>
   <lpage>-504</lpage>
-  <url>http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=403769&tool=p%
-mcentrez&rendertype=abstract</url>
+  <url>http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=403769&tool=pmcentrez&rendertype=abstract</url>
 </bibl>
 
 <bibl id="B7">
@@ -366,6 +379,31 @@ mcentrez&rendertype=abstract</url>
 </bibl>
 
 <bibl id="B10">
+  <title><p>Three.js - JavaScript 3D library</p></title>
+  <url>http://mrdoob.github.com/three.js/</url>
+</bibl>
+
+<bibl id="B11">
+  <title><p>WebGL 1.0 Specification</p></title>
+  <url>https://www.khronos.org/registry/webgl/specs/1.0/</url>
+</bibl>
+
+<bibl id="B12">
+  <title><p>United States Computer Emergency Readiness Team</p></title>
+  <url>http://www.kb.cert.org/vuls/id/636312</url>
+</bibl>
+
+<bibl id="B13">
+  <title><p>bioWeb3D on github</p></title>
+  <url>http://github.com/jbogp/bioWeb3D</url>
+</bibl>
+
+<bibl id="B14">
+  <title><p>bioWeb3D online</p></title>
+  <url>http://www.ebi.ac.uk/~jbpettit/bioWeb3D</url>
+</bibl>
+
+<bibl id="B15">
   <title><p>Profiling by image registration reveals common origin of annelid
   mushroom bodies and vertebrate pallium.</p></title>
   <aug>
