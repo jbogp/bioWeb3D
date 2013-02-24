@@ -79,7 +79,6 @@
 				consoleMess("You need at least one world");
 			}
 			else{
-				console.log("tesdt");
 				numWorlds = $(".checkWorld:checked").length;
 				worlds[$this.val()].toggle();
 				setWorlds();
@@ -246,18 +245,37 @@
 
 	//Load Data From Json File
 	function setFactory(jsonFile) {
-		$.ajax({
-		  url: jsonFile,
-		  dataType: 'json',
-		  success: function(data) {
-			  //Reading Json and creating Object
-			  var index = datasets.push(new DataSet(data.dataset));
-			  addDataSetUI(index);
-		},
-		 error: function (xhr, ajaxOptions, thrownError){
-			jsonError(xhr.statusText);
-		} 
-		});	
+		if(jsonFile.split('.').pop() == "json") { 
+			$.ajax({
+			  url: jsonFile,
+			  dataType: 'json',
+			  success: function(data) {
+				  //Reading Json and creating Object
+				  var index = datasets.push(new DataSet(data.dataset));
+				  addDataSetUI(index);
+			},
+			 error: function (xhr, ajaxOptions, thrownError){
+				jsonError(xhr.statusText);
+			} 
+			});	
+		}
+		else {
+			$.ajax({
+			  url: jsonFile,
+			  dataType: 'html',
+			  success: function(data) {
+				  //Reading csv and creating Object
+				  var points = new Object();
+				  data.points = $.csv.toArrays(data)
+				  var index = datasets.push(new DataSet(points));
+				  addDataSetUI(index);
+			},
+			 error: function (xhr, ajaxOptions, thrownError){
+				jsonError(xhr.statusText);
+			} 
+			});
+			
+		}
 	}
 	
 	
