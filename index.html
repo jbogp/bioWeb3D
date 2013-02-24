@@ -80,6 +80,7 @@
 <script src="build/Detector.js"></script>
 <script src="build/TrackballControls.js"></script>
 <script src="build/jscolor/jscolor.js"></script>
+<script src="build/jquery.csv-0.71.min.js"></script>
 
 
 
@@ -463,6 +464,12 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		//Setter for loaded points
 		this.setPoints = function(points) {
 			this.points = points;
+			//Making sure everything is numbers
+			for (var i = 0; i < this.points.length; i++) {
+				for(var j = 0; j < 3; j++) {
+					this.points[i][j] = Number(this.points[i][j]);
+				}
+			}
 			this.computeMeans();
 			this.center([1,1,1]);
 		}

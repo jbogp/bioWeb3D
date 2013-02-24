@@ -1,8 +1,7 @@
 function startRead() {  
   // obtain input element through DOM 
-  
+  var test=1;
   var file = document.getElementById('newDataSet').files[0];
-alert(document.getElementById('newDataSet').files[0].name);
   if(file){
     consoleMess("Loading dataset...");
     getAsText(file);
@@ -15,10 +14,20 @@ function getAsText(readFile) {
   // Read file into memory as UTF-8      
   reader.readAsText(readFile);
   
-  // Handle progress, success, and errors
-  reader.onprogress = updateProgress;
-  reader.onload = loaded;
-  reader.onerror = errorHandler;
+
+  //Lauching appropriate function depending on file type
+  if(readFile.name.split('.').pop() == "json") { 
+	  // Handle progress, success, and errors
+	  reader.onprogress = updateProgress;
+	  reader.onload = loadedJSON;
+	  reader.onerror = errorHandler;
+  }
+  else {
+	  // Handle progress, success, and errors
+	  reader.onprogress = updateProgress;
+	  reader.onload = loadedCSV;
+	  reader.onerror = errorHandler;
+  }
 }
 
 function updateProgress(evt) {
@@ -30,7 +39,7 @@ function updateProgress(evt) {
   }
 }
 
-function loaded(evt) {  
+function loadedJSON(evt) {  
   // Obtain the read file data    
   var fileString = evt.target.result;
   try {
@@ -45,6 +54,24 @@ function loaded(evt) {
  	}
       
 }
+
+function loadedCSV(evt) {  
+  // Obtain the read file data    
+  var fileString = evt.target.result;
+  try {
+	  //Reading Json and creating Object
+	  var data = new Object();
+	  data.points = $.csv.toArrays(fileString)
+	  var index = datasets.push(new DataSet(data));
+	  //Adding dataSet to UI
+	  addDataSetUI(index);
+	}
+  catch(e) {
+	  jsonError(e.message);
+ 	}
+      
+}
+
 
 function addDataSetUI(index) {
   //Adding dataset to the UI
