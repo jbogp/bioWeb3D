@@ -12,7 +12,6 @@ function getClusterAsText(readFile,datasetId) {
 
   var datasetNum = parseInt(datasetId)+1;
   var clustNum;
-  
   // Read file into memory as UTF-8      
   reader.readAsText(readFile);
   // Handle progress, success, and errors
@@ -20,10 +19,41 @@ function getClusterAsText(readFile,datasetId) {
   reader.onload = function (evt) {
 	// Obtain the read file data    
 	var fileString = evt.target.result;
+
 	try {
-		//Reading Json and creating Object
-		var json = eval('(' + fileString + ')').information;
-		addClusterUI(datasetId,datasetNum,json);
+		//Detecting json or CSV
+		if(readFile.name.split('.').pop() == "json") { 
+			//Reading Json and creating Object
+			var json = eval('(' + fileString + ')').information;
+			addClusterUI(datasetId,datasetNum,json);
+		}
+		else {
+			//Reading CSV and creating Object
+			var csv = new Object();
+			csv.information = new Array();
+			var information = $.csv.toArrays(fileString);
+
+			//Building structure
+			for(var j=0;j<information[0].length;j++) {
+				csv.information[j] = new Object();
+				csv.information[j].values = new Array();
+			}
+
+			for(var j=0;j<information[0].length;j++) {
+				var clustSeen = new Array(); //Seen classes to count them
+				for(var i=0;i<information.length;i++){
+					csv.information[j].values[i] = Number(information[i][j]);
+					//checking if element already seen
+					if(clustSeen.indexOf(Number(information[i][j])) <= -1) {
+						clustSeen.push(Number(information[i][j]));
+					}
+				}
+				csv.information[j].numClass = clustSeen.length;
+				csv.information[j].name = "Information set "+(j+1);
+
+			}
+			addClusterUI(datasetId,datasetNum,csv.information);			
+		}
 	}
 	catch(e) {
 		if(e.message == "ParticleSystem error") {

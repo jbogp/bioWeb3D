@@ -80,6 +80,7 @@
 <script src="build/Detector.js"></script>
 <script src="build/TrackballControls.js"></script>
 <script src="build/jscolor/jscolor.js"></script>
+<script src="build/jquery.csv-0.71.min.js"></script>
 
 
 
@@ -101,8 +102,8 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		<div class="session" style="position:absolute;left:0px;top:0px;;width:100%;height:30px;border:1px solid #000;background:#fff;padding-top:5px;opacity:0.6;filter:alpha(opacity=60);">
 			<div id="current" style="display:inline"><b>BioWeb3D-1.0</b></div>
 			<div style="float:right;display:inline;margin-right:25px;">
-				<a href='https://github.com/jibooo/bioWeb3D/wiki/Getting-started' target='_blank'>Getting started</a>&nbsp&nbsp&nbsp&nbsp
-				<a href='https://github.com/jibooo/bioWeb3D' target='_blank'>See project on Github</a>
+				<a href='https://github.com/jbogp/bioWeb3D/wiki/Getting-started' target='_blank'>Getting started</a>&nbsp&nbsp&nbsp&nbsp
+				<a href='https://github.com/jbogp/bioWeb3D' target='_blank'>See project on Github</a>
 			</div>
 		</div>
 		<div class="controls" style="position:absolute;right:0px;top:36px;overflow: auto;width:400px;border:1px solid #000;background:#000;opacity:0.6;filter:alpha(opacity=60);">
@@ -463,6 +464,12 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		//Setter for loaded points
 		this.setPoints = function(points) {
 			this.points = points;
+			//Making sure everything is numbers
+			for (var i = 0; i < this.points.length; i++) {
+				for(var j = 0; j < 3; j++) {
+					this.points[i][j] = Number(this.points[i][j]);
+				}
+			}
 			this.computeMeans();
 			this.center([1,1,1]);
 		}

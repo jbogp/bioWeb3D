@@ -245,18 +245,37 @@
 
 	//Load Data From Json File
 	function setFactory(jsonFile) {
-		$.ajax({
-		  url: jsonFile,
-		  dataType: 'json',
-		  success: function(data) {
-			  //Reading Json and creating Object
-			  var index = datasets.push(new DataSet(data.dataset));
-			  addDataSetUI(index);
-		},
-		 error: function (xhr, ajaxOptions, thrownError){
-			jsonError(xhr.statusText);
-		} 
-		});	
+		if(jsonFile.split('.').pop() == "json") { 
+			$.ajax({
+			  url: jsonFile,
+			  dataType: 'json',
+			  success: function(data) {
+				  //Reading Json and creating Object
+				  var index = datasets.push(new DataSet(data.dataset));
+				  addDataSetUI(index);
+			},
+			 error: function (xhr, ajaxOptions, thrownError){
+				jsonError(xhr.statusText);
+			} 
+			});	
+		}
+		else {
+			$.ajax({
+			  url: jsonFile,
+			  dataType: 'html',
+			  success: function(data) {
+				  //Reading csv and creating Object
+				  var coord = new Object();
+				  coord.points = $.csv.toArrays(data)
+				  var index = datasets.push(new DataSet(coord));
+				  addDataSetUI(index);
+			},
+			 error: function (xhr, ajaxOptions, thrownError){
+				jsonError(xhr.statusText);
+			} 
+			});
+			
+		}
 	}
 	
 	
