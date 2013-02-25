@@ -52,6 +52,22 @@
 \usepackage{cite} % Make references as [1-4], not [1,2,3,4]
 \usepackage{url}  % Formatting web addresses  
 \usepackage{ifthen}  % Conditional 
+\usepackage{color}
+\usepackage{listings}
+\lstset{ 
+basicstyle=\ttfamily,       % the size of the fonts that are used for the code
+                  % how far the line-numbers are from the code
+backgroundcolor=\color{white},  % choose the background color. You must add \usepackage{color}
+showspaces=false,               % show spaces adding particular underscores
+showstringspaces=false,         % underline spaces within strings
+showtabs=false,                 % show tabs within strings adding particular underscores
+frame=single,           % adds a frame around the code
+tabsize=2,          % sets default tabsize to 2 spaces
+captionpos=b,           % sets the caption-position to bottom
+breaklines=true,        % sets automatic line breaking
+breakatwhitespace=false,    % sets if automatic breaks should only happen at whitespace
+escapeinside={\%*}{*)}          % if you want to add a comment within your code
+}
 \usepackage{multicol}   %Columns
 \usepackage[utf8]{inputenc} %unicode support
 %\usepackage[applemac]{inputenc} %applemac support if unicode package fails
@@ -170,9 +186,9 @@
 
 \begin{abstract}
         % Do not use inserted blank lines (ie \\) until main body of text.
-{\bf Background:} Data visualization is an important part of biology that sometimes proves to be a bottleneck for non trained researchers. This is especially true when it comes to three dimensional (3D) data representation. Plenty of existing software provide all necessary functionalities to represent and manipulate biological 3D datasets but very few are easily accessible because (web based), cross platform and created for non expert users to quickly and efficiently view 3D data before an eventual finer analysis.
-{\bf Results:} An online HTML5/webGL based 3D visualisation tool has been developed to allow biologists to quickly and easily view interactive and customizable three dimensional representations of their data along with multiple layers of information. Using the WebGL library Three.js written in Javascript, bioWeb3D allows the simultaneous visualisation of multiple large datasets inputted via a simple JSON file, which can be read and analysed locally thanks to HTML5 capabilities.       
-{\bf Conclusions:} Using basic 3D representation technique in a technologically innovative context we are able to provide a program that is not intended to compete with professional 3D representation software but can be very useful for a quick and intuitive representation of reasonably large 3D datasets.
+{\bf Background:} Data visualization is critical for interpreting biological data. However, in practice it can prove to be a bottleneck for non trained researchers; this is especially true for three dimensional (3D) data representation. Whilst existing software can provide all necessary functionalities to represent and manipulate biological 3D datasets, very few are easily accessible (browser based), cross platform and accessible to non-expert users.
+{\bf Results:} An online HTML5/webGL based 3D visualisation tool has been developed to allow biologists to quickly and easily view interactive and customizable three dimensional representations of their data along with multiple layers of information. Using the WebGL library Three.js written in Javascript, bioWeb3D allows the simultaneous visualisation of multiple large datasets inputted via a simple JSON or CSV file, which can be read and analysed locally thanks to HTML5 capabilities.       
+{\bf Conclusions:} Using basic 3D representation techniques in a technologically innovative context we intend to provide a program that is not intended to compete with professional 3D representation software but can be very useful for a quick and intuitive representation of reasonably large 3D datasets.
 \end{abstract}
 
 
@@ -210,10 +226,10 @@
 %%
 \section{Background}
 
-Visualisation is a key feature in the analysis of large biological datasets, especially when analysing organized structures with distinct sub-clusters \cite{Rubel10}. This is particularly important when analysing 3-Dimensional (3D) datasets. In a situation where a biological has been described spatially by a set of 3D referenced points, either via laboratory work (confocal microscopy for example) or generated within a simulation, with some data attached to each point in space, the first approach in order to analyse the results is to visualize in space both the raw data and the information attached to it. Often a second step towards the full analysis of a biological problem will be to cluster the observations in different classes based upon the information attached. in this case also 3D visualization will be key to a good understanding of the results. \\
-To that end, all mathematics oriented programming languages have TODO
-While various visualisation tools have been developed, they have typically been available via a locally installed piece of software such as BioLayout Express$^{3D}$\cite{Freeman07}, Arena3D \cite{Pavlopoulos08},  3D Genome Tuner \cite{Wang09}, the Allen Brain Atlas \cite{Lein07} or Cytoscape \cite{Shannon03}. Other 3D visualisation tools have been built online and are accessible through the browser directly, such as AstexViewer \cite{Hartshorn02}, which is utilised by the Protein Databank Europe via a Java Applet. More recently, visualisation tools developed using HTML5/WebGL capabilities have been described, although they have focused on very specific applications, such as analysing radiology data  \cite{Dinesh12}.\\
-However, no tool has allowed biologists to view their own 3D data directly online in an easy, fast, secure and interactive way. Using webGL and the JavaScript 3D library Three.js, bioWeb3D aims to be a simple, generic, tool for visualising such data. 
+Visualisation is a key feature in the analysis of large biological datasets, especially when analysing organized structures with distinct sub-clusters \cite{Rubel10}. This is particularly important when analysing 3-Dimensional (3D) datasets. When a biological process or feature has been described spatially by a set of 3D referenced points, either via laboratory work (confocal microscopy for example) or generated within a simulation, with some data attached to each point in space, the first step in interpreting the data is to visualise it. Once the data are visualised and the quality assessed, downstream analysis can proceed. For example, on obvious second step is to cluster the observations into different classes based upon the information assiciated with each point; those results will also need visualisation. \\
+While various 3D visualisation tools have been developed, they have typically been made available via a locally installed piece of software such as BioLayout Express$^{3D}$\cite{Freeman07}, Arena3D \cite{Pavlopoulos08},  3D Genome Tuner \cite{Wang09}, the Allen Brain Atlas \cite{Lein07} or Cytoscape \cite{Shannon03}. Other 3D visualisation tools have been built online and are accessible through the browser directly, such as AstexViewer \cite{Hartshorn02}, which is utilised by the Protein Databank Europe via a Java Applet. More recently, visualisation tools developed using HTML5/WebGL capabilities have been described, although they have focused on very specific applications, such as analysing radiology data  \cite{Dinesh12}.\\
+Importantly, as yet no tool has allowed biologists to view their own 3D data directly online in an easy, fast and interactive and secure way. Using webGL and the JavaScript 3D library Three.js, bioWeb3D aims to be a simple, generic, tool for tackling this problem.\\
+
 
 
 
@@ -221,37 +237,83 @@ However, no tool has allowed biologists to view their own 3D data directly onlin
 
 \section{Implementation}
 
-bioWeb3D allows the representation of any 3D dataset by defining only two file formats, which enables the user to quickly upload their own datasets to their browser. The format of these files is based on JSON, a widely used structured format on the web \cite{Wilde07}.\\
-The first file type contains the coordinates of every point in the dataset, while the second describes one or several information layers that can be associated with the points defined in the first file. For example, if each point defines the location of a cell within a tissue, the second file could describe whether a particular gene is expressed in each cell. \\
-Datasets can be viewed and compared in up to four ``worlds" (each world refers to a separate visualisation sub-window) at the same time. Although web based, the application, fully written in Javascript, does not need to send any data to the host server. Instead the modern internet browser's local file system reading capabilities are used through the HTML 5 FileReader functionality. This allows the application to handle, in a very short period of time, large datasets while ensuring that the privacy of the data is maintained.\\
-Although the focus is on making bioWeb3D simple and easy to use, some options are available to customise how datasets are represented. The application can be used to visualise sequential information, such as 3D protein structures, in which case links can be drawn between the points. In other cases, such as when a population of cells are considered, the points can be left unlinked as individual particles. The information layers are visualised by colouring the 3D points according to the class that each point belongs to.
-\subsection{Defining the input file format}
-The JSON format has been chosen because of its rigorous structure, which allows fast Javascript object generation within the browser interpreter. Compared to other data-interchange languages, such as XML, JSON is also easily human readable thanks to a light-weight syntax. It is also supported by all of the primary internet browsers.\\
-The {\it{dataset}} file should have a root object called ``dataset" which contains: (i) the ``name" property of the dataset (\textit{e.g.}, ``my dataset"); (ii) the ``chain" parameter which has to be set to \textit{true} if the points should be linked (the default value is \textit{false}). The data will be considered sequentially, each point will be linked according to its order in the dataset file; and (iii) the ``points" property, which is a two dimensional array representing a list of (x,y,z) vectors that define the co-ordinates of the points.
-
-The {\it{information layer}} files must have a root element named  ``information". Since one information file can define multiple information sets, the structure below ``information" is a list. Each element of the list is structured as follows: (i) the ``name" property (optional); (ii) the ``numClass" property, which indicates the number of different classes the data will be assigned to; (iii) the ``labels" property, which defines a list of names for the ``numClass" classes previously defined (optional); and (iv) the ``values" property, which defines the class of each point in the dataset. As points do not have single IDs, this property must be in the same order and have the same length as the points defined in the {\it{dataset}} file.
-
-Exact specifications and examples of the file formats can be found on the bioWeb3D gitHub repository wiki and in the supplementary materials. Since many biological results are in fact stored as CSV files we also provide easy to use Perl scripts that can quickly generate JSON files from CSV data. These scripts are also available from the GitHub repository.
+bioWeb3D allows the user to represent any 3D dataset on their browser by defining only two files. The two files can either be formatted as JSON files, a widely used structured format on the web \cite{Wilde07} or directly as Comma Separated Values files (CSV).\\
+The first file used by the application, referred to as the ``dataset file", contains the coordinates of every point in the dataset. The second type of file used, the ``information layer" file, describes one or several information layers that are associated with the points defined in the first file. For example, if each point defines the location of a cell within a tissue, the second file could describe whether a particular gene is expressed in each cell. That way the tissue expression profile can be represented in the spatial context of the tissue.\\
+Datasets can be viewed and compared in up to four ``worlds" (each world refers to a separate visualisation sub-window) at the same time. Although browser based, the application, fully written in Javascript, does not need to send any data to the host server. Instead the modern internet browser's local file system reading capabilities are used through the HTML 5 FileReader functionality. This allows the application to handle, in a very short period of time, large datasets while ensuring that the privacy of the data is maintained.\\
+Although the focus is on making bioWeb3D simple and easy to use, some options are available to customise how datasets are represented. The application can be used to visualise sequential information, such as 3D protein structures, in which case links can be drawn between the points. In other situations, such as when a population of cells is considered, the points can be left unlinked as individual particles. The information layers are visualised by colouring the 3D points according to the class that each point belongs to.
+\subsection{technological overview}
+bioWeb3D is fully written in HTML/Javascript. It relies heavily upon a relatively recent 3D javascript library called Three.js \cite{three}. This library is used as the main interface between webGL (cross-platform, royalty-free web standard for a low-level 3D graphics API) \cite{webgl}. More specifically, bioWeb3D allows the generation and manipulation of simple Three.js objects. Indeed the primary challenge associated with the creation of bioWeb3D has been to design interactions between the 3D visualisation and the user interface in the most efficient way.\\
+\subsection{Defining the input files formats}
+Using the JSON format to input files into bioWeb3D is recommended because of its rigorous structure, which allows fast Javascript object generation within the browser interpreter. Compared to other data-interchange languages, such as XML, JSON is also easily human readable thanks to a light-weight syntax. It is also supported by all of the primary internet browsers.\\
+However, much data generated in the biological sciences is stored within CSV files. Converting CSV documents to the JSON format used in this application is not always trivial. In order to facilitate this process, the application is also able to interpret simple CSV files following a certain format as an input.
 
 
+\subsubsection{Dataset files specification}
+When the user adds a new {\it{Dataset}} file, a new Dataset section is created in the ``Data" panel of the application. One raw data file contains one dataset.\\
+\paragraph{JSON format}
+The {\it{dataset}} file should have a root object called ``dataset" which contains: \begin{itemize}
+\item{The ``name" property of the dataset (\textit{e.g.}, ``my dataset");}
+\item{The ``chain" parameter, which should be set to \textit{true} if the points are linked (the default value is \textit{false}) - the data will be considered sequentially, with each point linked according to its order in the dataset file;}
+\item{The ``points" property, which is a two dimensional array representing a list of (x,y,z) vectors that define the co-ordinates of the points.}
+\end{itemize}
+
+Listing \ref{jsondataset} is an example of a minimal 3 points dataset file:
+
+\paragraph{CSV format}
+Each line represents a point and the three coordinates on each line must be separated by ``comma" characters.\\As an example, listing \ref{csvdataset} carries the same information as the JSON file in Listing \ref{jsondataset}. Do note that although the spatial information remains the same it is not possible to set a name or to link the points within a CSV file input.
+
+
+
+\subsubsection{Information layer file specification}The {\it{Information layer}} file contains information about the points described in the Dataset file. The information in this file has to be given in the same order as the points defined in the Dataset file.
+
+\paragraph{JSON format}
+The {\it{information layer}} files must have a root element named  ``information". Since one information file can define multiple information sets, the structure below ``information" is a list. Each element of the list is structured as follows:
+\begin{itemize}
+\item{The ``name" property (optional);}
+\item{The ``numClass" property, which indicates the number of different classes the data will be assigned to;}
+\item{The ``labels" property, which defines a list of names for the ``numClass" classes previously defined (optional);}
+\item{The ``values" property, which defines the class of each point in the dataset. As points do not have single IDs, this property must be in the same order and have the same length as the points defined in the {\it{dataset}} file.}
+\end{itemize}
+
+For example coming back to the 3 points defined in Listing \ref{csvdataset} and Listing \ref{jsondataset}, two information layers could correspond to: 
+\begin{itemize}
+
+\item{one clustering algorithm that puts the first two points together in class one and the third point alone in a second class}
+\item{a second clustering algorithm that puts each point in a separate class}
+\end{itemize}
+
+In this case the Information layer file would look like Listing \ref{jsoninfo}.
+
+
+\paragraph{CSV format}
+The first element of each column will be the name of the information layer, and the rest of the column represents in which class each point belongs. The separation character between columns must be a ``tabulation". Listing \ref{csvinfo} carries the same information as Listing \ref{jsoninfo}. Note that it is not possible to use the ``labels" property available in Listing \ref{jsoninfo} within a CSV information layer file. 
+
+
+
+	
 \subsection{User interface}
 The user can interact with the visualisation via an interface on the right of the screen (Figure 1), which contains three panels. In the ``dataset" panel, the user can choose the {\it{datasets}} and {\it{information layer}} files that should be represented in each world. This panel also allows the user to show/hide specific classes of the selected information layers. Each dataset file entered will create a new sub-panel where the user can input {\it{information layer}} files for each world. Selecting an {\it{information layer}} in the drop-down list will display the data in the current world and generate a list of classes that the user can modify regarding their visibility and colour. The ``View" panel enables the user to choose which of the worlds are shown on the screen, ranging from 1 to 4 simultaneous worlds (Supplementary Fig 1). Finally, the ``Settings" panel provides the user with a number of options that affect all the worlds and all datasets, such as allowing the axes scales to be modified.
 
 
 \section{Results and Discussion}
+
+
 	\subsection{bioWeb3D and local software}
-Many 3D visualisation software tools, most of which require local installation, exist and provide similar functionalities with standard 3D format input such as Wavefront .OBJ. Some are extremely generic and powerful like Blender. However, these tools are not typically oriented towards a scientific audience. Moreover, those that are more focused on science are often targeted towards a very specific application, especially in medical sciences \cite{Wang09}. In this context we believe that bioWeb3D can be useful as it is completely generic and web based. It should also be noted that recent browser improvements regarding GPU acceleration through the webGL paradigm allow bioWeb3D to visualise several hundred thousand points. Additionally, local software is usually platform specific, which is not the case for web based applications.
+Many 3D visualisation software tools, most of which require local installation, exist and provide similar functionalities with standard 3D format input such as Wavefront .OBJ. Some are extremely generic and powerful like Blender. However, these tools are not typically oriented towards a scientific audience. Moreover, those that are more focused on science are often targeted towards a very specific application, especially in medical sciences \cite{Wang09}. In this context we believe that bioWeb3D can be useful as it is completely generic and browser based. It should also be noted that recent browser improvements regarding GPU acceleration through the webGL paradigm allow bioWeb3D to visualise several hundred thousand points. Additionally, local software is usually platform specific, which is not the case for browser based applications.
 
 	\subsection{bioWeb3D and Java Applets}
-As mentioned previously, web based 3D visualisation tools currently exist mainly in the form of Java Applets. This technology has attracted much criticism in 2012 regarding security flaws, leading the ``United States Computer Emergency Readiness Team" to advise that all Java Applets should be disabled due to current and future Java vulnerabilities (http://www.kb.cert.org/vuls/id/636312). The development of WebGL technology is viewed by many as a candidate for replacing Applets. 
+As mentioned previously, browser based 3D visualisation tools currently exist mainly in the form of Java Applets. This technology has attracted much criticism in 2012 regarding security flaws, leading the ``United States Computer Emergency Readiness Team" to advise that all Java Applets should be disabled due to current and future Java vulnerabilities \cite{security}. The development of WebGL technology is viewed by many as a candidate for replacing Applets. 
+
+
 
 	\subsection{Current limitations}
-The main current limitation of a webGL based application is the machine and browser compatibility. Only computers with fairly recent graphic cards will be able to run a 3D environment. It should also be noted that Microsoft has notified the developer community that Internet Explorer is not scheduled to support WebGL in the near future. However, importantly, Chrome, Firefox, Safari and Opera all now support webGL applications (http://caniuse.com/webgl).
+The main current limitation of a webGL based application is the machine and browser compatibility. Only computers with fairly recent graphic cards will be able to run a 3D environment. It should also be noted that Microsoft has notified the developer community that Internet Explorer is not scheduled to support WebGL in the near future. However, importantly, Chrome, Firefox, Safari and Opera all now support webGL applications (http://caniuse.com/webgl). It could also be important to mention for eventual future developments that webGL is supported on mobile platforms such as iOS or Android.
 
 \section{Conclusions}
+bioWe3D is designed to be a simple and quick way to view simple 3D data typically in a biological context.  Being browser-based, the software can be easily used from one computer to the other without the need for installation. Everything has been designed in order to offer the most gentle learning curve possible. Despite the current limitations in terms of compatibility or rendering performances for large numbers of points, it is the authors' belief that such tool can be used by non-experts in 3D data representation to have a quick access to visualising their data and the information attached to it in many biological context.
 
 \section{Availability and requirements}
-
+The full source is available on the github page of the project \cite{github}. A live version of the software is online \cite{bioWeb3D}. You will require a graphical card and a browser with webGL capabilities to run bioWeb3D.
 
 
 
@@ -267,7 +329,7 @@ JBP developed the presented software and drafted the manuscript. JCM has been in
 %%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Acknowledgements}
   \ifthenelse{\boolean{publ}}{\small}{}
-The authors would like to acknowledge Samuel Croset, Tom Oldfield, Stijn van Dongen, Konrad Rudolph and Sergio Martinez Cuesta for helpful discussion and criticisms.
+The authors would like to acknowledge Samuel Croset, Stijn van Dongen, Konrad Rudolph and Sergio Martinez Cuesta for helpful discussion and criticisms.
  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%                  The Bibliography                       %%
@@ -313,6 +375,74 @@ The authors would like to acknowledge Samuel Croset, Tom Oldfield, Stijn van Don
 	The 3D location of cells within the brain of the marine annelid {\it{Platynereis dumerilii}} is shown. Two classes are displayed (in green and blue) along with the shadow of the remaining cells. The User interface is visible on the right of the screen and can be hidden. Data for this figure was taken from \cite{Tomer10}
 
 
+\begin{lstlisting}[float,caption=Json dataset file,label=jsondataset]
+{ "dataset" : {
+      "name" : "my superb dataset",
+      "chain" : true,
+       points" :
+        [
+          [
+            0.5,
+            100,
+            -50.5
+          ],
+          [
+            200,
+            10,
+            0.0
+          ],
+          [
+            3,
+            250.15,
+            15
+          ]
+        ]
+     }
+}
+\end{lstlisting}
+
+
+\begin{lstlisting}[float,caption=CSV information layer file,label=csvinfo]
+clustering_algo_1	clustering_algo_2
+1	1
+1	2
+2	3
+\end{lstlisting}
+
+\begin{lstlisting}[float,caption=JSON information layer file,label=jsoninfo]
+{ "information" :
+  [
+    {
+      "name": "clustering algo 1",
+      "numClass": "2",
+      "labels" : [
+        "Category 1",
+        "Category 2"
+      ],
+      "values": [
+        1,
+        1,
+        2
+      ]
+    },
+    {
+      "name": "clustering algo 2",
+      "numClass": "3",
+      "values": [
+        1,
+        2,
+        3
+      ]
+    }
+  ]
+}
+\end{lstlisting}
+
+\begin{lstlisting}[float,caption=CSV dataset file,label=csvdataset]
+0.5	100	-50.5
+200	10	0.0
+3	250.15	15
+\end{lstlisting}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -328,11 +458,6 @@ The authors would like to acknowledge Samuel Croset, Tom Oldfield, Stijn van Don
 %%                               %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{Additional Files}
-  \subsection*{Additional file 1 --- Sample additional file title}
-    Additional file descriptions text (including details of how to
-    view the file, if it is in a non-standard format or the file extension).  This might
-    refer to a multi-page table or a figure.
 
 
 
