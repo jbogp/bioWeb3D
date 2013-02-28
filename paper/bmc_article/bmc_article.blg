@@ -1,3 +1,52 @@
-This is BibTeX, Version 0.99dThe top-level auxiliary file: bmc_article.aux
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: bmc_article.aux
 The style file: bmc_article.bst
+Reallocated glb_str_ptr (elt_size=4) to 20 items from 10.
+Reallocated global_strs (elt_size=20001) to 20 items from 10.
+Reallocated glb_str_end (elt_size=4) to 20 items from 10.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: bmc_article.bib
+You've used 16 entries,
+            3603 wiz_defined-function locations,
+            796 strings with 9586 characters,
+and the built_in function-call counts, 45275 in all, are:
+= -- 4018
+> -- 493
+< -- 169
++ -- 519
+- -- 159
+* -- 5655
+:= -- 7231
+add.period$ -- 27
+call.type$ -- 16
+change.case$ -- 162
+chr.to.int$ -- 0
+cite$ -- 16
+duplicate$ -- 3531
+empty$ -- 3335
+format.name$ -- 644
+if$ -- 8762
+int.to.chr$ -- 0
+int.to.str$ -- 32
+missing$ -- 1082
+newline$ -- 372
+num.names$ -- 20
+pop$ -- 698
+preamble$ -- 1
+purify$ -- 0
+quote$ -- 32
+skip$ -- 377
+stack$ -- 0
+substring$ -- 6049
+swap$ -- 675
+text.length$ -- 25
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 12
+warning$ -- 0
+while$ -- 239
+width$ -- 18
+write$ -- 906

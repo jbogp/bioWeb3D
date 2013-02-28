@@ -286,20 +286,19 @@ In this case the Information layer file would look like Listing \ref{jsoninfo}.
 
 
 \paragraph{CSV format}
-The first element of each column will be the name of the information layer, and the rest of the column represents in which class each point belongs. The separation character between columns must be a ``tabulation". Listing \ref{csvinfo} carries the same information as Listing \ref{jsoninfo}. Note that it is not possible to use the ``labels" property available in Listing \ref{jsoninfo} within a CSV information layer file. 
+Each column will represent in which class each point belongs. The separation character between columns must be a ``comma". Listing \ref{csvinfo} carries the same information as Listing \ref{jsoninfo}. Note that it is not possible to use the ``labels" or ``name" properties available in Listing \ref{jsoninfo} within a CSV information layer file. 
 
 
-
-	
-\subsection{User interface}
-The user can interact with the visualisation via an interface on the right of the screen (Figure 1), which contains three panels. In the ``dataset" panel, the user can choose the {\it{datasets}} and {\it{information layer}} files that should be represented in each world. This panel also allows the user to show/hide specific classes of the selected information layers. Each dataset file entered will create a new sub-panel where the user can input {\it{information layer}} files for each world. Selecting an {\it{information layer}} in the drop-down list will display the data in the current world and generate a list of classes that the user can modify regarding their visibility and colour. The ``View" panel enables the user to choose which of the worlds are shown on the screen, ranging from 1 to 4 simultaneous worlds (Supplementary Fig 1). Finally, the ``Settings" panel provides the user with a number of options that affect all the worlds and all datasets, such as allowing the axes scales to be modified.
 
 
 \section{Results and Discussion}
 
 
+	\subsection{Basic usage}
+	In figure 1 is visualised as an example, the brain the marine annelid {\it{Platynereis dumerilii}} each point represents a cell in the brain, the colour of which indicates the class it belongs to. The user can interact with the visualisation via an interface on the right of the screen, which contains three panels. In the ``dataset" panel, the user can choose the {\it{datasets}} and {\it{information layer}} files that should be represented in each world. This panel also allows the user to show/hide specific classes of the selected information layers. Each dataset file entered will create a new sub-panel where the user can input {\it{information layer}} files for that world. Selecting an {\it{information layer}} in the drop-down list will display the data in the current world and generate a list of classes that the user can modify regarding their visibility and colour. The ``View" panel enables the user to choose which of the worlds are shown on the screen, ranging from 1 to 4 simultaneous worlds. Finally, the ``Settings" panel provides the user with a number of options that affect all worlds and all datasets, such as modifying the axes scales.
+
 	\subsection{bioWeb3D and local software}
-Many 3D visualisation software tools, most of which require local installation, exist and provide similar functionalities with standard 3D format input such as Wavefront .OBJ. Some are extremely generic and powerful like Blender. However, these tools are not typically oriented towards a scientific audience. Moreover, those that are more focused on science are often targeted towards a very specific application, especially in medical sciences \cite{Wang09}. In this context we believe that bioWeb3D can be useful as it is completely generic and browser based. It should also be noted that recent browser improvements regarding GPU acceleration through the webGL paradigm allow bioWeb3D to visualise several hundred thousand points. Additionally, local software is usually platform specific, which is not the case for browser based applications.
+Many 3D visualisation software tools, most of which require local installation, exist and provide similar functionalities with standard 3D format input such as Wavefront .OBJ. Some are extremely generic and powerful like Blender. However, these tools are not typically oriented towards a scientific audience. Moreover, those that are more focused on science are often targeted towards a very specific application, especially in medical sciences \cite{Wang09}. In this context, we believe that bioWeb3D can be useful as it is completely generic and browser based. It should also be noted that recent browser improvements regarding GPU acceleration through the webGL paradigm allow bioWeb3D to visualise several hundred thousand points. Additionally, local software is usually platform specific, which is not the case for browser based applications.
 
 	\subsection{bioWeb3D and Java Applets}
 As mentioned previously, browser based 3D visualisation tools currently exist mainly in the form of Java Applets. This technology has attracted much criticism in 2012 regarding security flaws, leading the ``United States Computer Emergency Readiness Team" to advise that all Java Applets should be disabled due to current and future Java vulnerabilities \cite{security}. The development of WebGL technology is viewed by many as a candidate for replacing Applets. 
@@ -307,13 +306,13 @@ As mentioned previously, browser based 3D visualisation tools currently exist ma
 
 
 	\subsection{Current limitations}
-The main current limitation of a webGL based application is the machine and browser compatibility. Only computers with fairly recent graphic cards will be able to run a 3D environment. It should also be noted that Microsoft has notified the developer community that Internet Explorer is not scheduled to support WebGL in the near future. However, importantly, Chrome, Firefox, Safari and Opera all now support webGL applications (http://caniuse.com/webgl). It could also be important to mention for eventual future developments that webGL is supported on mobile platforms such as iOS or Android.
+The main current limitation of a webGL based application is the machine and browser compatibility. Only computers with fairly recent graphic cards will be able to run a 3D environment. It should also be noted that Microsoft has notified the developer community that Internet Explorer is not scheduled to support WebGL in the near future. However, importantly, Chrome, Firefox, Safari and Opera all now support webGL applications. It could also be important to mention for eventual future developments that webGL is supported on mobile platforms such as iOS or Android. \cite{caniuse}
 
 \section{Conclusions}
-bioWe3D is designed to be a simple and quick way to view simple 3D data typically in a biological context.  Being browser-based, the software can be easily used from one computer to the other without the need for installation. Everything has been designed in order to offer the most gentle learning curve possible. Despite the current limitations in terms of compatibility or rendering performances for large numbers of points, it is the authors' belief that such tool can be used by non-experts in 3D data representation to have a quick access to visualising their data and the information attached to it in many biological context.
+bioWeb3D is designed to be a simple and quick way to view 3D data with a specific focus on biological applications.  Being browser-based, the software can be easily used from any computer without the need to install a piece of software. Importantly bioWeb3D has been designed to offer a very straightforward and easy-to-use working environment. Despite the current limitations in terms of compatibility or rendering performances for large numbers of points, we believe that bioWeb3D will enable non-experts in 3D data representation to quickly visualise their data and the information attached to it in many biological context, thus facilitating downstream analyses.
 
 \section{Availability and requirements}
-The full source is available on the github page of the project \cite{github}. A live version of the software is online \cite{bioWeb3D}. You will require a graphical card and a browser with webGL capabilities to run bioWeb3D.
+The full source code is available on the github page of the project \cite{github}. A live version of the software is online \cite{bioWeb3D}. You will require a graphical card and a browser with webGL capabilities to run bioWeb3D.
 
 
 
@@ -401,13 +400,14 @@ The authors would like to acknowledge Samuel Croset, Stijn van Dongen, Konrad Ru
 }
 \end{lstlisting}
 
-
-\begin{lstlisting}[float,caption=CSV information layer file,label=csvinfo]
-clustering_algo_1	clustering_algo_2
-1	1
-1	2
-2	3
+\begin{lstlisting}[float,caption=CSV dataset file,label=csvdataset]
+0.5	100	-50.5
+200	10	0.0
+3	250.15	15
 \end{lstlisting}
+
+
+
 
 \begin{lstlisting}[float,caption=JSON information layer file,label=jsoninfo]
 { "information" :
@@ -438,10 +438,10 @@ clustering_algo_1	clustering_algo_2
 }
 \end{lstlisting}
 
-\begin{lstlisting}[float,caption=CSV dataset file,label=csvdataset]
-0.5	100	-50.5
-200	10	0.0
-3	250.15	15
+\begin{lstlisting}[float,caption=CSV information layer file,label=csvinfo]
+1	1
+1	2
+2	3
 \end{lstlisting}
 
 

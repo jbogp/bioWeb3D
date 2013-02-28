@@ -15,8 +15,7 @@ Rubel O, Weber GH, Huang MY, Bethel EW, Biggin MD, Fowlkes CC, Luengo~Hendriks
 Freeman TC, Goldovsky L, Brosch M, van Dongen S, Mazière P, Grocock RJ,
   Freilich S, Thornton J, Enright AJ: \textbf{Construction, Visualisation, and
   Clustering of Transcription Networks from Microarray Expression Data.}
-  \emph{PLoS Computational Biology} 2007, \textbf{3}(10),
-  \urlprefix\url{[http://dblp.uni-trier.de/db/journals/ploscb/ploscb3.html#FreemanGBDMGFTE07]}.
+  \emph{PLoS Computational Biology} 2007, \textbf{3}(10).
 
 \bibitem{Pavlopoulos08}
 Pavlopoulos GA, O'Donoghue SI, Satagopam VP, Soldatos TG, Pafilis E, Schneider
@@ -26,8 +25,7 @@ Pavlopoulos GA, O'Donoghue SI, Satagopam VP, Soldatos TG, Pafilis E, Schneider
 \bibitem{Wang09}
 Wang Q, Liang Q, Zhang X: \textbf{3D Genome Tuner: Compare Multiple Circular
   Genomes in a 3D Context}. \emph{Genomics Proteomics Bioinformatics} 2009,
-  \textbf{7}(3):143--146,
-  \urlprefix\url{[http://linkinghub.elsevier.com/retrieve/pii/S1672022908600431]}.
+  \textbf{7}(3):143--146.
 
 \bibitem{Lein07}
 Lein ES, Hawrylycz MJ, Ao N, Ayres M, Bensinger A, Bernard A, Boe AF, Boguski
@@ -52,8 +50,7 @@ Lein ES, Hawrylycz MJ, Ao N, Ayres M, Bensinger A, Bernard A, Boe AF, Boguski
 Shannon P, Markiel A, Ozier O, Baliga NS, Wang JT, Ramage D, Amin N,
   Schwikowski B, Ideker T: \textbf{Cytoscape: a software environment for
   integrated models of biomolecular interaction networks.} \emph{Genome
-  Research} 2003, \textbf{13}(11):2498--504,
-  \urlprefix\url{[http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=403769&tool=pmcentrez&rendertype=abstract]}.
+  Research} 2003, \textbf{13}:2498--504.
 
 \bibitem{Hartshorn02}
 Hartshorn MJ: \textbf{{{A}stex{V}iewer: a visualisation aid for structure-based
@@ -68,8 +65,7 @@ Kulkarni DB, Doijade MM, Devrukhkar CS, Zilpe GR, Surana RR: \textbf{Article:
 
 \bibitem{Wilde07}
 Wilde E: \textbf{Putting Things to REST}. \emph{Transport} 2007,
-  \textbf{15}(November):567--583,
-  \urlprefix\url{[http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.96.7936]}.
+  \textbf{15}(November):567--583.
 
 \bibitem{three}
 \textbf{Three.js - JavaScript 3D library}
@@ -83,6 +79,10 @@ Wilde E: \textbf{Putting Things to REST}. \emph{Transport} 2007,
 \textbf{United States Computer Emergency Readiness Team}
   \urlprefix\url{[http://www.kb.cert.org/vuls/id/636312]}.
 
+\bibitem{caniuse}
+\textbf{Compatibility table for WebGL}
+  \urlprefix\url{[http://caniuse.com/webgl]}.
+
 \bibitem{github}
 \textbf{bioWeb3D on github} \urlprefix\url{[http://github.com/jbogp/bioWeb3D]}.
 
@@ -93,8 +93,7 @@ Wilde E: \textbf{Putting Things to REST}. \emph{Transport} 2007,
 \bibitem{Tomer10}
 Tomer R, Denes AS, Tessmar-Raible K, Arendt D: \textbf{Profiling by image
   registration reveals common origin of annelid mushroom bodies and vertebrate
-  pallium.} \emph{Cell} 2010, \textbf{142}(5):800--809,
-  \urlprefix\url{[http://dx.doi.org/10.1016/j.cell.2010.07.043]}.
+  pallium.} \emph{Cell} 2010, \textbf{142}(5):800--809.
 
 \end{thebibliography}
 
@@ -148,7 +147,6 @@ Tomer R, Denes AS, Tessmar-Raible K, Arendt D: \textbf{Profiling by image
   <pubdate>2007</pubdate>
   <volume>3</volume>
   <issue>10</issue>
-  <url>http://dblp.uni-trier.de/db/journals/ploscb/ploscb3.html#FreemanGBDMGFTE07</url>
 </bibl>
 
 <bibl id="B3">
@@ -183,7 +181,6 @@ Tomer R, Denes AS, Tessmar-Raible K, Arendt D: \textbf{Profiling by image
   <issue>3</issue>
   <fpage>143</fpage>
   <lpage>-146</lpage>
-  <url>http://linkinghub.elsevier.com/retrieve/pii/S1672022908600431</url>
 </bibl>
 
 <bibl id="B5">
@@ -322,13 +319,10 @@ Tomer R, Denes AS, Tessmar-Raible K, Arendt D: \textbf{Profiling by image
     <au><snm>Ideker</snm><fnm>T</fnm></au>
   </aug>
   <source>Genome Research</source>
-  <publisher>Cold Spring Harbor Lab</publisher>
   <pubdate>2003</pubdate>
   <volume>13</volume>
-  <issue>11</issue>
   <fpage>2498</fpage>
   <lpage>-504</lpage>
-  <url>http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=403769&tool=pmcentrez&rendertype=abstract</url>
 </bibl>
 
 <bibl id="B7">
@@ -375,7 +369,6 @@ Tomer R, Denes AS, Tessmar-Raible K, Arendt D: \textbf{Profiling by image
   <issue>November</issue>
   <fpage>567</fpage>
   <lpage>-583</lpage>
-  <url>http://citeseerx.ist.psu.edu/viewdoc/summary?doi=10.1.1.96.7936</url>
 </bibl>
 
 <bibl id="B10">
@@ -394,16 +387,21 @@ Tomer R, Denes AS, Tessmar-Raible K, Arendt D: \textbf{Profiling by image
 </bibl>
 
 <bibl id="B13">
+  <title><p>Compatibility table for WebGL</p></title>
+  <url>http://caniuse.com/webgl</url>
+</bibl>
+
+<bibl id="B14">
   <title><p>bioWeb3D on github</p></title>
   <url>http://github.com/jbogp/bioWeb3D</url>
 </bibl>
 
-<bibl id="B14">
+<bibl id="B15">
   <title><p>bioWeb3D online</p></title>
   <url>http://www.ebi.ac.uk/~jbpettit/bioWeb3D</url>
 </bibl>
 
-<bibl id="B15">
+<bibl id="B16">
   <title><p>Profiling by image registration reveals common origin of annelid
   mushroom bodies and vertebrate pallium.</p></title>
   <aug>
@@ -419,7 +417,6 @@ Tomer R, Denes AS, Tessmar-Raible K, Arendt D: \textbf{Profiling by image
   <issue>5</issue>
   <fpage>800</fpage>
   <lpage>-809</lpage>
-  <url>http://dx.doi.org/10.1016/j.cell.2010.07.043</url>
 </bibl>
 
 </refgrp>
