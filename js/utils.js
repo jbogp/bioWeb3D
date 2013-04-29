@@ -55,6 +55,61 @@
 			}
 		});
 		
+		$( "#alphaClust" ).slider({
+			value:0,
+			min: 0,
+			max: 1,
+			step: 0.05,
+			slide: function( event, ui ) {
+				//Changing global alpha value
+				alphaClust = (1 - ui.value);
+				
+				//Changing cluster materials
+				for(var i=0;i<datasets.length;i++) {
+					datasets[i].refreshClusterSets();
+				}
+				//Refreshing worlds
+				for(var i=0;i<worlds.length;i++) {
+					worlds[i].refreshDataSets();
+				}
+			}
+		});
+		
+		$( "#alphaRaw" ).slider({
+			value:0.8,
+			min: 0,
+			max: 1,
+			step: 0.05,
+			slide: function( event, ui ) {
+				//Changing global alpha value
+				alphaRaw = (1 - ui.value);
+				//Refreshing worlds
+				for(var i=0;i<worlds.length;i++) {
+					worlds[i].refreshDataSets();
+				}
+			}
+		});
+		
+		$( "#sliderPartSize" ).slider({
+			value:2,
+			min: 1,
+			max: 30,
+			step: 1,
+			slide: function( event, ui ) {
+				//Changing global size
+				partSize = ui.value;
+				
+				//Changing cluster materials
+				for(var i=0;i<datasets.length;i++) {
+					datasets[i].refreshClusterSets();
+				}
+				//Refreshing worlds
+				for(var i=0;i<worlds.length;i++) {
+					worlds[i].refreshDataSets();
+				}
+			}
+		});
+		
 		//Create accordions
 		$("#accordion").accordion({ heightStyle: "content"});
 

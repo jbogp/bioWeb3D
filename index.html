@@ -89,7 +89,7 @@
 if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 //Defining application global variables
-var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeight=window.innerHeight,winWidth=window.innerWidth,datasets=new Array(),numWorlds,timeout;
+var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeight=window.innerHeight,winWidth=window.innerWidth,datasets=new Array(),numWorlds,timeout,alphaClust=1,alphaRaw=0.2,partSize=2;
 </script>
 
 
@@ -131,9 +131,18 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 							X axis<div class="sliderCoord" id="sliderX"></div>
 							Y axis<div class="sliderCoord" id="sliderY"></div>
 							Z axis<div class="sliderCoord" id="sliderZ"></div>
-							
-
-
+						</div>
+						<div class="coefs"  style="padding:10px !important;">
+							raw data transparency  : </br>
+							<div class="alphaRaw" id="alphaRaw"></div>
+						</div>
+						<div class="coefs"  style="padding:10px !important;">
+							Classes transparency  : </br>
+							<div class="alphaClust" id="alphaClust"></div>
+						</div>
+						<div class="coefs"  style="padding:10px !important;">
+							Particles size  : </br>
+							<div class="sliderPartSize" id="sliderPartSize"></div>
 						</div>
 					</div>
 			</div>
@@ -357,30 +366,33 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		this.loaded = false;
 		this.chain;
 		this.mean = new Array();
+		
 
+		this.loadMaterials = function() {
+			//Dataset Material
+			this.dataSetMaterial =  new THREE.ParticleBasicMaterial({
+				color: 0xffffff,
+				size: 2,
+				opacity:alphaRaw,
+				blending: THREE.NormalBlending,
+				transparent: true
+			});
 
-		//Dataset Material
-		this.dataSetMaterial =  new THREE.ParticleBasicMaterial({
-			color: 0xffffff,
-			size: 1.0,
-			opacity:0.1,
-			blending: THREE.AdditiveBlending,
-			transparent: true
-		});
-
-		//Line Material
-		this.lineMaterial = new THREE.LineBasicMaterial({
-			color: 0xffffff,
-			linewidth: 4,
-			transparent : true,
-			opacity : 0.8,
-		});
+			//Line Material
+			this.lineMaterial = new THREE.LineBasicMaterial({
+				color: 0xffffff,
+				linewidth: 4,
+				transparent : true,
+				opacity : 0.8,
+			});
+		}
 
 		
 		//Create Three.js particle system for new dataset
 		this.createParticuleSystem = function(cluster){
 			var error = false;
 			var pX,pY,pZ;
+			this.loadMaterials();
 			cluster = typeof cluster !== 'undefined' ? cluster : -1;
 			if(this.loaded) {
 				var geometry=new Array(),particles, particle,particleSystem=new Array();	
@@ -484,6 +496,14 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		this.addClusterSet = function(clusterSet) {	
 			return	this.clusterSets.push(clusterSet);
 		}
+		
+		
+		//Refresh clustersets to this dataset
+		this.refreshClusterSets = function() {	
+			this.clusterSets.forEach(function(clusterSet) {
+				clusterSet.refreshSet();
+			});
+		}
 
 
 		//Computing mean of raw data to center on 0
@@ -560,9 +580,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		//Initialize materials
 		for(var i=0;i<this.numClust;i++){
 			this.materials[i] =  new THREE.ParticleBasicMaterial({
-				size: 2,
-				opacity:1,
-				blending: THREE.NoBlending,
+				size: partSize,
+				opacity:alphaClust,
+				blending: THREE.NormalBlending,
 				transparent: true
 			});
 			this.materials[i].color.setHex(colors[i]);
@@ -575,6 +595,13 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 			}
 	}
 
+		this.refreshSet = function() {
+			this.materials.forEach(function(material) { 
+				material.opacity = alphaClust;
+				material.size = partSize;
+			});
+		}
+	
 		//setter for cluster color
 		this.setColor = function(numClust, color) {
 			this.materials[numClust].color.setHex(color);
