@@ -158,7 +158,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 
 	//defining world model
-	function World(id,innerWidth,innerHeight,x,y,visible){
+	function World(id,innerWidth,innerHeight,x,y,visible,labelsToUse){
 
 		//Initialisation
 		this.id = id;
@@ -203,7 +203,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 
 		//Creating Axis labels
-		this.labelSet = new WorldLabelSet(this);
+		this.labelSet = new WorldLabelSet(this,labelsToUse);
 		
 
 		//Turn off controls
@@ -616,12 +616,28 @@ $(function(){
 	else {
 		numWorlds = 1;	
 	}
+
+
+	//Change labels ?
+	var i=0;
+	var labelsToUse = [];
+	if(getUrlVars()["labelset"] == 'bio'){ 
+		labelsToUse = ["lateral","medial","versal","dorsal","anterior","posterior"]
+	}
+	
+	//Default Labels
+	else{
+		labelsToUse = ["x","x","z","z","y","y"];
+	}
+
+	console.log(labelsToUse);
+
 	
 	//Starting 4 world
-	worlds[0] = new World(1,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=1);
-	worlds[1] = new World(2,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=2);
-	worlds[2] = new World(3,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=3);
-	worlds[3] = new World(4,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=4);
+	worlds[0] = new World(1,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=1,labelsToUse);
+	worlds[1] = new World(2,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=2,labelsToUse);
+	worlds[2] = new World(3,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=3,labelsToUse);
+	worlds[3] = new World(4,(window.innerWidth), (window.innerHeight),0,0,numWorlds>=4,labelsToUse);
 
 	
 	

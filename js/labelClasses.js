@@ -79,7 +79,13 @@
 	}
 
 	//Defining WorldLabelSet
-	function WorldLabelSet(world){
+	function WorldLabelSet(world,labelValues){
+
+
+		//default labels
+		if(typeof labelValues == 'undefined') {
+			labelValues = defaultLabel;
+		}
 
 		this.labelGeometry = new THREE.Geometry();
 		this.labelSet = new Array();
@@ -89,12 +95,12 @@
 
 		
 		//Creating 2D labels
-		this.labelSet.push(new Label2D(defaultLabel[0],this.labelGeometry,v(-axisLength, 0, 0)));
-		this.labelSet.push(new Label2D(defaultLabel[1],this.labelGeometry,v(axisLength, 0, 0)));
-		this.labelSet.push(new Label2D(defaultLabel[2],this.labelGeometry,v(0, -axisLength, 0)));
-		this.labelSet.push(new Label2D(defaultLabel[3],this.labelGeometry,v(0, axisLength, 0)));
-		this.labelSet.push(new Label2D(defaultLabel[4],this.labelGeometry,v(0, 0, -axisLength)));
-		this.labelSet.push(new Label2D(defaultLabel[5],this.labelGeometry,v(0, 0, axisLength)));
+		this.labelSet.push(new Label2D(labelValues[0],this.labelGeometry,v(-axisLength, 0, 0)));
+		this.labelSet.push(new Label2D(labelValues[1],this.labelGeometry,v(axisLength, 0, 0)));
+		this.labelSet.push(new Label2D(labelValues[2],this.labelGeometry,v(0, -axisLength, 0)));
+		this.labelSet.push(new Label2D(labelValues[3],this.labelGeometry,v(0, axisLength, 0)));
+		this.labelSet.push(new Label2D(labelValues[4],this.labelGeometry,v(0, 0, -axisLength)));
+		this.labelSet.push(new Label2D(labelValues[5],this.labelGeometry,v(0, 0, axisLength)));
 
 
 

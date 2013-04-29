@@ -79,7 +79,14 @@
 	}
 
 	//Defining WorldLabelSet
-	function WorldLabelSet(world){
+	function WorldLabelSet(world,labelValues){
+
+		console.log(labelValues+"ohoho");
+
+		//default labels
+		if(typeof labelValues == 'undefined') {
+			labelValues = defaultLabel;
+		}
 
 		this.labelGeometry = new THREE.Geometry();
 		this.labelSet = new Array();
@@ -89,12 +96,12 @@
 
 		
 		//Creating 2D labels
-		this.labelSet.push(new Label2D(defaultLabel[0],this.labelGeometry,v(-axisLength, 0, 0)));
-		this.labelSet.push(new Label2D(defaultLabel[1],this.labelGeometry,v(axisLength, 0, 0)));
-		this.labelSet.push(new Label2D(defaultLabel[2],this.labelGeometry,v(0, -axisLength, 0)));
-		this.labelSet.push(new Label2D(defaultLabel[3],this.labelGeometry,v(0, axisLength, 0)));
-		this.labelSet.push(new Label2D(defaultLabel[4],this.labelGeometry,v(0, 0, -axisLength)));
-		this.labelSet.push(new Label2D(defaultLabel[5],this.labelGeometry,v(0, 0, axisLength)));
+		this.labelSet.push(new Label2D(labelValues[0],this.labelGeometry,v(-axisLength, 0, 0)));
+		this.labelSet.push(new Label2D(labelValues[1],this.labelGeometry,v(axisLength, 0, 0)));
+		this.labelSet.push(new Label2D(labelValues[2],this.labelGeometry,v(0, -axisLength, 0)));
+		this.labelSet.push(new Label2D(labelValues[3],this.labelGeometry,v(0, axisLength, 0)));
+		this.labelSet.push(new Label2D(labelValues[4],this.labelGeometry,v(0, 0, -axisLength)));
+		this.labelSet.push(new Label2D(labelValues[5],this.labelGeometry,v(0, 0, axisLength)));
 
 
 
@@ -119,7 +126,7 @@
 			var y = new Array();
 
 			//Rendering worldLabel
-			this.worldLabel.setPos(10+world.x,winHeight-(world.innerHeight+world.y)+30);
+			this.worldLabel.setPos(10+world.x,winHeight-(world.innerHeight+world.y)+40);
 
 			//Loop on labels 2 by two because we don't want to show the one behind the camera
 			for(var i=0;i<6;i=i+2){
@@ -158,6 +165,10 @@
 					winHeight-(this.vecGeoLabs[i+1].y* +(world.innerHeight/2) + (world.innerHeight/2)+world.y));
 			}
 			
+		}
+		//construct 
+		if(!world.visible) {
+			this.hideAll();
 		}
 	}
 

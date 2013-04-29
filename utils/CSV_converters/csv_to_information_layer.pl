@@ -4,7 +4,7 @@ open(F2, ">".$file.".json");
 print F2 "{ \"information\" : [\n";
 # Reading file line by line
 $current_line = <F>;
-@genes = split("\t",$current_line);
+@genes = split(",",$current_line);
 my $i = 0;
 my $j = 1;
 my $k;
@@ -21,7 +21,7 @@ for($i=0;$i<scalar (@genes);$i++) {
 	$json[$i][0] = $genes[$i];
 }
 while($current_line = <F>) {
-	@val = split("\t",$current_line);
+	@val = split(",",$current_line);
 	for($i=0;$i<scalar (@genes);$i++) {
 		$val[$i]=~ s/\n//g;
 		$json[$i][$j] = ($val[$i]);	
