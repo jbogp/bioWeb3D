@@ -114,12 +114,25 @@
 		$("#accordion").accordion({ heightStyle: "content"});
 
 		$("#worldAccordion").buttonset();
+
+
+		//Create centering button
+		$("#checkCenter").button();
 		
 		
 		//Bind events 
 		$(".UIControl").bind("click", function (event) {
 			//Show/hide UI
 			$(".UI").fadeToggle('slow');
+		});
+
+		$("#checkCenter").bind("change",function(event) {
+			centerPoints = !centerPoints;
+			//Refreshing worlds
+			for(var i=0;i<worlds.length;i++) {
+				worlds[i].refreshDataSets();
+			}	
+				
 		});
 		
 		$("#newDataSet").bind("change", function (event) {

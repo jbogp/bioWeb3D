@@ -89,7 +89,7 @@
 if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 //Defining application global variables
-var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeight=window.innerHeight,winWidth=window.innerWidth,datasets=new Array(),numWorlds,timeout,alphaClust=1,alphaRaw=0.2,partSize=2;
+var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeight=window.innerHeight,winWidth=window.innerWidth,datasets=new Array(),numWorlds,timeout,alphaClust=1,alphaRaw=0.2,partSize=2,centerPoints=true;
 </script>
 
 
@@ -126,6 +126,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					</div>
 				<h3><a href="#">Settings</a></h3>
 					<div>
+						<div class="coefs" style="padding:10px !important;">
+							<input type='checkbox' checked class="checkCenter" id='checkCenter' value=1 /><label for='checkCenter'>Center points</label>
+						</div>
 						<div class="coefs" style="padding:10px !important;">
 							Axis Coefficients :</br>
 							X axis<div class="sliderCoord" id="sliderX"></div>
@@ -362,6 +365,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		this.points;
 		this.name;
 		this.centered = new Array();
+		this.nonCentered = new Array();
 		this.clusterSets = new Array();
 		this.loaded = false;
 		this.chain;
@@ -394,6 +398,14 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 			var pX,pY,pZ;
 			this.loadMaterials();
 			cluster = typeof cluster !== 'undefined' ? cluster : -1;
+			//Take centered points if center is selected or let normal points otherwise
+			var points;
+			if(centerPoints) {
+				points = this.centered;
+			}
+			else {
+				points = this.nonCentered;
+			}
 			if(this.loaded) {
 				var geometry=new Array(),particles, particle,particleSystem=new Array();	
 				//For chain
@@ -403,9 +415,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 					//create DataSet geometry
 					geometry[0] = new THREE.Geometry();
 					for (var i = 0; i < this.centered.length; i++) {
-							pX =  this.centered[i][0],
-							pY =  this.centered[i][1],
-							pZ =  this.centered[i][2],
+							pX =  points[i][0],
+							pY =  points[i][1],
+							pZ =  points[i][2],
 							particle = new THREE.Vector3(pX, pY, pZ);
 
 							geometry[0].vertices.push( particle );
@@ -428,9 +440,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 						geometry[i] = new THREE.Geometry();
 					}
 					for (var i = 0; i < this.centered.length && !error; i++) {
-							var pX =  this.centered[i][0],
-							pY =  this.centered[i][1],
-							pZ =  this.centered[i][2],
+							var pX =  points[i][0],
+							pY =  points[i][1],
+							pZ =  points[i][2],
 							particle = new THREE.Vector3(pX, pY, pZ);
 							if(this.chain) {
 								geometryLine.vertices.push( particle );
@@ -526,12 +538,16 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 
 		}
 
+		
+
 		//Centering data on 0 accounting for the axis respective coeficients
 		this.center = function(coef) {
 			for (var i = 0; i < this.points.length; i++) {
 				this.centered[i] = new Array();
+				this.nonCentered[i] = new Array();
 				for(var j = 0; j < 3; j++) {
 						this.centered[i][j] = (((this.points[i][j])-this.mean[j])*coef[j]);
+						this.nonCentered[i][j] = (this.points[i][j]*coef[j]);
 				}
 			}
 		}
