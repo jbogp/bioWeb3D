@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.4)  2 MAY 2013 00:18
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9) (preloaded format=pdflatex 2013.2.4)  2 MAY 2013 00:52
 entering extended mode
 **C:/Users/jbpettit/Documents/GitHub/bioWeb3D/paper/bmc_article/round2/PettitEt
 Al_Manuscript_JCM_JB.tex
@@ -100,13 +100,6 @@ File: listings.cfg 2007/02/22 1.4 listings configuration
 ))
 Package: listings 2007/02/22 1.4 (Carsten Heinz)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\fontenc.sty"
-Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
-
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.def"
-File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
-LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
-))
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\multicol.sty"
 Package: multicol 2011/06/27 v1.7a multicolumn formatting (FMi)
 \c@tracingmulticols=\count98
@@ -374,18 +367,18 @@ Now handling font encoding U ...
 ))
 (C:\Users\jbpettit\Documents\GitHub\bioWeb3D\paper\bmc_article\round2\PettitEtA
 l_Manuscript_JCM_JB.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 130.
-LaTeX Font Info:    ... okay on input line 130.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -402,35 +395,74 @@ LaTeX Font Info:    ... okay on input line 130.
 \everyMPtoPDFconversion=\toks19
 )
 \c@lstlisting=\count113
-LaTeX Font Info:    Try loading font information for T1+cmss on input line 174.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 173.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 173.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 173.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 173.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 173.
 
- ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmss.fd"
-File: t1cmss.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 174.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 174.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 174.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 174.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 174.
-
-Overfull \hbox (9.99756pt too wide) in paragraph at lines 174--174
+Overfull \hbox (9.99998pt too wide) in paragraph at lines 173--173
 []  
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 230--233
+LaTeX Warning: Citation `Rubel10' on page 1 undefined on input line 229.
+
+
+LaTeX Warning: Citation `Freeman07' on page 1 undefined on input line 230.
+
+
+LaTeX Warning: Citation `Pavlopoulos08' on page 1 undefined on input line 230.
+
+
+LaTeX Warning: Citation `Wang09' on page 1 undefined on input line 230.
+
+
+LaTeX Warning: Citation `Stalling05' on page 1 undefined on input line 230.
+
+
+LaTeX Warning: Citation `Peng10' on page 1 undefined on input line 230.
+
+
+LaTeX Warning: Citation `Lein07' on page 1 undefined on input line 230.
+
+
+LaTeX Warning: Citation `Shannon03' on page 1 undefined on input line 230.
+
+
+LaTeX Warning: Citation `Hartshorn02' on page 1 undefined on input line 230.
+
+
+LaTeX Warning: Citation `Dinesh12' on page 1 undefined on input line 230.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 229--232
 
  []
 
 [1
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-Underfull \hbox (badness 10000) in paragraph at lines 246--247
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+
+LaTeX Warning: Citation `Wilde07' on page 2 undefined on input line 240.
+
+
+LaTeX Warning: Citation `xml' on page 2 undefined on input line 240.
+
+[2]
+
+LaTeX Warning: Citation `three' on page 3 undefined on input line 245.
+
+
+LaTeX Warning: Citation `webgl' on page 3 undefined on input line 245.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 245--246
 
  []
 
@@ -439,65 +471,90 @@ Underfull \hbox (badness 10000) in paragraph at lines 253--254
 
  []
 
+[3]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 256.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 256.
- [3] [4] [5]
-[6] [7] [8]
-(C:\Users\jbpettit\Documents\GitHub\bioWeb3D\paper\bmc_article\round2\PettitEtA
-l_Manuscript_JCM_JB.bbl
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 39.
-) [9] [10]
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 407.
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 264.
 
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1cmtt.fd"
-File: t1cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
-) [11] [12]
-[13] [14]
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omlcmr.fd"
+File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10> not available
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 264.
+ [4] [5]
+
+LaTeX Warning: Citation `Tomer10' on page 6 undefined on input line 319.
+
+
+LaTeX Warning: Citation `github' on page 6 undefined on input line 321.
+
+[6]
+
+LaTeX Warning: Citation `Wang09' on page 7 undefined on input line 326.
+
+
+LaTeX Warning: Citation `security' on page 7 undefined on input line 329.
+
+
+LaTeX Warning: Citation `caniuse' on page 7 undefined on input line 334.
+
+
+LaTeX Warning: Citation `github' on page 7 undefined on input line 338.
+
+[7]
+
+LaTeX Warning: Citation `github' on page 8 undefined on input line 344.
+
+
+LaTeX Warning: Citation `bioWeb3D' on page 8 undefined on input line 344.
+
+[8]
 (C:\Users\jbpettit\Documents\GitHub\bioWeb3D\paper\bmc_article\round2\PettitEtA
-l_Manuscript_JCM_JB.aux) ) 
+l_Manuscript_JCM_JB.bbl)
+
+LaTeX Warning: Citation `Tomer10' on page 9 undefined on input line 403.
+
+[9] [10] [11] [12] [13]
+(C:\Users\jbpettit\Documents\GitHub\bioWeb3D\paper\bmc_article\round2\PettitEtA
+l_Manuscript_JCM_JB.aux)
+
+LaTeX Warning: There were undefined references.
+
+ ) 
 Here is how much of TeX's memory you used:
- 3490 strings out of 493921
- 45422 string characters out of 3144868
- 246019 words of memory out of 3000000
- 6753 multiletter control sequences out of 15000+200000
- 20412 words of font info for 44 fonts, out of 3000000 for 9000
+ 3246 strings out of 493921
+ 42744 string characters out of 3144868
+ 245514 words of memory out of 3000000
+ 6526 multiletter control sequences out of 15000+200000
+ 10865 words of font info for 38 fonts, out of 3000000 for 9000
  841 hyphenation exceptions out of 8191
- 29i,5n,32p,1079b,1181s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\jbpettit\AppData\Local\MiKTeX\2.9\fonts\pk
-\ljfour\jknappen\ec\dpi600\ectt1000.pk> <C:\Users\jbpettit\AppData\Local\MiKTeX
-\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecti0900.pk> <C:\Users\jbpettit\AppData
-\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx0900.pk> <C:\Users\jbp
-ettit\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0900.pk> 
-<C:\Users\jbpettit\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\
-ecsx0900.pk> <C:\Users\jbpettit\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknapp
-en\ec\dpi600\ecti1000.pk> <C:\Users\jbpettit\AppData\Local\MiKTeX\2.9\fonts\pk\
-ljfour\jknappen\ec\dpi600\ecbi1000.pk> <C:\Users\jbpettit\AppData\Local\MiKTeX\
-2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1000.pk> <C:\Users\jbpettit\AppData\
-Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\jbpe
-ttit\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1000.pk> <
-C:\Users\jbpettit\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
-cbx1000.pk> <C:\Users\jbpettit\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
-n\ec\dpi600\ecsx1200.pk> <C:\Users\jbpettit\AppData\Local\MiKTeX\2.9\fonts\pk\l
-jfour\jknappen\ec\dpi600\ecss0800.pk> <C:\Users\jbpettit\AppData\Local\MiKTeX\2
-.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecss1200.pk> <C:\Users\jbpettit\AppData\L
-ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecsx1728.pk><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/Program Files (
-x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program Files (x86)
-/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program Files (x86)/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x86)/MiKTeX 
-2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.
-9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2.9/f
-onts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on PettitEtAl_Manuscript_JCM_JB.pdf (14 pages, 274036 bytes).
+ 29i,5n,32p,1279b,1176s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbxti10.pfb>
+<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C
+:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi7.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Prog
+ram Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Program 
+Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Program Files (x
+86)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss10.pfb><C:/Program Files (x86
+)/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss12.pfb><C:/Program Files (x86)/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmss8.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><C:/Program Files (x86)/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Program Files (x86)/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Program Files (x86)/MiKTeX 2.9/
+fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on PettitEtAl_Manuscript_JCM_JB.pdf (13 pages, 221500 bytes).
 PDF statistics:
- 708 PDF objects out of 1000 (max. 8388607)
+ 113 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

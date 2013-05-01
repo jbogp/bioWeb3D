@@ -1,46 +1,14 @@
-This is BibTeX, Version 0.99c (Web2C 7.5.6)
-The top-level auxiliary file: PettitEtAl_Manuscript_JCM_JB.aux
-The style file: bmc_article.bst.bst
-Reallocated wiz_functions (elt_size=4) to 6000 items from 472446405560.
-Database file #1: bmc_article.bib.bib
-You've used 19 entries,
-            3603 wiz_defined-function locations,
-            816 strings with 10236 characters,
-and the built_in function-call counts, 50472 in all, are:
-= -- 4505
-> -- 520
-< -- 179
-+ -- 551
-- -- 167
-* -- 6211
-:= -- 8137
-add.period$ -- 31
-call.type$ -- 19
-change.case$ -- 170
-chr.to.int$ -- 0
-cite$ -- 19
-duplicate$ -- 3850
-empty$ -- 3733
-format.name$ -- 678
-if$ -- 9800
-int.to.chr$ -- 0
-int.to.str$ -- 38
-missing$ -- 1217
-newline$ -- 415
-num.names$ -- 24
-pop$ -- 812
-preamble$ -- 1
-purify$ -- 0
-quote$ -- 38
-skip$ -- 452
-stack$ -- 0
-substring$ -- 6849
-swap$ -- 746
-text.length$ -- 29
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 16
-warning$ -- 0
-while$ -- 260
-width$ -- 21
-write$ -- 984
+This is BibTeX, Version 0.99dThe top-level auxiliary file: PettitEtAl_Manuscript_JCM_JB.aux
+I couldn't open style file bmc_article.bst.bst
+---line 44 of file PettitEtAl_Manuscript_JCM_JB.aux
+ : \bibstyle{bmc_article.bst
+ :                          }
+I'm skipping whatever remains of this command
+I couldn't open database file bmc_article.bib.bib
+---line 45 of file PettitEtAl_Manuscript_JCM_JB.aux
+ : \bibdata{bmc_article.bib
+ :                         }
+I'm skipping whatever remains of this command
+I found no database files---while reading file PettitEtAl_Manuscript_JCM_JB.aux
+I found no style file---while reading file PettitEtAl_Manuscript_JCM_JB.aux
+(There were 4 error messages)
