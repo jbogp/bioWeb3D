@@ -22,6 +22,12 @@ function getAsText(readFile) {
 	  reader.onload = loadedJSON;
 	  reader.onerror = errorHandler;
   }
+  else if(readFile.name.split('.').pop() == "xml") {
+	  // Handle progress, success, and errors
+	  reader.onprogress = updateProgress;
+	  reader.onload = loadedXML;
+	  reader.onerror = errorHandler;
+  }
   else {
 	  // Handle progress, success, and errors
 	  reader.onprogress = updateProgress;
@@ -61,7 +67,34 @@ function loadedCSV(evt) {
   try {
 	  //Reading Json and creating Object
 	  var data = new Object();
-	  data.points = $.csv.toArrays(fileString)
+	  data.points = $.csv.toArrays(fileString);
+	  var index = datasets.push(new DataSet(data));
+	  //Adding dataSet to UI
+	  addDataSetUI(index);
+	}
+  catch(e) {
+	  jsonError(e.message);
+ 	}
+      
+}
+
+
+function loadedXML(evt) {  
+  // Obtain the read file data    
+  var fileString = evt.target.result;
+  try {
+	  //Reading xml and creating Object
+	  var data = new Object();
+	  var xml = $.parseXML(fileString);
+	  $xml = $( xml );
+    	  data.name =  $xml.find( "name" ).text();
+	  data.chain = ($xml.find( "chain" ).text()  === 'true');
+	  data.points = new Array();
+	  $xml.find("point").each(
+		function(i,e) {
+			data.points.push([$(e).find("x").text(),$(e).find("y").text(),$(e).find("z").text()]);
+		}
+	  );
 	  var index = datasets.push(new DataSet(data));
 	  //Adding dataSet to UI
 	  addDataSetUI(index);

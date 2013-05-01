@@ -136,7 +136,7 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 							Z axis<div class="sliderCoord" id="sliderZ"></div>
 						</div>
 						<div class="coefs"  style="padding:10px !important;">
-							raw data transparency  : </br>
+							Raw data transparency  : </br>
 							<div class="alphaRaw" id="alphaRaw"></div>
 						</div>
 						<div class="coefs"  style="padding:10px !important;">
@@ -690,7 +690,7 @@ $(function(){
 	if(typeof getUrlVars()["dataset"] !== 'undefined'){ 
 		setFactory(getUrlVars()["dataset"]);
 		while(typeof getUrlVars()["cluster"+i] !== 'undefined'){ 
-			setTimeout('clusterSetFactory(getUrlVars()["cluster'+i+'"],1)',i*2000);
+			setTimeout('clusterSetFactory(getUrlVars()["cluster'+i+'"],1)',(i+1)*2000);
 			i++;
 		}
 	}

@@ -311,8 +311,9 @@
 	}
 
 
-	//Load Data From Json File
+	//Load Data From URL File
 	function setFactory(jsonFile) {
+		//JSON file
 		if(jsonFile.split('.').pop() == "json") { 
 			$.ajax({
 			  url: jsonFile,
@@ -327,6 +328,34 @@
 			} 
 			});	
 		}
+		//XML file
+		else if(jsonFile.split('.').pop() == "xml") { 
+			$.ajax({
+			  url: jsonFile,
+			  dataType: 'html',
+			  success: function(data) {
+				  //Reading xml and creating Object
+				  var coord = new Object();
+				  var xml = $.parseXML(data);
+				  $xml = $( xml );
+			    	  coord.name =  $xml.find( "name" ).text();
+				  coord.chain = ($xml.find( "chain" ).text()  === 'true');
+				  coord.points = new Array();
+				  $xml.find("point").each(
+					function(i,e) {
+						coord.points.push([$(e).find("x").text(),$(e).find("y").text(),$(e).find("z").text()]);
+					}
+				  );
+				  var index = datasets.push(new DataSet(coord));
+				  //Adding dataSet to UI
+				  addDataSetUI(index);
+			},
+			 error: function (xhr, ajaxOptions, thrownError){
+				jsonError(xhr.statusText);
+			} 
+			});	
+		}
+		//CSV File
 		else {
 			$.ajax({
 			  url: jsonFile,
@@ -380,6 +409,25 @@
 	//Json parsin error handle
 	function jsonError(e) {
 		consoleMess("Error ("+e+") while reading JSON, please check the file format <br/><a href='https://github.com/jibooo/bioWeb3D/wiki/Getting-started' target='_blank'>more info on formats</a>");
+	}
+
+
+	//xml PARSER
+	var parseXml;
+	if (typeof window.DOMParser != "undefined") {
+	    parseXml = function(xmlStr) {
+		return ( new window.DOMParser() ).parseFromString(xmlStr, "text/xml");
+	    };
+	} else if (typeof window.ActiveXObject != "undefined" &&
+	       new window.ActiveXObject("Microsoft.XMLDOM")) {
+	    parseXml = function(xmlStr) {
+		var xmlDoc = new window.ActiveXObject("Microsoft.XMLDOM");
+		xmlDoc.async = "false";
+		xmlDoc.loadXML(xmlStr);
+		return xmlDoc;
+	    };
+	} else {
+	    throw new Error("No XML parser found");
 	}
 
  

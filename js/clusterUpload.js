@@ -21,11 +21,35 @@ function getClusterAsText(readFile,datasetId) {
 	var fileString = evt.target.result;
 
 	try {
-		//Detecting json or CSV
+		//Detecting json, xml or CSV
 		if(readFile.name.split('.').pop() == "json") { 
 			//Reading Json and creating Object
 			var json = eval('(' + fileString + ')').information;
 			addClusterUI(datasetId,datasetNum,json);
+		}
+		else if(readFile.name.split('.').pop() == "xml") { 
+			//Reading xml and creating Object
+			var xml = $.parseXML(fileString);
+			$xml = $( xml );
+			var data = new Object();
+			data.information = new Array();
+			//Iterating on sets
+			$xml.find("set").each(function(i,e) {
+				//creating set object
+				var thisSet = new Object();
+				thisSet.name = $(e).find("name").text();
+				thisSet.numClass = parseInt($(e).find("numClass").text());
+				thisSet.values = new Array();
+				//iterating on points
+				$(e).find("value").each(function(j,el) {			
+					thisSet.values.push(parseInt($(el).text()));
+				});
+				//Pushing set in the data object
+				data.information.push(thisSet);
+				
+			});
+			//Rendering cluster set in UI and visualization
+			addClusterUI(datasetId,datasetNum,data.information);
 		}
 		else {
 			//Reading CSV and creating Object

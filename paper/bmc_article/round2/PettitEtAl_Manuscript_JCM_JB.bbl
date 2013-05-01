@@ -1,0 +1,475 @@
+%% BioMed_Central_Bib_Style_v1.01
+
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{[#1]}
+\providecommand{\urlprefix}{}
+
+\bibitem{Rubel10}
+Rubel O, Weber GH, Huang MY, Bethel EW, Biggin MD, Fowlkes CC, Luengo~Hendriks
+  CL, Keranen SV, Eisen MB, Knowles DW, Malik J, Hagen H, Hamann B:
+  \textbf{{{I}ntegrating data clustering and visualization for the analysis of
+  3{D} gene expression data}}. \emph{IEEE/ACM Trans Comput Biol Bioinform}
+  2010, \textbf{7}:64--79.
+
+\bibitem{Freeman07}
+Freeman TC, Goldovsky L, Brosch M, van Dongen S, Mazière P, Grocock RJ,
+  Freilich S, Thornton J, Enright AJ: \textbf{Construction, Visualisation, and
+  Clustering of Transcription Networks from Microarray Expression Data.}
+  \emph{PLoS Computational Biology} 2007, \textbf{3}(10).
+
+\bibitem{Pavlopoulos08}
+Pavlopoulos GA, O'Donoghue SI, Satagopam VP, Soldatos TG, Pafilis E, Schneider
+  R: \textbf{{{A}rena3{D}: visualization of biological networks in 3{D}}}.
+  \emph{BMC Syst Biol} 2008, \textbf{2}:104.
+
+\bibitem{Wang09}
+Wang Q, Liang Q, Zhang X: \textbf{3D Genome Tuner: Compare Multiple Circular
+  Genomes in a 3D Context}. \emph{Genomics Proteomics Bioinformatics} 2009,
+  \textbf{7}(3):143--146.
+
+\bibitem{Stalling05}
+Stalling D, Westerhoff M, Hege HC: \textbf{Amira: a highly interactive system
+  for visual data analysis} 2005.
+
+\bibitem{Peng10}
+Peng H, Ruan Z, Long F, Simpson JH, Myers EW: \textbf{V3D enables real-time 3D
+  visualization and quantitative analysis of large-scale biological image data
+  sets.} \emph{Nature Biotechnology} 2010, \textbf{28}(4):348--353,
+  \urlprefix\url{[http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=28%
+57929&tool=pmcentrez&rendertype=abstract]}.
+
+\bibitem{Lein07}
+Lein ES, Hawrylycz MJ, Ao N, Ayres M, Bensinger A, Bernard A, Boe AF, Boguski
+  MS, Brockway KS, Byrnes EJ, Chen L, Chen L, Chen TM, Chin MC, Chong J, Crook
+  BE, Czaplinska A, Dang CN, Datta S, Dee NR, Desaki AL, Desta T, Diep E,
+  Dolbeare TA, Donelan MJ, Dong HW, Dougherty JG, Duncan BJ, Ebbert AJ, Eichele
+  G, Estin LK, Faber C, Facer BA, Fields R, Fischer SR, Fliss TP, Frensley C,
+  Gates SN, Glattfelder KJ, Halverson KR, Hart MR, Hohmann JG, Howell MP, Jeung
+  DP, Johnson RA, Karr PT, Kawal R, Kidney JM, Knapik RH, Kuan CL, Lake JH,
+  Laramee AR, Larsen KD, Lau C, Lemon TA, Liang AJ, Liu Y, Luong LT, Michaels
+  J, Morgan JJ, Morgan RJ, Mortrud MT, Mosqueda NF, Ng LL, Ng R, Orta GJ,
+  Overly CC, Pak TH, Parry SE, Pathak SD, Pearson OC, Puchalski RB, Riley ZL,
+  Rockett HR, Rowland SA, Royall JJ, Ruiz MJ, Sarno NR, Schaffnit K,
+  Shapovalova NV, Sivisay T, Slaughterbeck CR, Smith SC, Smith KA, Smith BI,
+  Sodt AJ, Stewart NN, Stumpf KR, Sunkin SM, Sutram M, Tam A, Teemer CD,
+  Thaller C, Thompson CL, Varnam LR, Visel A, Whitlock RM, Wohnoutka PE, Wolkey
+  CK, Wong VY, Wood M, Yaylaoglu MB, Young RC, Youngstrom BL, Yuan XF, Zhang B,
+  Zwingman TA, Jones AR: \textbf{{{G}enome-wide atlas of gene expression in the
+  adult mouse brain}}. \emph{Nature} 2007, \textbf{445}(7124):168--176.
+
+\bibitem{Shannon03}
+Shannon P, Markiel A, Ozier O, Baliga NS, Wang JT, Ramage D, Amin N,
+  Schwikowski B, Ideker T: \textbf{Cytoscape: a software environment for
+  integrated models of biomolecular interaction networks.} \emph{Genome
+  Research} 2003, \textbf{13}:2498--504.
+
+\bibitem{Hartshorn02}
+Hartshorn MJ: \textbf{{{A}stex{V}iewer: a visualisation aid for structure-based
+  drug design}}. \emph{J. Comput. Aided Mol. Des.} 2002,
+  \textbf{16}(12):871--881.
+
+\bibitem{Dinesh12}
+Kulkarni DB, Doijade MM, Devrukhkar CS, Zilpe GR, Surana RR: \textbf{Article:
+  NetraRIS - a Web based DICOM Viewer}. \emph{International Journal of Computer
+  Applications} 2012, \textbf{48}(24):40--44. [Published by Foundation of
+  Computer Science, New York, USA].
+
+\bibitem{Wilde07}
+Wilde E: \textbf{Putting Things to REST}. \emph{Transport} 2007,
+  \textbf{15}(November):567--583.
+
+\bibitem{xml}
+\textbf{XML Applications and Initiatives}
+  \urlprefix\url{[http://xml.coverpages.org/xmlApplications.html]}.
+
+\bibitem{three}
+\textbf{Three.js - JavaScript 3D library}
+  \urlprefix\url{[http://mrdoob.github.com/three.js/]}.
+
+\bibitem{webgl}
+\textbf{WebGL 1.0 Specification}
+  \urlprefix\url{[https://www.khronos.org/registry/webgl/specs/1.0/]}.
+
+\bibitem{Tomer10}
+Tomer R, Denes AS, Tessmar-Raible K, Arendt D: \textbf{Profiling by image
+  registration reveals common origin of annelid mushroom bodies and vertebrate
+  pallium.} \emph{Cell} 2010, \textbf{142}(5):800--809.
+
+\bibitem{security}
+\textbf{United States Computer Emergency Readiness Team}
+  \urlprefix\url{[http://www.kb.cert.org/vuls/id/636312]}.
+
+\bibitem{caniuse}
+\textbf{Compatibility table for WebGL}
+  \urlprefix\url{[http://caniuse.com/webgl]}.
+
+\bibitem{github}
+\textbf{bioWeb3D on github} \urlprefix\url{[http://github.com/jbogp/bioWeb3D]}.
+
+\bibitem{bioWeb3D}
+\textbf{bioWeb3D online}
+  \urlprefix\url{[http://www.ebi.ac.uk/~jbpettit/bioWeb3D]}.
+
+\end{thebibliography}
+
+\newcommand{\BMCxmlcomment}[1]{}
+
+\BMCxmlcomment{
+
+<refgrp>
+
+<bibl id="B1">
+  <title><p>{{I}ntegrating data clustering and visualization for the analysis
+  of 3{D} gene expression data}</p></title>
+  <aug>
+    <au><snm>Rubel</snm><fnm>O.</fnm></au>
+    <au><snm>Weber</snm><fnm>G. H.</fnm></au>
+    <au><snm>Huang</snm><fnm>M. Y.</fnm></au>
+    <au><snm>Bethel</snm><fnm>E. W.</fnm></au>
+    <au><snm>Biggin</snm><fnm>M. D.</fnm></au>
+    <au><snm>Fowlkes</snm><fnm>C. C.</fnm></au>
+    <au><snm>Luengo Hendriks</snm><fnm>C. L.</fnm></au>
+    <au><snm>Keranen</snm><fnm>S. V.</fnm></au>
+    <au><snm>Eisen</snm><fnm>M. B.</fnm></au>
+    <au><snm>Knowles</snm><fnm>D. W.</fnm></au>
+    <au><snm>Malik</snm><fnm>J.</fnm></au>
+    <au><snm>Hagen</snm><fnm>H.</fnm></au>
+    <au><snm>Hamann</snm><fnm>B.</fnm></au>
+  </aug>
+  <source>IEEE/ACM Trans Comput Biol Bioinform</source>
+  <pubdate>2010</pubdate>
+  <volume>7</volume>
+  <issue>1</issue>
+  <fpage>64</fpage>
+  <lpage>-79</lpage>
+</bibl>
+
+<bibl id="B2">
+  <title><p>Construction, Visualisation, and Clustering of Transcription
+  Networks from Microarray Expression Data.</p></title>
+  <aug>
+    <au><snm>Freeman</snm><fnm>TC</fnm></au>
+    <au><snm>Goldovsky</snm><fnm>L</fnm></au>
+    <au><snm>Brosch</snm><fnm>M</fnm></au>
+    <au><snm>Dongen</snm><fnm>S</fnm></au>
+    <au><snm>Mazière</snm><fnm>P</fnm></au>
+    <au><snm>Grocock</snm><fnm>RJ</fnm></au>
+    <au><snm>Freilich</snm><fnm>S</fnm></au>
+    <au><snm>Thornton</snm><fnm>J</fnm></au>
+    <au><snm>Enright</snm><fnm>AJ</fnm></au>
+  </aug>
+  <source>PLoS Computational Biology</source>
+  <pubdate>2007</pubdate>
+  <volume>3</volume>
+  <issue>10</issue>
+</bibl>
+
+<bibl id="B3">
+  <title><p>{{A}rena3{D}: visualization of biological networks in
+  3{D}}</p></title>
+  <aug>
+    <au><snm>Pavlopoulos</snm><fnm>G. A.</fnm></au>
+    <au><snm>O'Donoghue</snm><fnm>S. I.</fnm></au>
+    <au><snm>Satagopam</snm><fnm>V. P.</fnm></au>
+    <au><snm>Soldatos</snm><fnm>T. G.</fnm></au>
+    <au><snm>Pafilis</snm><fnm>E.</fnm></au>
+    <au><snm>Schneider</snm><fnm>R.</fnm></au>
+  </aug>
+  <source>BMC Syst Biol</source>
+  <pubdate>2008</pubdate>
+  <volume>2</volume>
+  <fpage>104</fpage>
+</bibl>
+
+<bibl id="B4">
+  <title><p>3D Genome Tuner: Compare Multiple Circular Genomes in a 3D
+  Context</p></title>
+  <aug>
+    <au><snm>Wang</snm><fnm>Q</fnm></au>
+    <au><snm>Liang</snm><fnm>Q</fnm></au>
+    <au><snm>Zhang</snm><fnm>X</fnm></au>
+  </aug>
+  <source>Genomics Proteomics Bioinformatics</source>
+  <publisher>Beijing Genomics Institute</publisher>
+  <pubdate>2009</pubdate>
+  <volume>7</volume>
+  <issue>3</issue>
+  <fpage>143</fpage>
+  <lpage>-146</lpage>
+</bibl>
+
+<bibl id="B5">
+  <title><p>Amira: a highly interactive system for visual data
+  analysis</p></title>
+  <aug>
+    <au><snm>Stalling</snm><fnm>D</fnm></au>
+    <au><snm>Westerhoff</snm><fnm>M</fnm></au>
+    <au><snm>Hege</snm><fnm>HC</fnm></au>
+  </aug>
+  <pubdate>2005</pubdate>
+</bibl>
+
+<bibl id="B6">
+  <title><p>V3D enables real-time 3D visualization and quantitative analysis of
+  large-scale biological image data sets.</p></title>
+  <aug>
+    <au><snm>Peng</snm><fnm>H</fnm></au>
+    <au><snm>Ruan</snm><fnm>Z</fnm></au>
+    <au><snm>Long</snm><fnm>F</fnm></au>
+    <au><snm>Simpson</snm><fnm>JH</fnm></au>
+    <au><snm>Myers</snm><fnm>EW</fnm></au>
+  </aug>
+  <source>Nature Biotechnology</source>
+  <publisher>Nature Publishing Group</publisher>
+  <pubdate>2010</pubdate>
+  <volume>28</volume>
+  <issue>4</issue>
+  <fpage>348</fpage>
+  <lpage>-353</lpage>
+  <url>http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2857929&tool=%
+pmcentrez&rendertype=abstract</url>
+</bibl>
+
+<bibl id="B7">
+  <title><p>{{G}enome-wide atlas of gene expression in the adult mouse
+  brain}</p></title>
+  <aug>
+    <au><snm>Lein</snm><fnm>E. S.</fnm></au>
+    <au><snm>Hawrylycz</snm><fnm>M. J.</fnm></au>
+    <au><snm>Ao</snm><fnm>N.</fnm></au>
+    <au><snm>Ayres</snm><fnm>M.</fnm></au>
+    <au><snm>Bensinger</snm><fnm>A.</fnm></au>
+    <au><snm>Bernard</snm><fnm>A.</fnm></au>
+    <au><snm>Boe</snm><fnm>A. F.</fnm></au>
+    <au><snm>Boguski</snm><fnm>M. S.</fnm></au>
+    <au><snm>Brockway</snm><fnm>K. S.</fnm></au>
+    <au><snm>Byrnes</snm><fnm>E. J.</fnm></au>
+    <au><snm>Chen</snm><fnm>L.</fnm></au>
+    <au><snm>Chen</snm><fnm>L.</fnm></au>
+    <au><snm>Chen</snm><fnm>T. M.</fnm></au>
+    <au><snm>Chin</snm><fnm>M. C.</fnm></au>
+    <au><snm>Chong</snm><fnm>J.</fnm></au>
+    <au><snm>Crook</snm><fnm>B. E.</fnm></au>
+    <au><snm>Czaplinska</snm><fnm>A.</fnm></au>
+    <au><snm>Dang</snm><fnm>C. N.</fnm></au>
+    <au><snm>Datta</snm><fnm>S.</fnm></au>
+    <au><snm>Dee</snm><fnm>N. R.</fnm></au>
+    <au><snm>Desaki</snm><fnm>A. L.</fnm></au>
+    <au><snm>Desta</snm><fnm>T.</fnm></au>
+    <au><snm>Diep</snm><fnm>E.</fnm></au>
+    <au><snm>Dolbeare</snm><fnm>T. A.</fnm></au>
+    <au><snm>Donelan</snm><fnm>M. J.</fnm></au>
+    <au><snm>Dong</snm><fnm>H. W.</fnm></au>
+    <au><snm>Dougherty</snm><fnm>J. G.</fnm></au>
+    <au><snm>Duncan</snm><fnm>B. J.</fnm></au>
+    <au><snm>Ebbert</snm><fnm>A. J.</fnm></au>
+    <au><snm>Eichele</snm><fnm>G.</fnm></au>
+    <au><snm>Estin</snm><fnm>L. K.</fnm></au>
+    <au><snm>Faber</snm><fnm>C.</fnm></au>
+    <au><snm>Facer</snm><fnm>B. A.</fnm></au>
+    <au><snm>Fields</snm><fnm>R.</fnm></au>
+    <au><snm>Fischer</snm><fnm>S. R.</fnm></au>
+    <au><snm>Fliss</snm><fnm>T. P.</fnm></au>
+    <au><snm>Frensley</snm><fnm>C.</fnm></au>
+    <au><snm>Gates</snm><fnm>S. N.</fnm></au>
+    <au><snm>Glattfelder</snm><fnm>K. J.</fnm></au>
+    <au><snm>Halverson</snm><fnm>K. R.</fnm></au>
+    <au><snm>Hart</snm><fnm>M. R.</fnm></au>
+    <au><snm>Hohmann</snm><fnm>J. G.</fnm></au>
+    <au><snm>Howell</snm><fnm>M. P.</fnm></au>
+    <au><snm>Jeung</snm><fnm>D. P.</fnm></au>
+    <au><snm>Johnson</snm><fnm>R. A.</fnm></au>
+    <au><snm>Karr</snm><fnm>P. T.</fnm></au>
+    <au><snm>Kawal</snm><fnm>R.</fnm></au>
+    <au><snm>Kidney</snm><fnm>J. M.</fnm></au>
+    <au><snm>Knapik</snm><fnm>R. H.</fnm></au>
+    <au><snm>Kuan</snm><fnm>C. L.</fnm></au>
+    <au><snm>Lake</snm><fnm>J. H.</fnm></au>
+    <au><snm>Laramee</snm><fnm>A. R.</fnm></au>
+    <au><snm>Larsen</snm><fnm>K. D.</fnm></au>
+    <au><snm>Lau</snm><fnm>C.</fnm></au>
+    <au><snm>Lemon</snm><fnm>T. A.</fnm></au>
+    <au><snm>Liang</snm><fnm>A. J.</fnm></au>
+    <au><snm>Liu</snm><fnm>Y.</fnm></au>
+    <au><snm>Luong</snm><fnm>L. T.</fnm></au>
+    <au><snm>Michaels</snm><fnm>J.</fnm></au>
+    <au><snm>Morgan</snm><fnm>J. J.</fnm></au>
+    <au><snm>Morgan</snm><fnm>R. J.</fnm></au>
+    <au><snm>Mortrud</snm><fnm>M. T.</fnm></au>
+    <au><snm>Mosqueda</snm><fnm>N. F.</fnm></au>
+    <au><snm>Ng</snm><fnm>L. L.</fnm></au>
+    <au><snm>Ng</snm><fnm>R.</fnm></au>
+    <au><snm>Orta</snm><fnm>G. J.</fnm></au>
+    <au><snm>Overly</snm><fnm>C. C.</fnm></au>
+    <au><snm>Pak</snm><fnm>T. H.</fnm></au>
+    <au><snm>Parry</snm><fnm>S. E.</fnm></au>
+    <au><snm>Pathak</snm><fnm>S. D.</fnm></au>
+    <au><snm>Pearson</snm><fnm>O. C.</fnm></au>
+    <au><snm>Puchalski</snm><fnm>R. B.</fnm></au>
+    <au><snm>Riley</snm><fnm>Z. L.</fnm></au>
+    <au><snm>Rockett</snm><fnm>H. R.</fnm></au>
+    <au><snm>Rowland</snm><fnm>S. A.</fnm></au>
+    <au><snm>Royall</snm><fnm>J. J.</fnm></au>
+    <au><snm>Ruiz</snm><fnm>M. J.</fnm></au>
+    <au><snm>Sarno</snm><fnm>N. R.</fnm></au>
+    <au><snm>Schaffnit</snm><fnm>K.</fnm></au>
+    <au><snm>Shapovalova</snm><fnm>N. V.</fnm></au>
+    <au><snm>Sivisay</snm><fnm>T.</fnm></au>
+    <au><snm>Slaughterbeck</snm><fnm>C. R.</fnm></au>
+    <au><snm>Smith</snm><fnm>S. C.</fnm></au>
+    <au><snm>Smith</snm><fnm>K. A.</fnm></au>
+    <au><snm>Smith</snm><fnm>B. I.</fnm></au>
+    <au><snm>Sodt</snm><fnm>A. J.</fnm></au>
+    <au><snm>Stewart</snm><fnm>N. N.</fnm></au>
+    <au><snm>Stumpf</snm><fnm>K. R.</fnm></au>
+    <au><snm>Sunkin</snm><fnm>S. M.</fnm></au>
+    <au><snm>Sutram</snm><fnm>M.</fnm></au>
+    <au><snm>Tam</snm><fnm>A.</fnm></au>
+    <au><snm>Teemer</snm><fnm>C. D.</fnm></au>
+    <au><snm>Thaller</snm><fnm>C.</fnm></au>
+    <au><snm>Thompson</snm><fnm>C. L.</fnm></au>
+    <au><snm>Varnam</snm><fnm>L. R.</fnm></au>
+    <au><snm>Visel</snm><fnm>A.</fnm></au>
+    <au><snm>Whitlock</snm><fnm>R. M.</fnm></au>
+    <au><snm>Wohnoutka</snm><fnm>P. E.</fnm></au>
+    <au><snm>Wolkey</snm><fnm>C. K.</fnm></au>
+    <au><snm>Wong</snm><fnm>V. Y.</fnm></au>
+    <au><snm>Wood</snm><fnm>M.</fnm></au>
+    <au><snm>Yaylaoglu</snm><fnm>M. B.</fnm></au>
+    <au><snm>Young</snm><fnm>R. C.</fnm></au>
+    <au><snm>Youngstrom</snm><fnm>B. L.</fnm></au>
+    <au><snm>Yuan</snm><fnm>X. F.</fnm></au>
+    <au><snm>Zhang</snm><fnm>B.</fnm></au>
+    <au><snm>Zwingman</snm><fnm>T. A.</fnm></au>
+    <au><snm>Jones</snm><fnm>A. R.</fnm></au>
+  </aug>
+  <source>Nature</source>
+  <pubdate>2007</pubdate>
+  <volume>445</volume>
+  <issue>7124</issue>
+  <fpage>168</fpage>
+  <lpage>-176</lpage>
+</bibl>
+
+<bibl id="B8">
+  <title><p>Cytoscape: a software environment for integrated models of
+  biomolecular interaction networks.</p></title>
+  <aug>
+    <au><snm>Shannon</snm><fnm>P</fnm></au>
+    <au><snm>Markiel</snm><fnm>A</fnm></au>
+    <au><snm>Ozier</snm><fnm>O</fnm></au>
+    <au><snm>Baliga</snm><fnm>NS</fnm></au>
+    <au><snm>Wang</snm><fnm>JT</fnm></au>
+    <au><snm>Ramage</snm><fnm>D</fnm></au>
+    <au><snm>Amin</snm><fnm>N</fnm></au>
+    <au><snm>Schwikowski</snm><fnm>B</fnm></au>
+    <au><snm>Ideker</snm><fnm>T</fnm></au>
+  </aug>
+  <source>Genome Research</source>
+  <pubdate>2003</pubdate>
+  <volume>13</volume>
+  <fpage>2498</fpage>
+  <lpage>-504</lpage>
+</bibl>
+
+<bibl id="B9">
+  <title><p>{{A}stex{V}iewer: a visualisation aid for structure-based drug
+  design}</p></title>
+  <aug>
+    <au><snm>Hartshorn</snm><fnm>M. J.</fnm></au>
+  </aug>
+  <source>J. Comput. Aided Mol. Des.</source>
+  <pubdate>2002</pubdate>
+  <volume>16</volume>
+  <issue>12</issue>
+  <fpage>871</fpage>
+  <lpage>-881</lpage>
+</bibl>
+
+<bibl id="B10">
+  <title><p>Article: NetraRIS - a Web based DICOM Viewer</p></title>
+  <aug>
+    <au><snm>Kulkarni</snm><fnm>DB</fnm></au>
+    <au><snm>Doijade</snm><fnm>MM</fnm></au>
+    <au><snm>Devrukhkar</snm><fnm>CS</fnm></au>
+    <au><snm>Zilpe</snm><fnm>GR</fnm></au>
+    <au><snm>Surana</snm><fnm>RR</fnm></au>
+  </aug>
+  <source>International Journal of Computer Applications</source>
+  <pubdate>2012</pubdate>
+  <volume>48</volume>
+  <issue>24</issue>
+  <fpage>40</fpage>
+  <lpage>44</lpage>
+  <note>Published by Foundation of Computer Science, New York, USA</note>
+</bibl>
+
+<bibl id="B11">
+  <title><p>Putting Things to REST</p></title>
+  <aug>
+    <au><snm>Wilde</snm><fnm>E</fnm></au>
+  </aug>
+  <source>Transport</source>
+  <publisher>Citeseer</publisher>
+  <pubdate>2007</pubdate>
+  <volume>15</volume>
+  <issue>November</issue>
+  <fpage>567</fpage>
+  <lpage>-583</lpage>
+</bibl>
+
+<bibl id="B12">
+  <title><p>XML Applications and Initiatives</p></title>
+  <url>http://xml.coverpages.org/xmlApplications.html</url>
+</bibl>
+
+<bibl id="B13">
+  <title><p>Three.js - JavaScript 3D library</p></title>
+  <url>http://mrdoob.github.com/three.js/</url>
+</bibl>
+
+<bibl id="B14">
+  <title><p>WebGL 1.0 Specification</p></title>
+  <url>https://www.khronos.org/registry/webgl/specs/1.0/</url>
+</bibl>
+
+<bibl id="B15">
+  <title><p>Profiling by image registration reveals common origin of annelid
+  mushroom bodies and vertebrate pallium.</p></title>
+  <aug>
+    <au><snm>Tomer</snm><fnm>R</fnm></au>
+    <au><snm>Denes</snm><fnm>AS</fnm></au>
+    <au><snm>Tessmar Raible</snm><fnm>K</fnm></au>
+    <au><snm>Arendt</snm><fnm>D</fnm></au>
+  </aug>
+  <source>Cell</source>
+  <publisher>Elsevier Ltd</publisher>
+  <pubdate>2010</pubdate>
+  <volume>142</volume>
+  <issue>5</issue>
+  <fpage>800</fpage>
+  <lpage>-809</lpage>
+</bibl>
+
+<bibl id="B16">
+  <title><p>United States Computer Emergency Readiness Team</p></title>
+  <url>http://www.kb.cert.org/vuls/id/636312</url>
+</bibl>
+
+<bibl id="B17">
+  <title><p>Compatibility table for WebGL</p></title>
+  <url>http://caniuse.com/webgl</url>
+</bibl>
+
+<bibl id="B18">
+  <title><p>bioWeb3D on github</p></title>
+  <url>http://github.com/jbogp/bioWeb3D</url>
+</bibl>
+
+<bibl id="B19">
+  <title><p>bioWeb3D online</p></title>
+  <url>http://www.ebi.ac.uk/~jbpettit/bioWeb3D</url>
+</bibl>
+
+</refgrp>
+} % end of \BMCxmlcomment

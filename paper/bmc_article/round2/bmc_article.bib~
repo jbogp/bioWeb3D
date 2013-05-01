@@ -1,0 +1,160 @@
+% bmc_article.bib
+% 
+%  An example of bibtex entries.
+%  Entries taken from BMC instructions for authors page.
+
+
+@article{blank,
+	author  = {}, 
+	title   = {},
+	journal = {}, 
+	year  = {},
+	  month = {}, 
+	  volume= {}, 
+	  number= {}, 
+	  pages = {},
+	  note  = {} 
+}
+
+@article{Freeman07,
+  author = {Freeman, Tom C. and Goldovsky, Leon and Brosch, Markus and van Dongen, Stijn and Mazière, Pierre and Grocock, Russell J. and Freilich, Shiri and Thornton, Janet and Enright, Anton J.},
+  journal = {PLoS Computational Biology},
+  number = 10,
+  title = {Construction, Visualisation, and Clustering of Transcription Networks from Microarray Expression Data.},
+  volume = 3,
+  year = 2007
+}
+
+
+@Article{Hartshorn02,
+   Author="Hartshorn, M. J. ",
+   Title="{{A}stex{V}iewer: a visualisation aid for structure-based drug design}",
+   Journal="J. Comput. Aided Mol. Des.",
+   Year="2002",
+   Volume="16",
+   Number="12",
+   Pages="871--881",
+   Month="Dec"
+}
+
+@article{Dinesh12,
+	author = {Dinesh B. Kulkarni and Mahesh M. Doijade and Chetan S. Devrukhkar and Ganesh R. Zilpe and Rajesh R. Surana},
+	title = {Article: NetraRIS - a Web based DICOM Viewer},
+	journal = {International Journal of Computer Applications},
+	year = {2012},
+	volume = {48},
+	number = {24},
+	pages = {40-44},
+	month = {June},
+	note = {Published by Foundation of Computer Science, New York, USA}
+}
+
+
+@Article{Lein07,
+   Author="Lein, E. S.  and Hawrylycz, M. J.  and Ao, N.  and Ayres, M.  and Bensinger, A.  and Bernard, A.  and Boe, A. F.  and Boguski, M. S.  and Brockway, K. S.  and Byrnes, E. J.  and Chen, L.  and Chen, L.  and Chen, T. M.  and Chin, M. C.  and Chong, J.  and Crook, B. E.  and Czaplinska, A.  and Dang, C. N.  and Datta, S.  and Dee, N. R.  and Desaki, A. L.  and Desta, T.  and Diep, E.  and Dolbeare, T. A.  and Donelan, M. J.  and Dong, H. W.  and Dougherty, J. G.  and Duncan, B. J.  and Ebbert, A. J.  and Eichele, G.  and Estin, L. K.  and Faber, C.  and Facer, B. A.  and Fields, R.  and Fischer, S. R.  and Fliss, T. P.  and Frensley, C.  and Gates, S. N.  and Glattfelder, K. J.  and Halverson, K. R.  and Hart, M. R.  and Hohmann, J. G.  and Howell, M. P.  and Jeung, D. P.  and Johnson, R. A.  and Karr, P. T.  and Kawal, R.  and Kidney, J. M.  and Knapik, R. H.  and Kuan, C. L.  and Lake, J. H.  and Laramee, A. R.  and Larsen, K. D.  and Lau, C.  and Lemon, T. A.  and Liang, A. J.  and Liu, Y.  and Luong, L. T.  and Michaels, J.  and Morgan, J. J.  and Morgan, R. J.  and Mortrud, M. T.  and Mosqueda, N. F.  and Ng, L. L.  and Ng, R.  and Orta, G. J.  and Overly, C. C.  and Pak, T. H.  and Parry, S. E.  and Pathak, S. D.  and Pearson, O. C.  and Puchalski, R. B.  and Riley, Z. L.  and Rockett, H. R.  and Rowland, S. A.  and Royall, J. J.  and Ruiz, M. J.  and Sarno, N. R.  and Schaffnit, K.  and Shapovalova, N. V.  and Sivisay, T.  and Slaughterbeck, C. R.  and Smith, S. C.  and Smith, K. A.  and Smith, B. I.  and Sodt, A. J.  and Stewart, N. N.  and Stumpf, K. R.  and Sunkin, S. M.  and Sutram, M.  and Tam, A.  and Teemer, C. D.  and Thaller, C.  and Thompson, C. L.  and Varnam, L. R.  and Visel, A.  and Whitlock, R. M.  and Wohnoutka, P. E.  and Wolkey, C. K.  and Wong, V. Y.  and Wood, M.  and Yaylaoglu, M. B.  and Young, R. C.  and Youngstrom, B. L.  and Yuan, X. F.  and Zhang, B.  and Zwingman, T. A.  and Jones, A. R. ",
+   Title="{{G}enome-wide atlas of gene expression in the adult mouse brain}",
+   Journal="Nature",
+   Year="2007",
+   Volume="445",
+   Number="7124",
+   Pages="168--176",
+   Month="Jan"
+}
+
+
+% 19040715 
+@Article{Pavlopoulos08,
+   Author="Pavlopoulos, G. A.  and O'Donoghue, S. I.  and Satagopam, V. P.  and Soldatos, T. G.  and Pafilis, E.  and Schneider, R. ",
+   Title="{{A}rena3{D}: visualization of biological networks in 3{D}}",
+   Journal="BMC Syst Biol",
+   Year="2008",
+   Volume="2",
+   Pages="104"
+}
+
+@Article{Rubel10,
+   Author="Rubel, O.  and Weber, G. H.  and Huang, M. Y.  and Bethel, E. W.  and Biggin, M. D.  and Fowlkes, C. C.  and Luengo Hendriks, C. L.  and Keranen, S. V.  and Eisen, M. B.  and Knowles, D. W.  and Malik, J.  and Hagen, H.  and Hamann, B. ",
+   Title="{{I}ntegrating data clustering and visualization for the analysis of 3{D} gene expression data}",
+   Journal="IEEE/ACM Trans Comput Biol Bioinform",
+   Year="2010",
+   Volume="7",
+   Number="1",
+   Pages="64--79"
+}
+
+@article{Tomer10, title={Profiling by image registration reveals common origin of annelid mushroom bodies and vertebrate pallium.}, volume={142}, number={5}, journal={Cell}, publisher={Elsevier Ltd}, author={Tomer, Raju and Denes, Alexandru S and Tessmar-Raible, Kristin and Arendt, Detlev}, year={2010}, pages={800--809}}
+
+@article{Shannon03, title={Cytoscape: a software environment for integrated models of biomolecular interaction networks.}, volume={13}, journal={Genome Research}, author={Shannon, Paul and Markiel, Andrew and Ozier, Owen and Baliga, Nitin S and Wang, Jonathan T and Ramage, Daniel and Amin, Nada and Schwikowski, Benno and Ideker, Trey}, year={2003}, pages={2498--504}}
+
+@article{Wang09, title={3D Genome Tuner: Compare Multiple Circular Genomes in a 3D Context}, volume={7}, number={3}, journal={Genomics Proteomics Bioinformatics}, publisher={Beijing Genomics Institute}, author={Wang, Qi and Liang, Qun and Zhang, Xiuqing}, year={2009}, pages={143--146}}
+
+@article{Wilde07, title={Putting Things to REST}, volume={15}, number={November}, journal={Transport}, publisher={Citeseer}, author={Wilde, Erik}, year={2007}, pages={567--583}}
+
+@article{Peng10, title={V3D enables real-time 3D visualization and quantitative analysis of large-scale biological image data sets.}, volume={28}, url={http://www.pubmedcentral.nih.gov/articlerender.fcgi?artid=2857929&tool=pmcentrez&rendertype=abstract}, number={4}, journal={Nature Biotechnology}, publisher={Nature Publishing Group}, author={Peng, Hanchuan and Ruan, Zongcai and Long, Fuhui and Simpson, Julie H and Myers, Eugene W}, year={2010}, pages={348--353}}
+
+
+@webpage{three,
+	title  = {Three.js - JavaScript 3D library},
+	url = {http://mrdoob.github.com/three.js/}
+}
+
+@webpage{webgl,
+	title  = {WebGL 1.0 Specification},
+	url = {https://www.khronos.org/registry/webgl/specs/1.0/}
+}
+
+@webpage{github,
+	title  = {bioWeb3D on github},
+	url = {http://github.com/jbogp/bioWeb3D}
+}
+
+@webpage{bioweb3D,
+	title  = {bioWeb3D online},
+	url = {http://www.ebi.ac.uk/~jbpettit/bioWeb3D}
+}
+
+@webpage{security,
+	title  = {United States Computer Emergency Readiness Team},
+	url = {http://www.kb.cert.org/vuls/id/636312}
+}
+
+@webpage{caniuse,
+	title= {Compatibility table for WebGL},
+	url={http://caniuse.com/webgl}
+}
+
+@MISC{Stalling05,
+    author = {Detlev Stalling and Malte Westerhoff and Hans-Christian Hege},
+    title = {Amira: a highly interactive system for visual data analysis},
+    year = {2005}
+}
+
+
+
+
+
+
+
+
+
+% Article within a journal
+@ARTICLE{koon,
+	author  = {Koonin, E V and Altschul, S F and P Bork}, 
+	title   = {BRCA1 protein products: functional motifs}, 
+	journal = {Nat Genet}, 
+	year    = {1996},
+	volume  = {13}, 
+	pages   = {266-267}
+}	
+
+
+
+%%%%%%%%
+% Webpage Link / URL
+%
+@webpage{mouse,
+	title  = {The Mouse Tumor Biology Database},
+	url = {http://tumor.informatics.jax.org/cancer_links.html}
+}
+
+
