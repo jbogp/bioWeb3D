@@ -39,6 +39,18 @@ function getClusterAsText(readFile,datasetId) {
 				var thisSet = new Object();
 				thisSet.name = $(e).find("name").text();
 				thisSet.numClass = parseInt($(e).find("numClass").text());
+				thisSet.labels = new Array();
+				//iterating on labels if any (and enough)
+				if($(e).find("label").length >= thisSet.numClass) {
+					$(e).find("label").each(function(j,el) {			
+						thisSet.labels.push($(el).text());
+					});
+				}
+				else {
+					for(i=0;i<thisSet.numClass;i++){
+						thisSet.labels.push("Cluster "+(i+1));
+					}
+				}
 				thisSet.values = new Array();
 				//iterating on points
 				$(e).find("value").each(function(j,el) {			
