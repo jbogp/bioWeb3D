@@ -76,7 +76,7 @@
 		});
 		
 		$( "#alphaRaw" ).slider({
-			value:0.8,
+			value:0.9,
 			min: 0,
 			max: 1,
 			step: 0.05,
@@ -378,16 +378,58 @@
 	
 	//Load cluster From Json File
 	function clusterSetFactory(jsonFile,index) {
-		$.ajax({
-		  url: jsonFile,
-		  dataType: 'json',
-		  success: function(data) {
-			addClusterUI((index-1),index,data.information);
-		},
-		  error: function (xhr, ajaxOptions, thrownError){
-			jsonError(xhr.statusText);
-		}   
-		});
+		//JSON file
+		if(jsonFile.split('.').pop() == "json") { 
+			$.ajax({
+			  url: jsonFile,
+			  dataType: 'json',
+			  success: function(data) {
+				addClusterUI((index-1),index,data.information);
+			},
+			  error: function (xhr, ajaxOptions, thrownError){
+				jsonError(xhr.statusText);
+			}   
+			});
+		}
+		//CSV File
+		else {
+
+			$.ajax({
+			  url: jsonFile,
+			  dataType: 'html',
+			  success: function(data) {
+				//Reading CSV and creating Object
+				var csv = new Object();
+				csv.information = new Array();
+				var information = $.csv.toArrays(data);
+
+				//Building structure
+				for(var j=0;j<information[0].length;j++) {
+					csv.information[j] = new Object();
+					csv.information[j].values = new Array();
+				}
+
+				for(var j=0;j<information[0].length;j++) {
+					var clustMax = 0;
+					for(var i=0;i<information.length;i++){
+						csv.information[j].values[i] = Number(information[i][j]);
+						//checking if element already seen
+						if(Number(information[i][j]) > clustMax) {
+							clustMax = Number(information[i][j]);
+						}
+					}
+					csv.information[j].numClass = clustMax;
+					csv.information[j].name = "Information set "+(j+1);
+
+				}
+				addClusterUI(index-1,index,csv.information);
+			},
+			 error: function (xhr, ajaxOptions, thrownError){
+				jsonError(xhr.statusText);
+			} 
+			});
+		}
+
 	}
 	
 	

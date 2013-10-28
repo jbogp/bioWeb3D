@@ -89,7 +89,7 @@
 if ( ! Detector.webgl ) Detector.addGetWebGLMessage();
 
 //Defining application global variables
-var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeight=window.innerHeight,winWidth=window.innerWidth,datasets=new Array(),numWorlds,timeout,alphaClust=1,alphaRaw=0.2,partSize=2,centerPoints=true;
+var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeight=window.innerHeight,winWidth=window.innerWidth,datasets=new Array(),numWorlds,timeout,alphaClust=1,alphaRaw=0.1,partSize=2,centerPoints=true;
 </script>
 
 
@@ -598,9 +598,9 @@ var KeyDown=false,axisLength=10000,renderer,container,worlds=new Array(),winHeig
 		for(var i=0;i<this.numClust;i++){
 			this.materials[i] =  new THREE.ParticleBasicMaterial({
 				size: partSize,
-				opacity:alphaClust,
-				blending: THREE.NormalBlending,
-				transparent: true
+				opacity:1,
+				blending: THREE.NoBlending,
+				transparent: false
 			});
 			this.materials[i].color.setHex(colors[i]);
 
