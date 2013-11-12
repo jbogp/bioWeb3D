@@ -13,6 +13,8 @@ BioWeb3D an HTML5 visualization tool for biological datasets
 
 [![Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/paper/Supp_fig2.png "Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)")](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster0=examples/CChain-struc-3EAM.pdb.json)
 
+- **[Visualisation of FBI arrests and statistical data sets](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/arrests-dataset.json&cluster=examples/arrests-cluster.json)**
+
 But remember, you can input any 3D dataset for a quick and interactive visualization ! **Want to visualize your data in bioWeb3D ? You should look up the [FAQ](https://github.com/jbogp/bioWeb3D/wiki) and the [Getting started page](https://github.com/jbogp/bioWeb3D/wiki/Getting-started)** 
 
 If that's not enough, if you find a bug or if you have any improvement suggestion, please submit an [issue report here](https://github.com/jbogp/bioWeb3D/issues)

@@ -76,15 +76,15 @@ function getClusterAsText(readFile,datasetId) {
 			}
 
 			for(var j=0;j<information[0].length;j++) {
-				var clustSeen = new Array(); //Seen classes to count them
+				var clustMax = 0;
 				for(var i=0;i<information.length;i++){
 					csv.information[j].values[i] = Number(information[i][j]);
 					//checking if element already seen
-					if(clustSeen.indexOf(Number(information[i][j])) <= -1) {
-						clustSeen.push(Number(information[i][j]));
+					if(Number(information[i][j]) > clustMax) {
+						clustMax = Number(information[i][j]);
 					}
 				}
-				csv.information[j].numClass = clustSeen.length;
+				csv.information[j].numClass = clustMax;
 				csv.information[j].name = "Information set "+(j+1);
 
 			}
