@@ -13,9 +13,9 @@ BioWeb3D an HTML5 visualization tool for biological datasets
 
 [![Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/paper/Supp_fig2.png "Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)")](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster0=examples/CChain-struc-3EAM.pdb.json)
 
-- **[Visualisation of FBI arrests and statistical data sets](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/arrests-dataset.json&cluster=examples/arrests-cluster.json)**
+- **[Visualisation of FBI arrests and statistical data sets](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/arrests-dataset.json&cluster0=examples/arrests-cluster.json)**
 
-[![Visualisation of FBI arrests and statistical data sets](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/paper/Supp_fig4.png "Visualisation of FBI arrests and statistical data sets")](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/arrests-dataset.json&cluster=examples/arrests-cluster.json)
+[![Visualisation of FBI arrests and statistical data sets](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/paper/Supp_fig4.png "Visualisation of FBI arrests and statistical data sets")](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/arrests-dataset.json&cluster0=examples/arrests-cluster.json)
 
 This example has been created by github user **[MarcFrankfurt](https://github.com/MarcFrankfurt)** to visualize sex worker arrest data from the US has been added by Arrest Mapper Project. Check out his [explanation page](https://github.com/MarcFrankfurt/Bioweb3D) !
 
