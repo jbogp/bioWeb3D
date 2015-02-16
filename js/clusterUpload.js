@@ -76,16 +76,16 @@ function getClusterAsText(readFile,datasetId) {
 			}
 
 			for(var j=0;j<information[0].length;j++) {
-				var clustSeen = new Array(); //Seen classes to count them
-				for(var i=0;i<information.length;i++){
-					csv.information[j].values[i] = Number(information[i][j]);
+				var clustMax = 0;
+				for(var i=1;i<information.length;i++){
+					csv.information[j].values[i-1] = Number(information[i][j])+1;
 					//checking if element already seen
-					if(clustSeen.indexOf(Number(information[i][j])) <= -1) {
-						clustSeen.push(Number(information[i][j]));
+					if(Number(information[i][j]) > clustMax) {
+						clustMax = Number(information[i][j])+1;
 					}
 				}
-				csv.information[j].numClass = clustSeen.length;
-				csv.information[j].name = "Information set "+(j+1);
+				csv.information[j].numClass = clustMax;
+				csv.information[j].name = information[0][j];
 
 			}
 			addClusterUI(datasetId,datasetNum,csv.information);			
@@ -120,35 +120,13 @@ function addClusterUI (datasetId,datasetNum,json) {
 			//Creating World buttons		
 			for(var j=0;j<worlds.length;j++) {
 				thisOneSelected = false;
+				$("#worldButtonData"+datasetNum+""+(j+1)+"").append("<br/><input type='checkbox' class='clust' id='testworldButtonData"+datasetNum+"-"+(j+1)+"-"+clustNum+"' value='"+(clustNum-1)+
+				"'><label for='testworldButtonData"+datasetNum+"-"+(j+1)+"-"+clustNum+"'>"+datasets[datasetId].clusterSets[clustNum-1].name+"</label>");
+				$("#testworldButtonData"+datasetNum+"-"+(j+1)+"-"+clustNum+"").bind("click",{world:j,dataset:datasetNum},selectDataHandler);
 
-
-				//Loading first cluster set in visible worlds showing raw data of this dataset or if world is visible and empty
-				if(i == 0) {
-					if((worlds[j].isRaw(datasetId) || worlds[j].empty()) && worlds[j].visible && !select) {
-						console.log("added information layer "+clustNum+" to world "+j);
-						//attaching clusterset to world
-						worlds[j].attachDataSet(datasets[datasetId],datasetId,clustNum-1);
-						select = true;
-						thisOneSelected = true;
-					}
-				}
-		
-			
-				$("#worldButtonData"+datasetNum+""+(j+1)+"").append("<option class='clust' value='"+clustNum+"'>"+datasets[datasetId].clusterSets[clustNum-1].name+"</option>");
-
-			
-				//Creating the clusters div
-				$("#worldSelectData"+datasetNum+"-"+(j+1)+"").append("<div id='clusters"+datasetNum+"-"+(j+1)+"'></div>");
-				//updating dropdown menu if creation went well
-				if(i == 0) {
-					if(thisOneSelected) {
-						//Selecting correct option in dropdownlist
-						$("#worldButtonData"+datasetNum+""+(j+1)+" option[value='"+clustNum+"']").prop('selected',true);
-						$("#worldButtonData"+datasetNum+""+(j+1)+"").change()
-					}				
-				}
 			}
 		}
+		worlds[0].attachDataSet(datasets[datasetId],datasetId,1);
 
 				
 		consoleMess("Loaded "+json.length+" cluster sets for dataset \""+datasets[datasetId].name+"\"");

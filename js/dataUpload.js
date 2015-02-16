@@ -112,8 +112,7 @@ function addDataSetUI(index) {
 	$("#accordionData").append("<h3><a href='#'>"+datasets[index-1].name+"</a></h3><div id='worldDataAccordion"+index+"'>");
 	$("#worldDataAccordion"+index+"").append("<div id='worldSelectData"+index+"'></div>");
 	for(var i=1;i<=worlds.length;i++) {
-		$("#worldSelectData"+index+"").append("<h2><a href=\"#\">world "+i+"</a></h2><div id='worldSelectData"+index+"-"+i+"'><select id='worldButtonData"+index+""+i+"'><option class='noaction'>Select Data</option><option class='raw'>Raw Data</option></select></div>");
-		$("#worldButtonData"+index+""+i+"").bind("change",{world:i,dataset:index},selectDataHandler);
+		$("#worldSelectData"+index+"").append("<h2><a href=\"#\">world "+i+"</a></h2><div id='worldSelectData"+index+"-"+i+"'><div id='worldButtonData"+index+""+i+"'></div>");
 		if(worlds[i-1].visible && worlds[i-1].empty()) {
 			console.log("added DataSet "+index+" to world "+i);
 			//Viewing dataset in visible worlds

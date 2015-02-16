@@ -166,85 +166,17 @@
 	function selectDataHandler(event) {
 			// $this will contain a reference to the checkbox
 			var $this = $(this);
-
-			if (typeof $this.attr('name') !== 'undefined') {
-				//remove current
-				worlds[event.data.world-1].detachDataSet($this.attr('name'));
+			if ($this.attr('checked')) {
+				//add
+				selectedClust.push($this.attr('value'));
+				console.log(selectedClust.length);
 			}	
-			if($("select[id='worldButtonData"+event.data.dataset+""+event.data.world+"'] option:selected").attr("class") == 'raw'){
-				try {
-					worlds[event.data.world-1].attachDataSet(datasets[event.data.dataset-1],event.data.dataset-1);
-					$this.attr('name',event.data.dataset-1);
-					//Clearing the cluster area
-					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").empty();
-				}
-				catch(e) {
-					console.log("Failed to load dataset");
-				}
+			else {
+				//remove
+				selectedClust.splice(selectedClust.indexOf($this.attr('value')), 1);
+				console.log(selectedClust.length);
 			}
-			else if($("select[id='worldButtonData"+event.data.dataset+""+event.data.world+"'] option:selected").attr("class") == 'noaction') {
-				$this.removeAttr('name');
-				//Clearing the cluster area
-				$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").empty();
-			}
-			else if($("select[id='worldButtonData"+event.data.dataset+""+event.data.world+"'] option:selected").attr("class") == 'clust') {
-				try{
-					var numClust = ($("select[id='worldButtonData"+event.data.dataset+""+event.data.world+"'] option:selected").val() - 1);
-					worlds[event.data.world-1].attachDataSet(datasets[event.data.dataset-1],event.data.dataset-1,numClust);
-					$this.attr('name',event.data.dataset-1);
-
-					//Clearing the cluster area
-					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").empty();
-					//Creating All/None buttons
-					$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<a href='#' class='allButton"+(event.data.dataset)+"-"+(event.data.world)+"'>All</a>/<a class='noneButton"+(event.data.dataset)+"-"+(event.data.world)+"' href='#'>None</a>"+
-						"<div style='float:right'>Change colour</div>");
-					$(".allButton"+(event.data.dataset)+"-"+(event.data.world)+"").bind("click",{world:event.data.world,dataset:event.data.dataset,clustSet:numClust,numClust:datasets[event.data.dataset-1].clusterSets[numClust].numClust}, function(event) {
-						$(".clusters"+(event.data.dataset)+"-"+(event.data.world)+"").attr("checked",true);
-						for(var k=0;k<event.data.numClust;k++) {
-							datasets[event.data.dataset-1].clusterSets[event.data.clustSet].visible[k] = true;
-						}
-						worlds[event.data.world-1].refreshDataSets();
-					});
-					$(".noneButton"+(event.data.dataset)+"-"+(event.data.world)+"").bind("click",{world:event.data.world,dataset:event.data.dataset,clustSet:numClust,numClust:datasets[event.data.dataset-1].clusterSets[numClust].numClust}, function(event) {
-						$(".clusters"+(event.data.dataset)+"-"+(event.data.world)+"").attr("checked",false);
-						for(var k=0;k<event.data.numClust;k++) {
-							datasets[event.data.dataset-1].clusterSets[event.data.clustSet].visible[k] = false;
-						}
-						worlds[event.data.world-1].refreshDataSets();
-					});
-					//Iterating over each cluster
-					
-					for(var k=0;k<datasets[event.data.dataset-1].clusterSets[numClust].numClust;k++) {
-						var checked = (datasets[event.data.dataset-1].clusterSets[numClust].visible[k]) ? "checked" : "";
-						$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"").append("<div id='divClust"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"' style='background-color:"+colorsCSS[k]+";padding-left:8px'>" +
-							"<input type='checkbox' "+checked+" class='clusters"+(event.data.dataset)+"-"+(event.data.world)+"' id='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'> "+
-							"<label for='clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"'>"+datasets[event.data.dataset-1].clusterSets[numClust].labels[k]+"</label>"+
-							"<div style='float:right'><input type='text' size='10' id='colors"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"' style='font-size:9px;background:#"+('000000'+datasets[event.data.dataset-1].clusterSets[numClust].materials[k].color.getHex().toString(16)).slice(-6)+"' class=\"color\" value='"+('000000'+datasets[event.data.dataset-1].clusterSets[numClust].materials[k].color.getHex().toString(16)).slice(-6)+"'></div>"+
-							"</div>");
-						//Binding checkboxes
-						$("#clusters"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"").bind("change",{world:event.data.world-1,dataset:event.data.dataset-1,clusterSet:numClust,cluster:k}, function(event) {
-							var $this = $(this);
-							if ($this.is(':checked')) {
-							
-								datasets[event.data.dataset].clusterSets[event.data.clusterSet].visible[event.data.cluster] = true;
-							}
-							else {
-								datasets[event.data.dataset].clusterSets[event.data.clusterSet].visible[event.data.cluster] = false;
-							}
-							worlds[event.data.world].refreshDataSets();
-						});
-						//Binding color input
-						$("#colors"+(event.data.dataset)+"-"+(event.data.world)+"-"+(k+1)+"").bind("change",{world:event.data.world-1,dataset:event.data.dataset-1,clusterSet:numClust,cluster:k}, function(event) {
-							datasets[event.data.dataset].clusterSets[event.data.clusterSet].setColor(event.data.cluster,'0x'+$(this).val());
-							$("#divClust"+(event.data.dataset+1)+"-"+(event.data.world+1)+"-"+(event.data.cluster+1)+"").css('background-color','#'+$(this).val());
-						});
-					}
-				}
-				catch(e) {
-					console.log("Failed to load dataset");
-				}
-					
-			}
+			worlds[0].refreshDataSets();
 	}
 
 
@@ -411,15 +343,15 @@
 
 				for(var j=0;j<information[0].length;j++) {
 					var clustMax = 0;
-					for(var i=0;i<information.length;i++){
-						csv.information[j].values[i] = Number(information[i][j]);
+					for(var i=1;i<information.length;i++){
+						csv.information[j].values[i-1] = Number(information[i][j])+1;
 						//checking if element already seen
 						if(Number(information[i][j]) > clustMax) {
-							clustMax = Number(information[i][j]);
+							clustMax = Number(information[i][j])+1;
 						}
 					}
 					csv.information[j].numClass = clustMax;
-					csv.information[j].name = "Information set "+(j+1);
+					csv.information[j].name = information[0][j];
 
 				}
 				addClusterUI(index-1,index,csv.information);
