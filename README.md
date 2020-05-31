@@ -1,9 +1,9 @@
 BioWeb3D an HTML5 visualization tool for biological datasets
 =========================================================
-##What does it do ?
+## What does it do ?
 `bioWeb3D` is an HTML5/webGL based 3D visualisation tool has been developed to allow biologists to quickly and easily view interactive and customizable three dimensional representations of their data along with multiple layers of information. Using the WebGL library Three.js written in Javascript, bioWeb3D allows the simultaneous visualisation of multiple large datasets inputted via a simple JSON file, which can be read and analysed locally thanks to HTML5 capabilities.
 
-##Test it live now
+## Test it live now
 **Test the application in one click**
 
 - **[Single cell level brain of the marine worm Plateynereis dumerilii with clustered functional areas](http://www.ebi.ac.uk/~jbpettit/bioWeb3D/?dataset=examples/platynereis.json&cluster0=examples/20Clustbeta0Rand.json)**
@@ -27,7 +27,7 @@ If that's not enough, if you find a bug or if you have any improvement suggestio
 ## Motivation
 Visualisation is a key feature in the analysis of large biological datasets, especially when analysing organized structures with distinct sub-clusters (Rubel _et al._, 2010). This is particularly important when analysing 3-Dimensional (3D) datasets, which is becoming more and more common. While various visualisation tools have been developed, they have typically been available via a locally installed piece of software such as Arena3D (Pavlopoulos _et al._,2008),  3D Genome Tuner (Wang _et al._, 2009), the Allen Brain Atlas (Lein _et al._, 2007) or Cytoscape (Shannon _et al._, 2003). Other 3D visualisation tools have been built online and are accessible through the browser directly, such as AstexViewer (Hartshorn _et al._, 2002), which is utilised by the Protein Databank Europe via a Java Applet. More recently, visualisation tools developed using HTML5/WebGL capabilities have been described, although they have focused on very specific applications, such as analysing radiology data  (Kulkarni _et al._, 2012). However, no tool has allowed biologists to view their own 3D data directly online in an easy, fast, secure and interactive way. Using webGL and the JavaScript 3D library [Three.js](https://github.com/mrdoob/three.js/), bioWeb3D aims to be a simple, generic, tool for visualising such data.
 
-###References
+### References
 Hartshorn M.J. (2002). AstexViewer: a visualisation aid for structure-based drug design. Journal of Computer-aided Molecule Design 16:871-881.
 
 Kulkarni D.B., Doijade M.M., Devrukhkar C.S., Zilpe G.R. and Surana R.R. (2012). NetraRIS - a Web based DICOM Viewer. International Journal of Computer Applications.48:40-44.
