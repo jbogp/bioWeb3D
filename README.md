@@ -6,16 +6,16 @@ BioWeb3D an HTML5 visualization tool for biological datasets
 ## Test it live now
 **Test the application in one click**
 
-- **[Single cell level brain of the marine worm Plateynereis dumerilii with clustered functional areas](http://gribaudo-vandame.com/bioWeb3D/?dataset=examples/platynereis.json&cluster=examples/20Clustbeta0Rand.json)**
+- **[Single cell level brain of the marine worm Plateynereis dumerilii with clustered functional areas](http://gribaudo-vandamme.com/bioWeb3D/?dataset=examples/platynereis.json&cluster=examples/20Clustbeta0Rand.json)**
 
-[![Plateynereis dumerilii's brain](http://gribaudo-vandame.com/bioWeb3D/paper/Supp_fig3.png "Plateynereis dumerilii's brain")](http://gribaudo-vandame.com/bioWeb3D/?dataset=examples/platynereis.json&cluster0=examples/20Clustbeta0Rand.json)
-- **[Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein) with beta structure highlighted](http://gribaudo-vandame.com/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster0=examples/CChain-struc-3EAM.pdb.json)**
+[![Plateynereis dumerilii's brain](http://gribaudo-vandamme.com/bioWeb3D/paper/Supp_fig3.png "Plateynereis dumerilii's brain")](http://gribaudo-vandamme.com/bioWeb3D/?dataset=examples/platynereis.json&cluster0=examples/20Clustbeta0Rand.json)
+- **[Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein) with beta structure highlighted](http://gribaudo-vandamme.com/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster0=examples/CChain-struc-3EAM.pdb.json)**
 
-[![Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)](http://gribaudo-vandame.com/bioWeb3D/paper/Supp_fig2.png "Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)")](http://gribaudo-vandame.com/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster0=examples/CChain-struc-3EAM.pdb.json)
+[![Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)](http://gribaudo-vandamme.com/bioWeb3D/paper/Supp_fig2.png "Main carbon chain of a bacterial pentameric ligand-gated ion channel (protein)")](http://gribaudo-vandamme.com/bioWeb3D/?dataset=examples/CChain-3EAM.pdb.json&cluster0=examples/CChain-struc-3EAM.pdb.json)
 
-- **[Visualisation of FBI arrests and statistical data sets](http://gribaudo-vandame.com/bioWeb3D/?dataset=examples/arrests-dataset.json&cluster0=examples/arrests-cluster.json)**
+- **[Visualisation of FBI arrests and statistical data sets](http://gribaudo-vandamme.com/bioWeb3D/?dataset=examples/arrests-dataset.json&cluster0=examples/arrests-cluster.json)**
 
-[![Visualisation of FBI arrests and statistical data sets](http://gribaudo-vandame.com/bioWeb3D/paper/Supp_fig4.png "Visualisation of FBI arrests and statistical data sets")](http://gribaudo-vandame.com/bioWeb3D/?dataset=examples/arrests-dataset.json&cluster0=examples/arrests-cluster.json)
+[![Visualisation of FBI arrests and statistical data sets](http://gribaudo-vandamme.com/bioWeb3D/paper/Supp_fig4.png "Visualisation of FBI arrests and statistical data sets")](http://gribaudo-vandamme.com/bioWeb3D/?dataset=examples/arrests-dataset.json&cluster0=examples/arrests-cluster.json)
 
 This example has been created by github user **[MarcFrankfurt](https://github.com/MarcFrankfurt)** to visualize sex worker arrest data from the US has been added by Arrest Mapper Project. Check out his [explanation page](https://github.com/MarcFrankfurt/Bioweb3D) !
 
